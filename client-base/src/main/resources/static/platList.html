@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<table id="platList" style="width:100%;"
+		toolbar="#platToolbar" idField="id" pagination="true"
+		rownumbers="true" fitColumns="true" singleSelect="false" ctrlSelect="true"
+		pageSize="20" remoteSort="true" sortName="id" sortOrder="desc">
+	<thead>
+		<tr>
+			<th field="item" width="200px" sortable="true" editor="{type:'validatebox',options:{required:true}}">区域名</th>
+			<th field="projectid" width="200px" sortable="true" editor="{type: 'combobox', options:{url:'project/combobox', valueField:'value', textField:'text', editable:false, panelHeight:'auto', panelMaxHeight:'200'}}" data-options="formatter:platProjectFormatter">项目</th>
+			<th field="province" width="200px" sortable="true" editor="{type: 'combobox', options:{url:'plat/provinceCombobox', valueField:'value', textField:'text', editable:false, panelHeight:'auto', panelMaxHeight:'200'}}">省</th>
+			<th field="city" width="200px" sortable="true" editor="text">市</th>
+			<th field="longitude" width="200px" sortable="true" editor="{type:'numberbox', options:{precision:6}}">中心经度</th>
+			<th field="latitude" width="200px" sortable="true" editor="{type:'numberbox', options:{precision:6}}">中心纬度</th>
+			<th field="note" width="200px" sortable="true" editor="text">备注</th>
+		</tr>
+	</thead>
+</table>
+<div id="platToolbar" style="width:100%;">
+	<span class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="$('#platList').edatagrid('unselectAll');$('#platList').edatagrid('addRow',0)">新增</span>
+	<span class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="$('#platList').edatagrid('destroyRow')">删除</span>
+	<span class="easyui-linkbutton" iconCls="icon-save" plain="true" onclick="$('#platList').edatagrid('saveRow')">保存</span>
+	<span class="easyui-linkbutton" iconCls="icon-undo" plain="true" onclick="$('#platList').edatagrid('cancelRow')">取消</span>
+	<span class="easyui-linkbutton" iconCls="icon-reload" plain="true" onclick="$('#platList').edatagrid('removeFilterRule');$('#platList').edatagrid('doFilter')">刷新</span>
+</div>
+</body>  
+</html> 

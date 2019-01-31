@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<table id="projectList" style="width:100%;"
+		toolbar="#projectToolbar" idField="id" pagination="true"
+		rownumbers="true" fitColumns="true" singleSelect="false" ctrlSelect="true"
+		pageSize="20" remoteSort="true" sortName="id" sortOrder="asc">
+	<thead>
+		<tr>
+			<th field="item" width="200px" sortable="true" editor="{type:'validatebox',options:{required:true}}">项目名</th>
+			<th field="fileurl" width="200px" sortable="true" editor="{type:'validatebox'}">文件url</th>
+			<th field="servicename" width="200px" sortable="true" editor="{type:'validatebox'}">服务名</th>
+			<th field="dburl" width="200px" sortable="true" editor="{type:'validatebox'}">数据库地址</th>
+			<th field="detail" width="200px" sortable="true" editor="{type:'validatebox'}">详细内容</th>
+		</tr>
+	</thead>
+</table>
+<div id="projectToolbar" style="width:100%;">
+	<span class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="$('#projectList').edatagrid('unselectAll');$('#projectList').edatagrid('addRow',0)">新增</span>
+	<span class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="$('#projectList').edatagrid('destroyRow')">删除</span>
+	<span class="easyui-linkbutton" iconCls="icon-save" plain="true" onclick="$('#projectList').edatagrid('saveRow')">保存</span>
+	<span class="easyui-linkbutton" iconCls="icon-undo" plain="true" onclick="$('#projectList').edatagrid('cancelRow')">取消</span>
+	<span class="easyui-linkbutton" iconCls="icon-reload" plain="true" onclick="$('#projectList').edatagrid('removeFilterRule');$('#projectList').edatagrid('doFilter')">刷新</span>
+</div>
+<div id="projectMenu" class="easyui-menu" style="width:100px">
+	<div>项目管理</div>
+</div>
+</body>  
+</html> 

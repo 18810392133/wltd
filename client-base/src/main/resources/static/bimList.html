@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<table id="bimList" style="width:100%;"
+		toolbar="#bimToolbar" idField="id" pagination="true"
+		rownumbers="true" fitColumns="true" singleSelect="false" ctrlSelect="true"
+		pageSize="20" remoteSort="true" sortName="id" sortOrder="desc">
+	<thead>
+		<tr>
+			<th field="item" width="200px" sortable="true" editor="{type:'validatebox',options:{required:true}}">节点名</th>
+			<th field="projectid" width="200px" editor="{type: 'combobox', options:{url:'project/combobox', onSelect:onBimProjectSelect, valueField:'value', textField:'text', editable:false, panelHeight:'auto', panelMaxHeight:'200'}}" data-options="formatter:bimProjectFormatter">项目</th>
+			<th field="platid" width="200px" sortable="true" editor="{type: 'combobox', options:{url:'', onLoadSuccess:onBimPlatLoad, valueField:'value', textField:'text', editable:false, panelHeight:'auto', panelMaxHeight:'200'}}" data-options="formatter:bimPlatFormatter">区域</th>
+			<th field="longitude" width="200px" sortable="true" editor="{type:'numberbox', options:{precision:6}}">经度</th>
+			<th field="latitude" width="200px" sortable="true" editor="{type:'numberbox', options:{precision:6}}">纬度</th>
+			<th field="status" width="200px" sortable="true" editor="{type: 'combobox', options:{url:'bim/statusCombobox', valueField:'value', textField:'text', editable:false, panelHeight:'auto', panelMaxHeight:'200'}}">状态</th>
+			<th field="note" width="200px" sortable="true" editor="text">备注</th>
+		</tr>
+	</thead>
+</table>
+<div id="bimToolbar" style="width:100%;">
+	<span class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="$('#bimList').edatagrid('unselectAll');$('#bimList').edatagrid('addRow',0)">新增</span>
+	<span class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="$('#bimList').edatagrid('destroyRow')">删除</span>
+	<span class="easyui-linkbutton" iconCls="icon-save" plain="true" onclick="$('#bimList').edatagrid('saveRow')">保存</span>
+	<span class="easyui-linkbutton" iconCls="icon-undo" plain="true" onclick="$('#bimList').edatagrid('cancelRow')">取消</span>
+	<span class="easyui-linkbutton" iconCls="icon-reload" plain="true" onclick="$('#bimList').edatagrid('removeFilterRule');$('#bimList').edatagrid('doFilter')">刷新</span>
+</div>
+</body>  
+</html> 

@@ -1,0 +1,68 @@
+server:
+  port: 8180
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://118.194.51.250:8761/eureka/
+
+spring:
+  application:
+    name: service-base
+#  cloud:
+#    config:
+#      profile: dev
+#      discovery:
+#        enabled: true
+#        service-id: server-config
+#    bus:
+#      enabled: true
+#      trace:
+#        enabled: true
+#  rabbitmq:
+#    host: localhost
+#    port: 5672
+#    username: guest
+#    password: guest
+  servlet:
+    multipart:
+      max-file-size: -1
+  datasource:
+    url: jdbc:mariadb://118.194.51.250:3306/wltd?autoReconnect=true&amp;autoReconnectForPools=true
+    username: root
+    password: wltd
+    driver-class-name: org.mariadb.jdbc.Driver
+  jpa:
+    show-sql: true
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password:
+    database: 0
+    timeout: 6000
+    jedis:
+      pool:
+        max-active: 8
+        max-wait: -1
+        max-idle: 8
+        min-idle: 0
+
+mybatis:
+  type-aliases-package: com.iot.bean
+  configuration:
+    cache-enabled: true
+
+logging:
+  level:
+    root: INFO
+    com:
+      iot:
+        mapper: debug
+  file: logs/service-base.log
+
+
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: bus-refresh

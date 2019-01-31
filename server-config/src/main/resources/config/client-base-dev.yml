@@ -1,0 +1,23 @@
+feign:
+  hystrix:
+    enabled: true
+
+spring:
+  servlet:
+    multipart:
+      max-file-size: -1
+  jpa:
+    thymeleaf:
+      cache: false
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password:
+    database: 0
+    timeout: 6000
+    jedis:
+      pool:
+        max-active: 8
+        max-wait: -1
+        max-idle: 8
+        min-idle: 0

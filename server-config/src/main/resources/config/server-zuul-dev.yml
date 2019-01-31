@@ -1,0 +1,32 @@
+zuul:
+  sensitiveHeaders: "*"
+  routes:
+    base:
+      path: /base/**
+      serviceId: client-base
+      sensitiveHeaders: "*"
+    cover:
+      path: /cover/**
+      serviceId: client-cover
+      sensitiveHeaders: "*"
+    security:
+      path: /security/**
+      serviceId: client-security
+      sensitiveHeaders: "*"
+    onmap:
+      path: /**
+      url: http://47.105.40.8:808/
+
+spring:
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password:
+    database: 0
+    timeout: 6000
+    jedis:
+      pool:
+        max-active: 8
+        max-wait: -1
+        max-idle: 8
+        min-idle: 0
