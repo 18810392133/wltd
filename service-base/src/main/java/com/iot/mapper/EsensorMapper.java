@@ -4,7 +4,6 @@ import com.iot.bean.Esensor;
 import com.iot.bean.Esensorv;
 import com.iot.util.RedisCache;
 import org.apache.ibatis.annotations.*;
-
 import java.util.List;
 
 @CacheNamespace(implementation = RedisCache.class)

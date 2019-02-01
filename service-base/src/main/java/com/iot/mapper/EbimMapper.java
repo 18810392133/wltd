@@ -2,12 +2,8 @@ package com.iot.mapper;
 
 import com.iot.bean.Ebim;
 import com.iot.bean.Ebimv;
-import com.iot.bean.Eplat;
-import com.iot.bean.Eplatv;
 import com.iot.util.RedisCache;
 import org.apache.ibatis.annotations.*;
-import org.apache.ibatis.type.JdbcType;
-
 import java.util.List;
 
 @CacheNamespace(implementation = RedisCache.class)
