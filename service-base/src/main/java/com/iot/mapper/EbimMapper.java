@@ -127,7 +127,7 @@ public interface EbimMapper {
             "select",
             "ebim.id id, ebim.item item, ebim.platid platid, ebim.longitude longitude, ebim.latitude latitude, ebim.status status, ebim.note note",
             "from ebim, eplat",
-            "where ebim.platid = eplat.id and eplat.projectid = #{projectid} and id = #{id}"
+            "where ebim.platid = eplat.id and eplat.projectid = #{projectid} and ebim.id = #{id}"
     })
     @Results({
             @Result(column="platid", property="platid"),

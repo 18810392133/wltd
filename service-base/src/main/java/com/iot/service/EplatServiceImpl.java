@@ -25,7 +25,7 @@ public class EplatServiceImpl implements EplatService {
 		if(sort == null) sort = "id";
 		if(order == null) order = "desc";
 		PageHelper.startPage(page, rows, sort + " " + order);
-		if(filterRules == null)
+		if(filterRules == null || CommonUtils.json2sql(filterRules).isEmpty())
 			return eplatMapper.selectAll();
 		else
 			return eplatMapper.selectBySql(CommonUtils.json2sql(filterRules));
@@ -73,10 +73,10 @@ public class EplatServiceImpl implements EplatService {
 		if(sort == null) sort = "id";
 		if(order == null) order = "desc";
 		PageHelper.startPage(page, rows, sort + " " + order);
-		if(filterRules == null || CommonUtils.json2sql(filterRules).isEmpty())
+		if(filterRules == null || CommonUtils.json2sql4sub(filterRules, "eplat").isEmpty())
 			return eplatMapper.selectSubAll(projectid);
 		else
-			return eplatMapper.selectSubBySql(projectid, CommonUtils.json2sql(filterRules));
+			return eplatMapper.selectSubBySql(projectid, CommonUtils.json2sql4sub(filterRules, "eplat"));
 	}
 
 	public List<Eplat> selectSubBySql(Integer projectid, String sql){
@@ -97,10 +97,10 @@ public class EplatServiceImpl implements EplatService {
 		if(sort == null) sort = "id";
 		if(order == null) order = "desc";
 		PageHelper.startPage(page, rows, sort + " " + order);
-		if(filterRules == null || CommonUtils.json2sql(filterRules).isEmpty())
+		if(filterRules == null || CommonUtils.json2sql4sub(filterRules, "eplat").isEmpty())
 			return eplatMapper.selectSubVAll(projectid);
 		else
-			return eplatMapper.selectSubVBySql(projectid, CommonUtils.json2sql(filterRules));
+			return eplatMapper.selectSubVBySql(projectid, CommonUtils.json2sql4sub(filterRules, "eplat"));
 	}
 
 	public List<Eplatv> selectSubVBySql(Integer projectid, String sql){

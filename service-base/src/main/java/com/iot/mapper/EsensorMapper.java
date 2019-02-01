@@ -1,7 +1,5 @@
 package com.iot.mapper;
 
-import com.iot.bean.Ebim;
-import com.iot.bean.Ebimv;
 import com.iot.bean.Esensor;
 import com.iot.bean.Esensorv;
 import com.iot.util.RedisCache;
@@ -92,7 +90,7 @@ public interface EsensorMapper {
             "select",
             "esensor.id id, esensor.item item, esensor.bimid bimid, esensor.protocol protocol, esensor.timer timer, esensor.status status, esensor.note note",
             "from esensor, ebim, eplat",
-            "where esensor.bimid = ebim.id and ebim.platid = eplat.id and eplat.projectid = #{projectid} and ebim.id = #{id}"
+            "where esensor.bimid = ebim.id and ebim.platid = eplat.id and eplat.projectid = #{projectid} and esensor.id = #{id}"
     })
     Esensor selectSubByPrimaryKey(Integer projectid, Integer id);
 
@@ -126,7 +124,7 @@ public interface EsensorMapper {
             "select",
             "esensor.id id, esensor.item item, esensor.bimid bimid, esensor.protocol protocol, esensor.timer timer, esensor.status status, esensor.note note",
             "from esensor, ebim, eplat",
-            "where esensor.bimid = ebim.id and ebim.platid = eplat.id and eplat.projectid = #{projectid} and id = #{id}"
+            "where esensor.bimid = ebim.id and ebim.platid = eplat.id and eplat.projectid = #{projectid} and esensor.id = #{id}"
     })
     @Results({
             @Result(column="bimid", property="bimid"),

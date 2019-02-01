@@ -24,7 +24,7 @@ public class EsensorServiceImpl implements EsensorService {
         if(sort == null) sort = "id";
         if(order == null) order = "desc";
         PageHelper.startPage(page, rows, sort + " " + order);
-        if(filterRules == null)
+        if(filterRules == null || CommonUtils.json2sql(filterRules).isEmpty())
             return esensorMapper.selectAll();
         else
             return esensorMapper.selectBySql(CommonUtils.json2sql(filterRules));
@@ -72,10 +72,10 @@ public class EsensorServiceImpl implements EsensorService {
         if(sort == null) sort = "id";
         if(order == null) order = "desc";
         PageHelper.startPage(page, rows, sort + " " + order);
-        if(filterRules == null || CommonUtils.json2sql(filterRules).isEmpty())
+        if(filterRules == null || CommonUtils.json2sql4sub(filterRules, "esensor").isEmpty())
             return esensorMapper.selectSubAll(projectid);
         else
-            return esensorMapper.selectSubBySql(projectid, CommonUtils.json2sql(filterRules));
+            return esensorMapper.selectSubBySql(projectid, CommonUtils.json2sql4sub(filterRules, "esensor"));
     }
 
     public List<Esensor> selectSubBySql(Integer projectid, String sql){
@@ -96,10 +96,10 @@ public class EsensorServiceImpl implements EsensorService {
         if(sort == null) sort = "id";
         if(order == null) order = "desc";
         PageHelper.startPage(page, rows, sort + " " + order);
-        if(filterRules == null || CommonUtils.json2sql(filterRules).isEmpty())
+        if(filterRules == null || CommonUtils.json2sql4sub(filterRules, "esensor").isEmpty())
             return esensorMapper.selectSubVAll(projectid);
         else
-            return esensorMapper.selectSubVBySql(projectid, CommonUtils.json2sql(filterRules));
+            return esensorMapper.selectSubVBySql(projectid, CommonUtils.json2sql4sub(filterRules, "esensor"));
     }
 
     public List<Esensorv> selectSubVBySql(Integer projectid, String sql){

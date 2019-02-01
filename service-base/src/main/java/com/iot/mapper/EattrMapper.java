@@ -1,70 +1,166 @@
 package com.iot.mapper;
 
 import com.iot.bean.Eattr;
-import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.InsertProvider;
-import org.apache.ibatis.annotations.Result;
-import org.apache.ibatis.annotations.Results;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
-import org.apache.ibatis.annotations.UpdateProvider;
+import com.iot.bean.Eattr;
+import com.iot.bean.Eattrv;
+import com.iot.util.RedisCache;
+import org.apache.ibatis.annotations.*;
 import org.apache.ibatis.type.JdbcType;
 
+import java.util.List;
+
+@CacheNamespace(implementation = RedisCache.class)
 public interface EattrMapper {
+    @Select({
+            "select",
+            "id, item, sensorid, protocol, type, unit, thresholdl, thresholdm, thresholdh, note",
+            "from eattr"
+    })
+    List<Eattr> selectAll();
+
+    @Select({
+            "select",
+            "id, item, sensorid, protocol, type, unit, thresholdl, thresholdm, thresholdh, note",
+            "from eattr",
+            "where ${sql}"
+    })
+    List<Eattr> selectBySql(@Param("sql") String sql);
+
+    @Select({
+            "select",
+            "id, item, sensorid, protocol, type, unit, thresholdl, thresholdm, thresholdh, note",
+            "from eattr",
+            "where id = #{id}"
+    })
+    Eattr selectByPrimaryKey(Integer id);
+
+    @Select({
+            "select",
+            "id, item, sensorid, protocol, type, unit, thresholdl, thresholdm, thresholdh, note",
+            "from eattr"
+    })
+    @Results({
+            @Result(column="sensorid", property="sensorid"),
+            @Result(column = "sensorid", property = "sensor",
+                    one = @One(select = "com.iot.mapper.EsensorMapper.selectVByPrimaryKey"))
+    })
+    List<Eattrv> selectVAll();
+
+    @Select({
+            "select",
+            "id, item, sensorid, protocol, type, unit, thresholdl, thresholdm, thresholdh, note",
+            "from eattr",
+            "where ${sql}"
+    })
+    @Results({
+            @Result(column="sensorid", property="sensorid"),
+            @Result(column = "sensorid", property = "sensor",
+                    one = @One(select = "com.iot.mapper.EsensorMapper.selectVByPrimaryKey"))
+    })
+    List<Eattrv> selectVBySql(@Param("sql") String sql);
+
+    @Select({
+            "select",
+            "id, item, sensorid, protocol, type, unit, thresholdl, thresholdm, thresholdh, note",
+            "from eattr",
+            "where id = #{id}"
+    })
+    @Results({
+            @Result(column="sensorid", property="sensorid"),
+            @Result(column = "sensorid", property = "sensor",
+                    one = @One(select = "com.iot.mapper.EsensorMapper.selectVByPrimaryKey"))
+    })
+    Eattrv selectVByPrimaryKey(Integer id);
+
+    @Select({
+            "select",
+            "eattr.id id, eattr.item item, eattr.sensorid sensorid, eattr.protocol protocol, eattr.type type, eattr.unit unit, eattr.thresholdl thresholdl, eattr.thresholdm thresholdm, eattr.thresholdh thresholdh, eattr.note note",
+            "from eattr, esensor, ebim, eplat",
+            "where eattr.sensorid = esensor.id and esensor.bimid = ebim.id and ebim.platid = eplat.id and eplat.projectid = #{projectid}"
+    })
+    List<Eattr> selectSubAll(Integer projectid);
+
+    @Select({
+            "select",
+            "eattr.id id, eattr.item item, eattr.sensorid sensorid, eattr.protocol protocol, eattr.type type, eattr.unit unit, eattr.thresholdl thresholdl, eattr.thresholdm thresholdm, eattr.thresholdh thresholdh, eattr.note note",
+            "from eattr, esensor, ebim, eplat",
+            "where eattr.sensorid = esensor.id and esensor.bimid = ebim.id and ebim.platid = eplat.id and eplat.projectid = #{projectid} and ${sql}"
+    })
+    List<Eattr> selectSubBySql(Integer projectid, @Param("sql") String sql);
+
+    @Select({
+            "select",
+            "eattr.id id, eattr.item item, eattr.sensorid sensorid, eattr.protocol protocol, eattr.type type, eattr.unit unit, eattr.thresholdl thresholdl, eattr.thresholdm thresholdm, eattr.thresholdh thresholdh, eattr.note note",
+            "from eattr, esensor, ebim, eplat",
+            "where eattr.sensorid = esensor.id and esensor.bimid = ebim.id and ebim.platid = eplat.id and eplat.projectid = #{projectid} and eattr.id = #{id}"
+    })
+    Eattr selectSubByPrimaryKey(Integer projectid, Integer id);
+
+    @Select({
+            "select",
+            "eattr.id id, eattr.item item, eattr.sensorid sensorid, eattr.protocol protocol, eattr.type type, eattr.unit unit, eattr.thresholdl thresholdl, eattr.thresholdm thresholdm, eattr.thresholdh thresholdh, eattr.note note",
+            "from eattr, esensor, ebim, eplat",
+            "where eattr.sensorid = esensor.id and esensor.bimid = ebim.id and ebim.platid = eplat.id and eplat.projectid = #{projectid}"
+    })
+    @Results({
+            @Result(column="sensorid", property="sensorid"),
+            @Result(column = "sensorid", property = "sensor",
+                    one = @One(select = "com.iot.mapper.EsensorMapper.selectVByPrimaryKey"))
+    })
+    List<Eattrv> selectSubVAll(Integer projectid);
+
+    @Select({
+            "select",
+            "eattr.id id, eattr.item item, eattr.sensorid sensorid, eattr.protocol protocol, eattr.type type, eattr.unit unit, eattr.thresholdl thresholdl, eattr.thresholdm thresholdm, eattr.thresholdh thresholdh, eattr.note note",
+            "from eattr, esensor, ebim, eplat",
+            "where eattr.sensorid = esensor.id and esensor.bimid = ebim.id and ebim.platid = eplat.id and eplat.projectid = #{projectid} and ${sql}"
+    })
+    @Results({
+            @Result(column="sensorid", property="sensorid"),
+            @Result(column = "sensorid", property = "sensor",
+                    one = @One(select = "com.iot.mapper.EsensorMapper.selectVByPrimaryKey"))
+    })
+    List<Eattrv> selectSubVBySql(Integer projectid, @Param("sql") String sql);
+
+    @Select({
+            "select",
+            "eattr.id id, eattr.item item, eattr.sensorid sensorid, eattr.protocol protocol, eattr.type type, eattr.unit unit, eattr.thresholdl thresholdl, eattr.thresholdm thresholdm, eattr.thresholdh thresholdh, eattr.note note",
+            "from eattr, esensor, ebim, eplat",
+            "where eattr.sensorid = esensor.id and esensor.bimid = ebim.id and ebim.platid = eplat.id and eplat.projectid = #{projectid} and eattr.id = #{id}"
+    })
+    @Results({
+            @Result(column="sensorid", property="sensorid"),
+            @Result(column = "sensorid", property = "sensor",
+                    one = @One(select = "com.iot.mapper.EsensorMapper.selectVByPrimaryKey"))
+    })
+    Eattrv selectSubVByPrimaryKey(Integer projectid, Integer id);
+
     @Delete({
         "delete from eattr",
-        "where id = #{id,jdbcType=INTEGER}"
+        "where id = #{id}"
     })
     int deleteByPrimaryKey(Integer id);
 
     @Insert({
-        "insert into eattr (id, item, ",
-        "sensorid, protocol, ",
-        "type, unit, thresholdl, ",
-        "thresholdm, thresholdh, ",
-        "note)",
-        "values (#{id,jdbcType=INTEGER}, #{item,jdbcType=VARCHAR}, ",
-        "#{sensorid,jdbcType=INTEGER}, #{protocol,jdbcType=VARCHAR}, ",
-        "#{type,jdbcType=VARCHAR}, #{unit,jdbcType=VARCHAR}, #{thresholdl,jdbcType=VARCHAR}, ",
-        "#{thresholdm,jdbcType=VARCHAR}, #{thresholdh,jdbcType=VARCHAR}, ",
-        "#{note,jdbcType=VARCHAR})"
+        "insert into eattr",
+        "(id, item, sensorid, protocol, type, unit, thresholdl, thresholdm, thresholdh, note)",
+        "values (#{id}, #{item}, #{sensorid}, #{protocol}, #{type}, #{unit}, #{thresholdl}, #{thresholdm}, #{thresholdh}, #{note})"
     })
+    @Options(useGeneratedKeys = true, keyProperty = "id")
     int insert(Eattr record);
-
-    @Select({
-        "select",
-        "id, item, sensorid, protocol, type, unit, thresholdl, thresholdm, thresholdh, ",
-        "note",
-        "from eattr",
-        "where id = #{id,jdbcType=INTEGER}"
-    })
-    @Results({
-        @Result(column="id", property="id", jdbcType=JdbcType.INTEGER, id=true),
-        @Result(column="item", property="item", jdbcType=JdbcType.VARCHAR),
-        @Result(column="sensorid", property="sensorid", jdbcType=JdbcType.INTEGER),
-        @Result(column="protocol", property="protocol", jdbcType=JdbcType.VARCHAR),
-        @Result(column="type", property="type", jdbcType=JdbcType.VARCHAR),
-        @Result(column="unit", property="unit", jdbcType=JdbcType.VARCHAR),
-        @Result(column="thresholdl", property="thresholdl", jdbcType=JdbcType.VARCHAR),
-        @Result(column="thresholdm", property="thresholdm", jdbcType=JdbcType.VARCHAR),
-        @Result(column="thresholdh", property="thresholdh", jdbcType=JdbcType.VARCHAR),
-        @Result(column="note", property="note", jdbcType=JdbcType.VARCHAR)
-    })
-    Eattr selectByPrimaryKey(Integer id);
 
     @Update({
         "update eattr",
-        "set item = #{item,jdbcType=VARCHAR},",
-          "sensorid = #{sensorid,jdbcType=INTEGER},",
-          "protocol = #{protocol,jdbcType=VARCHAR},",
-          "type = #{type,jdbcType=VARCHAR},",
-          "unit = #{unit,jdbcType=VARCHAR},",
-          "thresholdl = #{thresholdl,jdbcType=VARCHAR},",
-          "thresholdm = #{thresholdm,jdbcType=VARCHAR},",
-          "thresholdh = #{thresholdh,jdbcType=VARCHAR},",
-          "note = #{note,jdbcType=VARCHAR}",
-        "where id = #{id,jdbcType=INTEGER}"
+        "set item = #{item},",
+          "sensorid = #{sensorid},",
+          "protocol = #{protocol},",
+          "type = #{type},",
+          "unit = #{unit},",
+          "thresholdl = #{thresholdl},",
+          "thresholdm = #{thresholdm},",
+          "thresholdh = #{thresholdh},",
+          "note = #{noteR}",
+        "where id = #{id}"
     })
     int updateByPrimaryKey(Eattr record);
 }

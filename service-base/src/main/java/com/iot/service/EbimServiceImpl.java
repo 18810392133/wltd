@@ -25,7 +25,7 @@ public class EbimServiceImpl implements EbimService {
 		if(sort == null) sort = "id";
 		if(order == null) order = "desc";
 		PageHelper.startPage(page, rows, sort + " " + order);
-		if(filterRules == null)
+		if(filterRules == null || CommonUtils.json2sql(filterRules).isEmpty())
 			return ebimMapper.selectAll();
 		else
 			return ebimMapper.selectBySql(CommonUtils.json2sql(filterRules));
@@ -73,10 +73,10 @@ public class EbimServiceImpl implements EbimService {
 		if(sort == null) sort = "id";
 		if(order == null) order = "desc";
 		PageHelper.startPage(page, rows, sort + " " + order);
-		if(filterRules == null || CommonUtils.json2sql(filterRules).isEmpty())
+		if(filterRules == null || CommonUtils.json2sql4sub(filterRules, "ebim").isEmpty())
 			return ebimMapper.selectSubAll(projectid);
 		else
-			return ebimMapper.selectSubBySql(projectid, CommonUtils.json2sql(filterRules));
+			return ebimMapper.selectSubBySql(projectid, CommonUtils.json2sql4sub(filterRules, "ebim"));
 	}
 
 	public List<Ebim> selectSubBySql(Integer projectid, String sql){
@@ -97,10 +97,10 @@ public class EbimServiceImpl implements EbimService {
 		if(sort == null) sort = "id";
 		if(order == null) order = "desc";
 		PageHelper.startPage(page, rows, sort + " " + order);
-		if(filterRules == null || CommonUtils.json2sql(filterRules).isEmpty())
+		if(filterRules == null || CommonUtils.json2sql4sub(filterRules, "ebim").isEmpty())
 			return ebimMapper.selectSubVAll(projectid);
 		else
-			return ebimMapper.selectSubVBySql(projectid, CommonUtils.json2sql(filterRules));
+			return ebimMapper.selectSubVBySql(projectid, CommonUtils.json2sql4sub(filterRules, "ebim"));
 	}
 
 	public List<Ebimv> selectSubVBySql(Integer projectid, String sql){

@@ -25,7 +25,7 @@ public class EuserServiceImpl implements EuserService {
 		if(sort == null) sort = "id";
 		if(order == null) order = "desc";
 		PageHelper.startPage(page, rows, sort + " " + order);
-		if(filterRules == null)
+		if(filterRules == null || CommonUtils.json2sql(filterRules).isEmpty())
 			return euserMapper.selectAll();
 		else
 			return euserMapper.selectBySql(CommonUtils.json2sql(filterRules));
@@ -73,10 +73,10 @@ public class EuserServiceImpl implements EuserService {
 		if(sort == null) sort = "id";
 		if(order == null) order = "desc";
 		PageHelper.startPage(page, rows, sort + " " + order);
-		if(filterRules == null || CommonUtils.json2sql(filterRules).isEmpty())
+		if(filterRules == null || CommonUtils.json2sql4sub(filterRules, "euser").isEmpty())
 			return euserMapper.selectSubAll(projectid);
 		else
-			return euserMapper.selectSubBySql(projectid, CommonUtils.json2sql(filterRules));
+			return euserMapper.selectSubBySql(projectid, CommonUtils.json2sql4sub(filterRules, "euser"));
 	}
 
 	public List<Euser> selectSubBySql(Integer projectid, String sql){
@@ -97,10 +97,10 @@ public class EuserServiceImpl implements EuserService {
 		if(sort == null) sort = "id";
 		if(order == null) order = "desc";
 		PageHelper.startPage(page, rows, sort + " " + order);
-		if(filterRules == null || CommonUtils.json2sql(filterRules).isEmpty())
+		if(filterRules == null || CommonUtils.json2sql4sub(filterRules, "euser").isEmpty())
 			return euserMapper.selectSubVAll(projectid);
 		else
-			return euserMapper.selectSubVBySql(projectid, CommonUtils.json2sql(filterRules));
+			return euserMapper.selectSubVBySql(projectid, CommonUtils.json2sql4sub(filterRules, "euser"));
 	}
 
 	public List<Euserv> selectSubVBySql(Integer projectid, String sql){
