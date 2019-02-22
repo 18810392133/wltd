@@ -1,0 +1,309 @@
+2019-02-22 09:18:35.908  INFO 13656 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-22 09:22:18.829 DEBUG 13656 --- [http-nio-8181-exec-2] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:22:18.837 DEBUG 13656 --- [http-nio-8181-exec-2] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 29(Integer), 35(Integer), 2019-02-22 09:22:18(String), (String)
+2019-02-22 09:22:18.847 DEBUG 13656 --- [http-nio-8181-exec-2] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:22:30.306 DEBUG 13656 --- [http-nio-8181-exec-8] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:22:30.344 DEBUG 13656 --- [http-nio-8181-exec-8] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 30(Integer), 38(Integer), 2019-02-22 09:22:30(String), (String)
+2019-02-22 09:22:30.644 DEBUG 13656 --- [http-nio-8181-exec-8] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:22:30.676 DEBUG 13656 --- [http-nio-8181-exec-4] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:22:30.801 DEBUG 13656 --- [http-nio-8181-exec-4] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 30(Integer), 38(Integer), 2019-02-22 09:22:30(String), (String)
+2019-02-22 09:22:30.809 DEBUG 13656 --- [http-nio-8181-exec-4] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:22:31.004 DEBUG 13656 --- [http-nio-8181-exec-5] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:22:31.121 DEBUG 13656 --- [http-nio-8181-exec-5] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 96(String), 29(Integer), 36(Integer), 2019-02-22 09:22:31(String), (String)
+2019-02-22 09:22:31.129 DEBUG 13656 --- [http-nio-8181-exec-5] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:23:02.142 DEBUG 13656 --- [http-nio-8181-exec-3] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:23:02.150 DEBUG 13656 --- [http-nio-8181-exec-3] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 30(Integer), 38(Integer), 2019-02-22 09:23:02(String), (String)
+2019-02-22 09:23:02.158 DEBUG 13656 --- [http-nio-8181-exec-3] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:23:14.797 DEBUG 13656 --- [http-nio-8181-exec-9] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:23:14.805 DEBUG 13656 --- [http-nio-8181-exec-9] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 30(Integer), 38(Integer), 2019-02-22 09:23:14(String), (String)
+2019-02-22 09:23:14.832 DEBUG 13656 --- [http-nio-8181-exec-9] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:23:35.914  INFO 13656 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-22 09:24:06.218 DEBUG 13656 --- [http-nio-8181-exec-12] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:24:06.225 DEBUG 13656 --- [http-nio-8181-exec-12] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 29(Integer), 35(Integer), 2019-02-22 09:24:05(String), (String)
+2019-02-22 09:24:06.233 DEBUG 13656 --- [http-nio-8181-exec-12] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:24:06.748 DEBUG 13656 --- [http-nio-8181-exec-2] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:24:06.753 DEBUG 13656 --- [http-nio-8181-exec-2] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 29(Integer), 35(Integer), 2019-02-22 09:24:06(String), (String)
+2019-02-22 09:24:06.762 DEBUG 13656 --- [http-nio-8181-exec-2] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:24:06.765 DEBUG 13656 --- [http-nio-8181-exec-8] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:24:06.772 DEBUG 13656 --- [http-nio-8181-exec-8] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 96(String), 29(Integer), 36(Integer), 2019-02-22 09:24:06(String), (String)
+2019-02-22 09:24:06.779 DEBUG 13656 --- [http-nio-8181-exec-8] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:24:06.781 DEBUG 13656 --- [http-nio-8181-exec-4] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:24:06.793 DEBUG 13656 --- [http-nio-8181-exec-4] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 30(Integer), 38(Integer), 2019-02-22 09:24:06(String), (String)
+2019-02-22 09:24:06.800 DEBUG 13656 --- [http-nio-8181-exec-4] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:25:32.954 DEBUG 13656 --- [http-nio-8181-exec-3] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:25:32.963 DEBUG 13656 --- [http-nio-8181-exec-3] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 30(Integer), 38(Integer), 2019-02-22 09:25:32(String), (String)
+2019-02-22 09:25:32.972 DEBUG 13656 --- [http-nio-8181-exec-3] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:25:41.596 DEBUG 13656 --- [http-nio-8181-exec-11] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:25:41.606 DEBUG 13656 --- [http-nio-8181-exec-11] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 96(String), 29(Integer), 36(Integer), 2019-02-22 09:25:40(String), (String)
+2019-02-22 09:25:41.728 DEBUG 13656 --- [http-nio-8181-exec-11] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:25:44.056 DEBUG 13656 --- [http-nio-8181-exec-9] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:25:44.062 DEBUG 13656 --- [http-nio-8181-exec-9] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 29(Integer), 35(Integer), 2019-02-22 09:25:44(String), (String)
+2019-02-22 09:25:44.068 DEBUG 13656 --- [http-nio-8181-exec-9] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:25:44.375 DEBUG 13656 --- [http-nio-8181-exec-7] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:25:44.381 DEBUG 13656 --- [http-nio-8181-exec-7] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 30(Integer), 38(Integer), 2019-02-22 09:25:44(String), (String)
+2019-02-22 09:25:44.387 DEBUG 13656 --- [http-nio-8181-exec-7] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:25:45.445 DEBUG 13656 --- [http-nio-8181-exec-12] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:25:45.457 DEBUG 13656 --- [http-nio-8181-exec-12] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 96(String), 29(Integer), 36(Integer), 2019-02-22 09:25:45(String), (String)
+2019-02-22 09:25:45.465 DEBUG 13656 --- [http-nio-8181-exec-12] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:25:57.524 DEBUG 13656 --- [http-nio-8181-exec-8] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:25:57.533 DEBUG 13656 --- [http-nio-8181-exec-8] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 29(Integer), 35(Integer), 2019-02-22 09:25:57(String), (String)
+2019-02-22 09:25:57.541 DEBUG 13656 --- [http-nio-8181-exec-8] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:25:58.094 DEBUG 13656 --- [http-nio-8181-exec-4] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:25:58.101 DEBUG 13656 --- [http-nio-8181-exec-4] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 96(String), 29(Integer), 36(Integer), 2019-02-22 09:25:58(String), (String)
+2019-02-22 09:25:58.110 DEBUG 13656 --- [http-nio-8181-exec-4] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:26:47.967 DEBUG 13656 --- [http-nio-8181-exec-1] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:26:47.975 DEBUG 13656 --- [http-nio-8181-exec-1] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 29(Integer), 35(Integer), 2019-02-22 09:26:47(String), (String)
+2019-02-22 09:26:47.979 DEBUG 13656 --- [http-nio-8181-exec-3] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:26:47.990 DEBUG 13656 --- [http-nio-8181-exec-1] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:26:47.997 DEBUG 13656 --- [http-nio-8181-exec-3] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 30(Integer), 38(Integer), 2019-02-22 09:26:47(String), (String)
+2019-02-22 09:26:48.004 DEBUG 13656 --- [http-nio-8181-exec-3] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:26:48.108 DEBUG 13656 --- [http-nio-8181-exec-11] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:26:48.115 DEBUG 13656 --- [http-nio-8181-exec-11] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 96(String), 29(Integer), 36(Integer), 2019-02-22 09:26:48(String), (String)
+2019-02-22 09:26:48.121 DEBUG 13656 --- [http-nio-8181-exec-11] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:26:48.625 DEBUG 13656 --- [http-nio-8181-exec-9] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:26:48.632 DEBUG 13656 --- [http-nio-8181-exec-9] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 30(Integer), 38(Integer), 2019-02-22 09:26:48(String), (String)
+2019-02-22 09:26:48.643 DEBUG 13656 --- [http-nio-8181-exec-9] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:26:50.682 DEBUG 13656 --- [http-nio-8181-exec-7] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:26:50.691 DEBUG 13656 --- [http-nio-8181-exec-7] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 30(Integer), 38(Integer), 2019-02-22 09:26:50(String), (String)
+2019-02-22 09:26:50.732 DEBUG 13656 --- [http-nio-8181-exec-7] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:27:00.637 DEBUG 13656 --- [http-nio-8181-exec-2] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:27:00.647 DEBUG 13656 --- [http-nio-8181-exec-2] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 29(Integer), 35(Integer), 2019-02-22 09:27:00(String), (String)
+2019-02-22 09:27:00.654 DEBUG 13656 --- [http-nio-8181-exec-2] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:27:00.698 DEBUG 13656 --- [http-nio-8181-exec-8] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:27:00.705 DEBUG 13656 --- [http-nio-8181-exec-8] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 30(Integer), 38(Integer), 2019-02-22 09:27:00(String), (String)
+2019-02-22 09:27:00.716 DEBUG 13656 --- [http-nio-8181-exec-8] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:27:00.765 DEBUG 13656 --- [http-nio-8181-exec-4] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:27:00.772 DEBUG 13656 --- [http-nio-8181-exec-4] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 96(String), 29(Integer), 36(Integer), 2019-02-22 09:27:00(String), (String)
+2019-02-22 09:27:00.788 DEBUG 13656 --- [http-nio-8181-exec-4] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:27:10.743 DEBUG 13656 --- [http-nio-8181-exec-1] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:27:10.751 DEBUG 13656 --- [http-nio-8181-exec-1] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 30(Integer), 38(Integer), 2019-02-22 09:27:10(String), (String)
+2019-02-22 09:27:10.762 DEBUG 13656 --- [http-nio-8181-exec-1] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:27:10.795 DEBUG 13656 --- [http-nio-8181-exec-3] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:27:10.805 DEBUG 13656 --- [http-nio-8181-exec-3] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 29(Integer), 35(Integer), 2019-02-22 09:27:10(String), (String)
+2019-02-22 09:27:10.811 DEBUG 13656 --- [http-nio-8181-exec-3] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:27:10.973 DEBUG 13656 --- [http-nio-8181-exec-11] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:27:10.983 DEBUG 13656 --- [http-nio-8181-exec-11] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 96(String), 29(Integer), 36(Integer), 2019-02-22 09:27:10(String), (String)
+2019-02-22 09:27:10.989 DEBUG 13656 --- [http-nio-8181-exec-11] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:27:21.593 DEBUG 13656 --- [http-nio-8181-exec-7] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:27:21.726 DEBUG 13656 --- [http-nio-8181-exec-7] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 30(Integer), 38(Integer), 2019-02-22 09:27:21(String), (String)
+2019-02-22 09:27:21.738 DEBUG 13656 --- [http-nio-8181-exec-7] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:27:30.639 DEBUG 13656 --- [http-nio-8181-exec-12] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:27:30.648 DEBUG 13656 --- [http-nio-8181-exec-12] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 29(Integer), 35(Integer), 2019-02-22 09:27:30(String), (String)
+2019-02-22 09:27:30.662 DEBUG 13656 --- [http-nio-8181-exec-12] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:27:30.702 DEBUG 13656 --- [http-nio-8181-exec-2] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:27:30.718 DEBUG 13656 --- [http-nio-8181-exec-2] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 30(Integer), 38(Integer), 2019-02-22 09:27:30(String), (String)
+2019-02-22 09:27:30.727 DEBUG 13656 --- [http-nio-8181-exec-2] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:27:30.793 DEBUG 13656 --- [http-nio-8181-exec-8] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:27:30.799 DEBUG 13656 --- [http-nio-8181-exec-8] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 96(String), 29(Integer), 36(Integer), 2019-02-22 09:27:30(String), (String)
+2019-02-22 09:27:30.805 DEBUG 13656 --- [http-nio-8181-exec-8] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:27:40.740 DEBUG 13656 --- [http-nio-8181-exec-5] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:27:40.748 DEBUG 13656 --- [http-nio-8181-exec-5] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 29(Integer), 35(Integer), 2019-02-22 09:27:40(String), (String)
+2019-02-22 09:27:40.753 DEBUG 13656 --- [http-nio-8181-exec-5] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:27:40.866 DEBUG 13656 --- [http-nio-8181-exec-1] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:27:40.872 DEBUG 13656 --- [http-nio-8181-exec-1] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 96(String), 29(Integer), 36(Integer), 2019-02-22 09:27:40(String), (String)
+2019-02-22 09:27:40.878 DEBUG 13656 --- [http-nio-8181-exec-1] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:27:50.664 DEBUG 13656 --- [http-nio-8181-exec-11] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:27:50.673 DEBUG 13656 --- [http-nio-8181-exec-11] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 30(Integer), 38(Integer), 2019-02-22 09:27:50(String), (String)
+2019-02-22 09:27:50.683 DEBUG 13656 --- [http-nio-8181-exec-11] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:27:50.712 DEBUG 13656 --- [http-nio-8181-exec-9] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:27:50.718 DEBUG 13656 --- [http-nio-8181-exec-9] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 29(Integer), 35(Integer), 2019-02-22 09:27:50(String), (String)
+2019-02-22 09:27:50.725 DEBUG 13656 --- [http-nio-8181-exec-9] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:27:50.839 DEBUG 13656 --- [http-nio-8181-exec-7] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:27:50.845 DEBUG 13656 --- [http-nio-8181-exec-7] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 96(String), 29(Integer), 36(Integer), 2019-02-22 09:27:50(String), (String)
+2019-02-22 09:27:50.850 DEBUG 13656 --- [http-nio-8181-exec-7] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:28:00.655 DEBUG 13656 --- [http-nio-8181-exec-12] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:28:00.671 DEBUG 13656 --- [http-nio-8181-exec-12] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 30(Integer), 38(Integer), 2019-02-22 09:28:00(String), (String)
+2019-02-22 09:28:00.683 DEBUG 13656 --- [http-nio-8181-exec-12] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:28:00.710 DEBUG 13656 --- [http-nio-8181-exec-2] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:28:00.720 DEBUG 13656 --- [http-nio-8181-exec-2] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 29(Integer), 35(Integer), 2019-02-22 09:28:00(String), (String)
+2019-02-22 09:28:00.728 DEBUG 13656 --- [http-nio-8181-exec-2] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:28:00.867 DEBUG 13656 --- [http-nio-8181-exec-8] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:28:00.873 DEBUG 13656 --- [http-nio-8181-exec-8] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 96(String), 29(Integer), 36(Integer), 2019-02-22 09:28:00(String), (String)
+2019-02-22 09:28:00.879 DEBUG 13656 --- [http-nio-8181-exec-8] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:28:10.653 DEBUG 13656 --- [http-nio-8181-exec-5] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:28:10.661 DEBUG 13656 --- [http-nio-8181-exec-5] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 29(Integer), 35(Integer), 2019-02-22 09:28:10(String), (String)
+2019-02-22 09:28:10.669 DEBUG 13656 --- [http-nio-8181-exec-5] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:28:10.703 DEBUG 13656 --- [http-nio-8181-exec-1] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:28:10.711 DEBUG 13656 --- [http-nio-8181-exec-1] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 30(Integer), 38(Integer), 2019-02-22 09:28:10(String), (String)
+2019-02-22 09:28:10.719 DEBUG 13656 --- [http-nio-8181-exec-1] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:28:10.788 DEBUG 13656 --- [http-nio-8181-exec-3] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:28:10.795 DEBUG 13656 --- [http-nio-8181-exec-3] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 96(String), 29(Integer), 36(Integer), 2019-02-22 09:28:10(String), (String)
+2019-02-22 09:28:10.801 DEBUG 13656 --- [http-nio-8181-exec-3] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:28:21.804 DEBUG 13656 --- [http-nio-8181-exec-9] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:28:21.811 DEBUG 13656 --- [http-nio-8181-exec-9] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 30(Integer), 38(Integer), 2019-02-22 09:28:21(String), (String)
+2019-02-22 09:28:21.825 DEBUG 13656 --- [http-nio-8181-exec-9] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:28:30.713 DEBUG 13656 --- [http-nio-8181-exec-7] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:28:30.724 DEBUG 13656 --- [http-nio-8181-exec-7] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 30(Integer), 38(Integer), 2019-02-22 09:28:30(String), (String)
+2019-02-22 09:28:30.731 DEBUG 13656 --- [http-nio-8181-exec-7] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:28:35.917  INFO 13656 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-22 09:28:40.728 DEBUG 13656 --- [http-nio-8181-exec-2] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:28:40.739 DEBUG 13656 --- [http-nio-8181-exec-2] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 30(Integer), 38(Integer), 2019-02-22 09:28:40(String), (String)
+2019-02-22 09:28:40.745 DEBUG 13656 --- [http-nio-8181-exec-2] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:28:40.831 DEBUG 13656 --- [http-nio-8181-exec-8] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:28:40.842 DEBUG 13656 --- [http-nio-8181-exec-8] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 29(Integer), 35(Integer), 2019-02-22 09:28:40(String), (String)
+2019-02-22 09:28:40.848 DEBUG 13656 --- [http-nio-8181-exec-8] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:28:40.954 DEBUG 13656 --- [http-nio-8181-exec-4] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:28:40.963 DEBUG 13656 --- [http-nio-8181-exec-4] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 96(String), 29(Integer), 36(Integer), 2019-02-22 09:28:40(String), (String)
+2019-02-22 09:28:40.970 DEBUG 13656 --- [http-nio-8181-exec-4] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:28:50.722 DEBUG 13656 --- [http-nio-8181-exec-1] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:28:50.732 DEBUG 13656 --- [http-nio-8181-exec-1] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 29(Integer), 35(Integer), 2019-02-22 09:28:50(String), (String)
+2019-02-22 09:28:50.746 DEBUG 13656 --- [http-nio-8181-exec-1] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:28:50.913 DEBUG 13656 --- [http-nio-8181-exec-3] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:28:50.921 DEBUG 13656 --- [http-nio-8181-exec-3] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 96(String), 29(Integer), 36(Integer), 2019-02-22 09:28:50(String), (String)
+2019-02-22 09:28:50.929 DEBUG 13656 --- [http-nio-8181-exec-3] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:29:00.720 DEBUG 13656 --- [http-nio-8181-exec-9] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:29:00.732 DEBUG 13656 --- [http-nio-8181-exec-9] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 29(Integer), 35(Integer), 2019-02-22 09:29:00(String), (String)
+2019-02-22 09:29:00.740 DEBUG 13656 --- [http-nio-8181-exec-9] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:29:00.914 DEBUG 13656 --- [http-nio-8181-exec-7] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:29:00.922 DEBUG 13656 --- [http-nio-8181-exec-7] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 96(String), 29(Integer), 36(Integer), 2019-02-22 09:29:00(String), (String)
+2019-02-22 09:29:00.933 DEBUG 13656 --- [http-nio-8181-exec-7] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:29:10.631 DEBUG 13656 --- [http-nio-8181-exec-2] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:29:10.639 DEBUG 13656 --- [http-nio-8181-exec-2] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 29(Integer), 35(Integer), 2019-02-22 09:29:10(String), (String)
+2019-02-22 09:29:10.647 DEBUG 13656 --- [http-nio-8181-exec-2] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:29:10.684 DEBUG 13656 --- [http-nio-8181-exec-8] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:29:10.694 DEBUG 13656 --- [http-nio-8181-exec-8] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 30(Integer), 38(Integer), 2019-02-22 09:29:10(String), (String)
+2019-02-22 09:29:10.702 DEBUG 13656 --- [http-nio-8181-exec-8] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:29:10.773 DEBUG 13656 --- [http-nio-8181-exec-4] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:29:10.780 DEBUG 13656 --- [http-nio-8181-exec-4] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 96(String), 29(Integer), 36(Integer), 2019-02-22 09:29:10(String), (String)
+2019-02-22 09:29:10.787 DEBUG 13656 --- [http-nio-8181-exec-4] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:29:21.910 DEBUG 13656 --- [http-nio-8181-exec-5] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:29:21.930 DEBUG 13656 --- [http-nio-8181-exec-5] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 30(Integer), 38(Integer), 2019-02-22 09:29:21(String), (String)
+2019-02-22 09:29:21.941 DEBUG 13656 --- [http-nio-8181-exec-5] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:29:21.958 DEBUG 13656 --- [http-nio-8181-exec-1] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:29:21.970 DEBUG 13656 --- [http-nio-8181-exec-1] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 29(Integer), 35(Integer), 2019-02-22 09:29:21(String), (String)
+2019-02-22 09:29:21.976 DEBUG 13656 --- [http-nio-8181-exec-1] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:29:22.465 DEBUG 13656 --- [http-nio-8181-exec-3] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:29:22.474 DEBUG 13656 --- [http-nio-8181-exec-3] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 96(String), 29(Integer), 36(Integer), 2019-02-22 09:29:22(String), (String)
+2019-02-22 09:29:22.600 DEBUG 13656 --- [http-nio-8181-exec-3] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:29:30.677 DEBUG 13656 --- [http-nio-8181-exec-9] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:29:30.685 DEBUG 13656 --- [http-nio-8181-exec-9] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 29(Integer), 35(Integer), 2019-02-22 09:29:30(String), (String)
+2019-02-22 09:29:30.693 DEBUG 13656 --- [http-nio-8181-exec-9] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:29:30.722 DEBUG 13656 --- [http-nio-8181-exec-7] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:29:30.731 DEBUG 13656 --- [http-nio-8181-exec-7] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 30(Integer), 38(Integer), 2019-02-22 09:29:30(String), (String)
+2019-02-22 09:29:30.743 DEBUG 13656 --- [http-nio-8181-exec-7] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:29:30.821 DEBUG 13656 --- [http-nio-8181-exec-12] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:29:30.828 DEBUG 13656 --- [http-nio-8181-exec-12] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 96(String), 29(Integer), 36(Integer), 2019-02-22 09:29:30(String), (String)
+2019-02-22 09:29:30.837 DEBUG 13656 --- [http-nio-8181-exec-12] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:29:40.654 DEBUG 13656 --- [http-nio-8181-exec-8] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:29:40.664 DEBUG 13656 --- [http-nio-8181-exec-8] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 29(Integer), 35(Integer), 2019-02-22 09:29:40(String), (String)
+2019-02-22 09:29:40.682 DEBUG 13656 --- [http-nio-8181-exec-8] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:29:40.705 DEBUG 13656 --- [http-nio-8181-exec-4] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:29:40.712 DEBUG 13656 --- [http-nio-8181-exec-4] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 30(Integer), 38(Integer), 2019-02-22 09:29:40(String), (String)
+2019-02-22 09:29:40.719 DEBUG 13656 --- [http-nio-8181-exec-4] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:29:40.807 DEBUG 13656 --- [http-nio-8181-exec-5] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:29:40.814 DEBUG 13656 --- [http-nio-8181-exec-5] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 96(String), 29(Integer), 36(Integer), 2019-02-22 09:29:40(String), (String)
+2019-02-22 09:29:40.822 DEBUG 13656 --- [http-nio-8181-exec-5] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:29:50.685 DEBUG 13656 --- [http-nio-8181-exec-1] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:29:50.693 DEBUG 13656 --- [http-nio-8181-exec-1] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 30(Integer), 38(Integer), 2019-02-22 09:29:50(String), (String)
+2019-02-22 09:29:50.702 DEBUG 13656 --- [http-nio-8181-exec-1] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:29:50.784 DEBUG 13656 --- [http-nio-8181-exec-3] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:29:50.797 DEBUG 13656 --- [http-nio-8181-exec-3] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 29(Integer), 35(Integer), 2019-02-22 09:29:50(String), (String)
+2019-02-22 09:29:50.805 DEBUG 13656 --- [http-nio-8181-exec-3] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:29:50.973 DEBUG 13656 --- [http-nio-8181-exec-11] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:29:50.985 DEBUG 13656 --- [http-nio-8181-exec-11] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 96(String), 29(Integer), 36(Integer), 2019-02-22 09:29:50(String), (String)
+2019-02-22 09:29:50.993 DEBUG 13656 --- [http-nio-8181-exec-11] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:30:00.673 DEBUG 13656 --- [http-nio-8181-exec-7] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:30:00.681 DEBUG 13656 --- [http-nio-8181-exec-7] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 29(Integer), 35(Integer), 2019-02-22 09:30:00(String), (String)
+2019-02-22 09:30:00.690 DEBUG 13656 --- [http-nio-8181-exec-7] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:30:00.827 DEBUG 13656 --- [http-nio-8181-exec-12] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:30:00.836 DEBUG 13656 --- [http-nio-8181-exec-12] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 96(String), 29(Integer), 36(Integer), 2019-02-22 09:30:00(String), (String)
+2019-02-22 09:30:00.846 DEBUG 13656 --- [http-nio-8181-exec-12] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:30:11.446 DEBUG 13656 --- [http-nio-8181-exec-8] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:30:11.456 DEBUG 13656 --- [http-nio-8181-exec-8] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 30(Integer), 38(Integer), 2019-02-22 09:30:11(String), (String)
+2019-02-22 09:30:11.463 DEBUG 13656 --- [http-nio-8181-exec-8] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:30:11.616 DEBUG 13656 --- [http-nio-8181-exec-4] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:30:11.626 DEBUG 13656 --- [http-nio-8181-exec-4] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 29(Integer), 35(Integer), 2019-02-22 09:30:11(String), (String)
+2019-02-22 09:30:11.654 DEBUG 13656 --- [http-nio-8181-exec-4] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:30:11.778 DEBUG 13656 --- [http-nio-8181-exec-5] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:30:11.787 DEBUG 13656 --- [http-nio-8181-exec-5] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 96(String), 29(Integer), 36(Integer), 2019-02-22 09:30:11(String), (String)
+2019-02-22 09:30:11.793 DEBUG 13656 --- [http-nio-8181-exec-5] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:30:20.663 DEBUG 13656 --- [http-nio-8181-exec-3] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:30:20.671 DEBUG 13656 --- [http-nio-8181-exec-3] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 30(Integer), 38(Integer), 2019-02-22 09:30:20(String), (String)
+2019-02-22 09:30:20.678 DEBUG 13656 --- [http-nio-8181-exec-3] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:30:30.643 DEBUG 13656 --- [http-nio-8181-exec-11] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:30:30.650 DEBUG 13656 --- [http-nio-8181-exec-11] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 30(Integer), 38(Integer), 2019-02-22 09:30:30(String), (String)
+2019-02-22 09:30:30.656 DEBUG 13656 --- [http-nio-8181-exec-11] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:30:30.693 DEBUG 13656 --- [http-nio-8181-exec-9] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:30:30.700 DEBUG 13656 --- [http-nio-8181-exec-9] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 29(Integer), 35(Integer), 2019-02-22 09:30:30(String), (String)
+2019-02-22 09:30:30.706 DEBUG 13656 --- [http-nio-8181-exec-9] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:30:30.821 DEBUG 13656 --- [http-nio-8181-exec-7] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:30:30.828 DEBUG 13656 --- [http-nio-8181-exec-7] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 96(String), 29(Integer), 36(Integer), 2019-02-22 09:30:30(String), (String)
+2019-02-22 09:30:30.836 DEBUG 13656 --- [http-nio-8181-exec-7] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:30:40.642 DEBUG 13656 --- [http-nio-8181-exec-2] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:30:40.648 DEBUG 13656 --- [http-nio-8181-exec-2] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 29(Integer), 35(Integer), 2019-02-22 09:30:40(String), (String)
+2019-02-22 09:30:40.655 DEBUG 13656 --- [http-nio-8181-exec-2] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:30:40.683 DEBUG 13656 --- [http-nio-8181-exec-8] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:30:40.690 DEBUG 13656 --- [http-nio-8181-exec-8] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 30(Integer), 38(Integer), 2019-02-22 09:30:40(String), (String)
+2019-02-22 09:30:40.699 DEBUG 13656 --- [http-nio-8181-exec-8] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:30:40.778 DEBUG 13656 --- [http-nio-8181-exec-4] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:30:40.787 DEBUG 13656 --- [http-nio-8181-exec-4] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 96(String), 29(Integer), 36(Integer), 2019-02-22 09:30:40(String), (String)
+2019-02-22 09:30:40.795 DEBUG 13656 --- [http-nio-8181-exec-4] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:30:50.631 DEBUG 13656 --- [http-nio-8181-exec-1] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:30:50.638 DEBUG 13656 --- [http-nio-8181-exec-1] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 29(Integer), 35(Integer), 2019-02-22 09:30:50(String), (String)
+2019-02-22 09:30:50.648 DEBUG 13656 --- [http-nio-8181-exec-1] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:30:50.682 DEBUG 13656 --- [http-nio-8181-exec-3] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:30:50.689 DEBUG 13656 --- [http-nio-8181-exec-3] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 30(Integer), 38(Integer), 2019-02-22 09:30:50(String), (String)
+2019-02-22 09:30:50.695 DEBUG 13656 --- [http-nio-8181-exec-3] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:30:50.758 DEBUG 13656 --- [http-nio-8181-exec-11] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:30:50.765 DEBUG 13656 --- [http-nio-8181-exec-11] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 96(String), 29(Integer), 36(Integer), 2019-02-22 09:30:50(String), (String)
+2019-02-22 09:30:50.772 DEBUG 13656 --- [http-nio-8181-exec-11] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:31:01.446 DEBUG 13656 --- [http-nio-8181-exec-7] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:31:01.453 DEBUG 13656 --- [http-nio-8181-exec-7] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 29(Integer), 35(Integer), 2019-02-22 09:31:01(String), (String)
+2019-02-22 09:31:01.461 DEBUG 13656 --- [http-nio-8181-exec-7] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:31:01.691 DEBUG 13656 --- [http-nio-8181-exec-12] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:31:01.699 DEBUG 13656 --- [http-nio-8181-exec-12] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 96(String), 29(Integer), 36(Integer), 2019-02-22 09:31:01(String), (String)
+2019-02-22 09:31:01.705 DEBUG 13656 --- [http-nio-8181-exec-12] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:31:10.631 DEBUG 13656 --- [http-nio-8181-exec-8] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:31:10.643 DEBUG 13656 --- [http-nio-8181-exec-8] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 29(Integer), 35(Integer), 2019-02-22 09:31:10(String), (String)
+2019-02-22 09:31:10.651 DEBUG 13656 --- [http-nio-8181-exec-8] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:31:10.678 DEBUG 13656 --- [http-nio-8181-exec-4] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:31:10.686 DEBUG 13656 --- [http-nio-8181-exec-4] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 30(Integer), 38(Integer), 2019-02-22 09:31:10(String), (String)
+2019-02-22 09:31:10.696 DEBUG 13656 --- [http-nio-8181-exec-4] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:31:10.783 DEBUG 13656 --- [http-nio-8181-exec-5] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:31:10.792 DEBUG 13656 --- [http-nio-8181-exec-5] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 96(String), 29(Integer), 36(Integer), 2019-02-22 09:31:10(String), (String)
+2019-02-22 09:31:10.806 DEBUG 13656 --- [http-nio-8181-exec-5] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:31:20.662 DEBUG 13656 --- [http-nio-8181-exec-3] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:31:20.669 DEBUG 13656 --- [http-nio-8181-exec-3] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 29(Integer), 35(Integer), 2019-02-22 09:31:20(String), (String)
+2019-02-22 09:31:20.682 DEBUG 13656 --- [http-nio-8181-exec-3] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:31:20.739 DEBUG 13656 --- [http-nio-8181-exec-11] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:31:20.746 DEBUG 13656 --- [http-nio-8181-exec-11] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 30(Integer), 38(Integer), 2019-02-22 09:31:20(String), (String)
+2019-02-22 09:31:20.753 DEBUG 13656 --- [http-nio-8181-exec-11] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:31:20.836 DEBUG 13656 --- [http-nio-8181-exec-9] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:31:20.844 DEBUG 13656 --- [http-nio-8181-exec-9] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 96(String), 29(Integer), 36(Integer), 2019-02-22 09:31:20(String), (String)
+2019-02-22 09:31:20.850 DEBUG 13656 --- [http-nio-8181-exec-9] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:31:30.699 DEBUG 13656 --- [http-nio-8181-exec-12] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:31:30.708 DEBUG 13656 --- [http-nio-8181-exec-12] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 29(Integer), 35(Integer), 2019-02-22 09:31:30(String), (String)
+2019-02-22 09:31:30.721 DEBUG 13656 --- [http-nio-8181-exec-12] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:31:30.840 DEBUG 13656 --- [http-nio-8181-exec-2] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:31:30.850 DEBUG 13656 --- [http-nio-8181-exec-2] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 96(String), 29(Integer), 36(Integer), 2019-02-22 09:31:30(String), (String)
+2019-02-22 09:31:30.858 DEBUG 13656 --- [http-nio-8181-exec-2] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:31:41.068 DEBUG 13656 --- [http-nio-8181-exec-4] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:31:41.074 DEBUG 13656 --- [http-nio-8181-exec-4] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 30(Integer), 38(Integer), 2019-02-22 09:31:41(String), (String)
+2019-02-22 09:31:41.083 DEBUG 13656 --- [http-nio-8181-exec-4] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:31:41.128 DEBUG 13656 --- [http-nio-8181-exec-5] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:31:41.135 DEBUG 13656 --- [http-nio-8181-exec-5] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 29(Integer), 35(Integer), 2019-02-22 09:31:41(String), (String)
+2019-02-22 09:31:41.159 DEBUG 13656 --- [http-nio-8181-exec-5] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:31:41.268 DEBUG 13656 --- [http-nio-8181-exec-1] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:31:41.276 DEBUG 13656 --- [http-nio-8181-exec-1] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 96(String), 29(Integer), 36(Integer), 2019-02-22 09:31:41(String), (String)
+2019-02-22 09:31:41.285 DEBUG 13656 --- [http-nio-8181-exec-1] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:31:50.699 DEBUG 13656 --- [http-nio-8181-exec-11] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:31:50.707 DEBUG 13656 --- [http-nio-8181-exec-11] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 30(Integer), 38(Integer), 2019-02-22 09:31:50(String), (String)
+2019-02-22 09:31:50.715 DEBUG 13656 --- [http-nio-8181-exec-11] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:32:00.696 DEBUG 13656 --- [http-nio-8181-exec-9] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:32:00.703 DEBUG 13656 --- [http-nio-8181-exec-9] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 29(Integer), 35(Integer), 2019-02-22 09:32:00(String), (String)
+2019-02-22 09:32:00.712 DEBUG 13656 --- [http-nio-8181-exec-9] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:32:00.796 DEBUG 13656 --- [http-nio-8181-exec-7] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:32:00.803 DEBUG 13656 --- [http-nio-8181-exec-7] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 30(Integer), 38(Integer), 2019-02-22 09:32:00(String), (String)
+2019-02-22 09:32:00.810 DEBUG 13656 --- [http-nio-8181-exec-7] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:32:00.836 DEBUG 13656 --- [http-nio-8181-exec-12] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:32:00.844 DEBUG 13656 --- [http-nio-8181-exec-12] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 96(String), 29(Integer), 36(Integer), 2019-02-22 09:32:00(String), (String)
+2019-02-22 09:32:00.852 DEBUG 13656 --- [http-nio-8181-exec-12] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:32:10.654 DEBUG 13656 --- [http-nio-8181-exec-8] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:32:10.662 DEBUG 13656 --- [http-nio-8181-exec-8] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 30(Integer), 38(Integer), 2019-02-22 09:32:10(String), (String)
+2019-02-22 09:32:10.674 DEBUG 13656 --- [http-nio-8181-exec-8] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:32:10.693 DEBUG 13656 --- [http-nio-8181-exec-4] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:32:10.700 DEBUG 13656 --- [http-nio-8181-exec-4] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 29(Integer), 35(Integer), 2019-02-22 09:32:10(String), (String)
+2019-02-22 09:32:10.707 DEBUG 13656 --- [http-nio-8181-exec-4] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-22 09:32:10.818 DEBUG 13656 --- [http-nio-8181-exec-5] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-22 09:32:10.827 DEBUG 13656 --- [http-nio-8181-exec-5] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 96(String), 29(Integer), 36(Integer), 2019-02-22 09:32:10(String), (String)
+2019-02-22 09:32:10.833 DEBUG 13656 --- [http-nio-8181-exec-5] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1

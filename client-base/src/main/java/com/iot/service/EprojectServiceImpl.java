@@ -1,49 +1,45 @@
 package com.iot.service;
 
-import com.alibaba.fastjson.JSONArray;
+import com.iot.bean.Eproject;
 import org.springframework.stereotype.Component;
-import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Component
 public class EprojectServiceImpl implements EprojectService {
-    @Override
-    public Map<Object, Object> select(){
-        Map<Object, Object> map = new HashMap<Object, Object>();
-        map.put("msg", "服务暂停");
-        return map;
-    }
 
     @Override
-    public Map<Object, Object> selectByPage(Integer page, Integer rows, String sort, String order, String filterRules){
-        Map<Object, Object> map = new HashMap<Object, Object>();
-        map.put("msg", "服务暂停");
-        return map;
-    }
-
-    @Override
-    public Map<Object, Object> insert(String item, String fileurl, String servicename, String dburl, String detail){
-        Map<Object, Object> map = new HashMap<Object, Object>();
-        map.put("msg", "服务暂停");
-        return map;
-    }
-
-    @Override
-    public Map<Object, Object> update(Integer id, String item, String fileurl, String servicename, String dburl, String detail){
-        Map<Object, Object> map = new HashMap<Object, Object>();
-        map.put("msg", "服务暂停");
-        return map;
-    }
-
-    @Override
-    public Map<Object, Object> delete(Integer id){
-        Map<Object, Object> map = new HashMap<Object, Object>();
-        map.put("msg", "服务暂停");
-        return map;
-    }
-
-    @Override
-    public JSONArray combobox(){
+    public List<Eproject> selectAll() {
         return null;
+    }
+
+    @Override
+    public Map<Object, Object> selectByPage(Integer page, Integer rows, String sort, String order, String filterRules) {
+        return null;
+    }
+
+    @Override
+    public List<Eproject> selectBySql(String sql) {
+        return null;
+    }
+
+    @Override
+    public Eproject selectByPrimaryKey(Integer id) {
+        return null;
+    }
+
+    @Override
+    public Eproject insert(String item, String fileurl, String servicename, String dburl, String detail) {
+        return null;
+    }
+
+    @Override
+    public Eproject update(Integer id, String item, String fileurl, String servicename, String dburl, String detail) {
+        return null;
+    }
+
+    @Override
+    public int delete(Integer id) {
+        return 0;
     }
 }

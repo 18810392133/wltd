@@ -1,13 +1,9 @@
 package com.iot.action;
 
-import com.alibaba.fastjson.JSONArray;
 import com.github.pagehelper.PageInfo;
-import com.iot.bean.Eattr;
-import com.iot.bean.Eattrv;
-import com.iot.bean.Select;
+import com.iot.bean.*;
 import com.iot.service.EattrService;
 import com.iot.service.EsensorService;
-import org.apache.commons.beanutils.BeanMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -24,12 +20,9 @@ public class EattrAction {
 	@Resource
 	private EsensorService esensorService;
 
-	@RequestMapping(value = "/select", method = RequestMethod.GET)
-	public Map<Object, Object> select(){
-		List<Eattr> list = eattrService.selectAll();
-		Map<Object, Object> map = new HashMap<Object, Object>();
-		map.put("list", list);
-		return map;
+	@RequestMapping(value = "/selectAll", method = RequestMethod.GET)
+	public List<Eattr> selectAll(){
+		return eattrService.selectAll();
 	}
 
 	@RequestMapping(value = "/selectByPage", method = RequestMethod.GET)
@@ -43,27 +36,18 @@ public class EattrAction {
 	}
 
 	@RequestMapping(value = "/selectBySql", method = RequestMethod.GET)
-	public Map<Object, Object> selectBySql(String sql){
-		List<Eattr> list = eattrService.selectBySql(sql);
-		Map<Object, Object> map = new HashMap<Object, Object>();
-		map.put("list", list);
-		return map;
+	public List<Eattr> selectBySql(String sql){
+		return eattrService.selectBySql(sql);
 	}
 
 	@RequestMapping(value = "/selectByPrimaryKey", method = RequestMethod.GET)
-	public Map<Object, Object> selectByPrimaryKey(Integer id){
-		Eattr object = eattrService.selectByPrimaryKey(id);
-		Map<Object, Object> map = new HashMap<Object, Object>();
-		map.put("object", object);
-		return map;
+	public Eattr selectByPrimaryKey(Integer id){
+		return eattrService.selectByPrimaryKey(id);
 	}
 
 	@RequestMapping(value = "/selectVAll", method = RequestMethod.GET)
-	public Map<Object, Object> selectVAll(){
-		List<Eattrv> list = eattrService.selectVAll();
-		Map<Object, Object> map = new HashMap<Object, Object>();
-		map.put("list", list);
-		return map;
+	public List<Eattrv>  selectVAll(){
+		return eattrService.selectVAll();
 	}
 
 	@RequestMapping(value = "/selectVByPage", method = RequestMethod.GET)
@@ -77,27 +61,18 @@ public class EattrAction {
 	}
 
 	@RequestMapping(value = "/selectVBySql", method = RequestMethod.GET)
-	public Map<Object, Object> selectVBySql(String sql){
-		List<Eattrv> list = eattrService.selectVBySql(sql);
-		Map<Object, Object> map = new HashMap<Object, Object>();
-		map.put("list", list);
-		return map;
+	public List<Eattrv> selectVBySql(String sql){
+		return eattrService.selectVBySql(sql);
 	}
 
 	@RequestMapping(value = "/selectVByPrimaryKey", method = RequestMethod.GET)
-	public Map<Object, Object> selectVByPrimaryKey(Integer id){
-		Eattrv object = eattrService.selectVByPrimaryKey(id);
-		Map<Object, Object> map = new HashMap<Object, Object>();
-		map.put("object", object);
-		return map;
+	public Eattrv selectVByPrimaryKey(Integer id){
+		return eattrService.selectVByPrimaryKey(id);
 	}
 
 	@RequestMapping(value = "/selectSubAll", method = RequestMethod.GET)
-	public Map<Object, Object> selectSubAll(Integer projectid){
-		List<Eattr> list = eattrService.selectSubAll(projectid);
-		Map<Object, Object> map = new HashMap<Object, Object>();
-		map.put("list", list);
-		return map;
+	public List<Eattr> selectSubAll(Integer projectid){
+		return eattrService.selectSubAll(projectid);
 	}
 
 	@RequestMapping(value = "/selectSubByPage", method = RequestMethod.GET)
@@ -111,27 +86,18 @@ public class EattrAction {
 	}
 
 	@RequestMapping(value = "/selectSubBySql", method = RequestMethod.GET)
-	public Map<Object, Object> selectSubBySql(Integer projectid, String sql){
-		List<Eattr> list = eattrService.selectSubBySql(projectid, sql);
-		Map<Object, Object> map = new HashMap<Object, Object>();
-		map.put("list", list);
-		return map;
+	public List<Eattr> selectSubBySql(Integer projectid, String sql){
+		return eattrService.selectSubBySql(projectid, sql);
 	}
 
 	@RequestMapping(value = "/selectSubByPrimaryKey", method = RequestMethod.GET)
-	public Map<Object, Object> selectSubByPrimaryKey(Integer projectid, Integer id){
-		Eattr object = eattrService.selectSubByPrimaryKey(projectid, id);
-		Map<Object, Object> map = new HashMap<Object, Object>();
-		map.put("object", object);
-		return map;
+	public Eattr selectSubByPrimaryKey(Integer projectid, Integer id){
+		return eattrService.selectSubByPrimaryKey(projectid, id);
 	}
 
 	@RequestMapping(value = "/selectSubVAll", method = RequestMethod.GET)
-	public Map<Object, Object> selectSubVAll(Integer projectid){
-		List<Eattrv> list = eattrService.selectSubVAll(projectid);
-		Map<Object, Object> map = new HashMap<Object, Object>();
-		map.put("list", list);
-		return map;
+	public List<Eattrv> selectSubVAll(Integer projectid){
+		return eattrService.selectSubVAll(projectid);
 	}
 
 	@RequestMapping(value = "/selectSubVByPage", method = RequestMethod.GET)
@@ -145,111 +111,49 @@ public class EattrAction {
 	}
 
 	@RequestMapping(value = "/selectSubVBySql", method = RequestMethod.GET)
-	public Map<Object, Object> selectSubVBySql(Integer projectid, String sql){
-		List<Eattrv> list = eattrService.selectSubVBySql(projectid, sql);
-		Map<Object, Object> map = new HashMap<Object, Object>();
-		map.put("list", list);
-		return map;
+	public List<Eattrv> selectSubVBySql(Integer projectid, String sql){
+		return eattrService.selectSubVBySql(projectid, sql);
 	}
 
 	@RequestMapping(value = "/selectSubVByPrimaryKey", method = RequestMethod.GET)
-	public Map<Object, Object> selectSubVByPrimaryKey(Integer projectid, Integer id){
-		Eattrv object = eattrService.selectSubVByPrimaryKey(projectid, id);
-		Map<Object, Object> map = new HashMap<Object, Object>();
-		map.put("object", object);
-		return map;
+	public Eattrv selectSubVByPrimaryKey(Integer projectid, Integer id){
+		return eattrService.selectSubVByPrimaryKey(projectid, id);
 	}
 
 	@RequestMapping(value = "/insert", method = RequestMethod.POST)
-	public Map<Object, Object> insert(String item, Integer sensorid, String protocol, String type, String unit, String thresholdl, String thresholdm, String thresholdh, String note){
-		Map<Object, Object> map = new HashMap<Object, Object>();
-		if(isValidate(item, sensorid,0)){
-			Eattrv attr = new Eattrv();
-			attr.setItem(item);
-			attr.setSensorid(sensorid);
-			attr.setProtocol(protocol);
-			attr.setType(type);
-			attr.setUnit(unit);
-			attr.setThresholdl(thresholdl);
-			attr.setThresholdm(thresholdm);
-			attr.setThresholdh(thresholdh);
-			attr.setNote(note);
-			eattrService.insert(attr);
-			attr.setSensor(esensorService.selectVByPrimaryKey(sensorid));
-			map = new BeanMap(attr);
-		}else{
-			map.put("isError", true);
-			map.put("msg", "该属性已存在");
-		}
-		return map;
+	public Eattrv insert(String item, Integer sensorid, String protocol, String compare, String unit, Integer timer, String note){
+		Eattrv attr = new Eattrv();
+		attr.setItem(item);
+		attr.setSensorid(sensorid);
+		attr.setProtocol(protocol);
+		attr.setCompare(compare);
+		attr.setUnit(unit);
+		attr.setTimer(timer);
+		attr.setNote(note);
+		eattrService.insert(attr);
+		attr.setSensor(esensorService.selectVByPrimaryKey(sensorid));
+		return attr;
 	}
 
 	@RequestMapping(value = "/update", method = RequestMethod.PUT)
-	public Map<Object, Object> update(Integer id, String item, Integer sensorid, String protocol, String type, String unit, String thresholdl, String thresholdm, String thresholdh, String note){
-		Map<Object, Object> map = new HashMap<Object, Object>();
-		if(isValidate(item, sensorid, id)){
-			Eattrv attr = eattrService.selectVByPrimaryKey(id);
-			if(attr != null){
-				attr.setItem(item);
-				attr.setSensorid(sensorid);
-				attr.setProtocol(protocol);
-				attr.setType(type);
-				attr.setUnit(unit);
-				attr.setThresholdl(thresholdl);
-				attr.setThresholdm(thresholdm);
-				attr.setThresholdh(thresholdh);
-				attr.setNote(note);
-				eattrService.updateByPrimaryKey(attr);
-				attr.setSensor(esensorService.selectVByPrimaryKey(sensorid));
-				map = new BeanMap(attr);
-			}
-		}else{
-			map.put("isError", true);
-			map.put("msg", "该属性已存在");
+	public Eattrv update(Integer id, String item, Integer sensorid, String protocol, String compare, String unit, Integer timer, String note){
+		Eattrv attr = eattrService.selectVByPrimaryKey(id);
+		if(attr != null){
+			attr.setItem(item);
+			attr.setSensorid(sensorid);
+			attr.setProtocol(protocol);
+			attr.setCompare(compare);
+			attr.setUnit(unit);
+			attr.setTimer(timer);
+			attr.setNote(note);
+			eattrService.updateByPrimaryKey(attr);
+			attr.setSensor(esensorService.selectVByPrimaryKey(sensorid));
 		}
-		return map;
+		return attr;
 	}
 
 	@RequestMapping(value = "/delete", method = RequestMethod.DELETE)
-	public Map<Object, Object> delete(Integer id){
-		Map<Object, Object> map = new HashMap<Object, Object>();
-		eattrService.deleteByPrimaryKey(id);
-		map.put("success", true);
-		return map;
-	}
-
-	@RequestMapping("/typeCombobox")
-	public JSONArray typeCombobox(){
-		JSONArray jsonArray = new JSONArray();
-		Select select = new Select();
-		select.setText("大于");
-		select.setValue("大于");
-		jsonArray.add(select);
-		select = new Select();
-		select.setText("小于");
-		select.setValue("小于");
-		jsonArray.add(select);
-		return jsonArray;
-	}
-
-	@RequestMapping(value = "/combobox", method = RequestMethod.GET)
-	public JSONArray combobox(Integer sensorid){
-		JSONArray jsonArray = new JSONArray();
-		List<Eattr> list = eattrService.selectBySql("sensorid=" + sensorid);
-		for(int i = 0; i < list.size(); i++){
-			Select select = new Select();
-			select.setText(list.get(i).getItem());
-			select.setValue(String.valueOf(list.get(i).getId()));
-			jsonArray.add(select);
-		}
-		return jsonArray;
-	}
-
-	public boolean isValidate(String item, Integer sensorid, Integer id){
-		List<Eattr> list = eattrService.selectBySql("item='" + item + "' and sensorid=" + sensorid + " and id!=" + id);
-		if(list.size() > 0)
-			return false;
-		else
-			return true;
+	public int delete(Integer id){
+		return eattrService.deleteByPrimaryKey(id);
 	}
 }

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>  
+<head>  
+</head>
+<body>
+<table id="attrList" style="width:100%;"
+		toolbar="#attrToolbar" idField="id" pagination="true"
+		rownumbers="true" fitColumns="true" singleSelect="false" ctrlSelect="true"
+		pageSize="20" remoteSort="true" sortName="id" sortOrder="desc">
+	<thead>
+		<tr>
+			<th field="item" width="200px" sortable="true" editor="{type:'validatebox',options:{required:true}}">属性名</th>
+			<th field="projectid" width="200px" editor="{type: 'combobox', options:{url:'project/list', onSelect:onAttrProjectSelect, valueField:'value', textField:'text', editable:false, panelHeight:'auto', panelMaxHeight:'200'}}" data-options="formatter:attrProjectFormatter">项目</th>
+			<th field="platid" width="200px" editor="{type: 'combobox', options:{url:'', onLoadSuccess:onAttrPlatLoad, onSelect:onAttrPlatSelect, valueField:'value', textField:'text', editable:false, panelHeight:'auto', panelMaxHeight:'200'}}" data-options="formatter:attrPlatFormatter">区域</th>
+			<th field="bimid" width="200px" editor="{type: 'combobox', options:{url:'', onLoadSuccess:onAttrBimLoad, onSelect:onAttrBimSelect, valueField:'value', textField:'text', editable:false, panelHeight:'auto', panelMaxHeight:'200'}}" data-options="formatter:attrBimFormatter">节点</th>
+			<th field="sensorid" width="200px" sortable="true" editor="{type: 'combobox', options:{url:'', onLoadSuccess:onAttrSensorLoad, valueField:'value', textField:'text', editable:false, panelHeight:'auto', panelMaxHeight:'200'}}" data-options="formatter:attrSensorFormatter">传感器</th>
+			<th field="protocol" width="200px" sortable="true" editor="{type:'validatebox'}">数据接口</th>
+			<th field="type" width="200px" sortable="true" editor="{type: 'combobox', options:{url:'attr/typeList', valueField:'value', textField:'text', editable:false, panelHeight:'auto', panelMaxHeight:'200'}}">报警类型</th>
+			<th field="unit" width="200px" sortable="true" editor="text">单位</th>
+			<th field="thresholdl" width="200px" sortable="true" editor="{type:'numberbox', options:{precision:2}}">低阈值</th>
+			<th field="thresholdm" width="200px" sortable="true" editor="{type:'numberbox', options:{precision:2}}">中阈值</th>
+			<th field="thresholdh" width="200px" sortable="true" editor="{type:'numberbox', options:{precision:2}}">高阈值</th>
+			<th field="note" width="200px" sortable="true" editor="text">备注</th>
+		</tr>
+	</thead>
+</table>
+<div id="attrToolbar" style="width:100%;">
+	<span class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="$('#attrList').edatagrid('unselectAll');$('#attrList').edatagrid('addRow',0)">新增</span>
+	<span class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="$('#attrList').edatagrid('destroyRow')">删除</span>
+	<span class="easyui-linkbutton" iconCls="icon-save" plain="true" onclick="$('#attrList').edatagrid('saveRow')">保存</span>
+	<span class="easyui-linkbutton" iconCls="icon-undo" plain="true" onclick="$('#attrList').edatagrid('cancelRow')">取消</span>
+	<span class="easyui-linkbutton" iconCls="icon-reload" plain="true" onclick="$('#attrList').edatagrid('removeFilterRule');$('#attrList').edatagrid('doFilter')">刷新</span>
+</div>
+</body>  
+</html> 

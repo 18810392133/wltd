@@ -11,7 +11,7 @@
     <groupId>com.iot</groupId>
     <artifactId>wltd</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <packaging>pom</packaging>
     <name>wltd</name>
     <description>Demo project for Spring Boot</description>
 
@@ -21,6 +21,7 @@
         <module>server-zuul</module>
         <module>service-base</module>
         <module>client-base</module>
+        <module>service-security</module>
     </modules>
 
     <properties>

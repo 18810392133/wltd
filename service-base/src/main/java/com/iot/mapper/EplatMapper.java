@@ -2,16 +2,25 @@ package com.iot.mapper;
 
 import com.iot.bean.Eplat;
 import com.iot.bean.Eplatv;
-import com.iot.util.RedisCache;
 import org.apache.ibatis.annotations.*;
+import org.apache.ibatis.type.JdbcType;
 import java.util.List;
 
-@CacheNamespace(implementation = RedisCache.class)
 public interface EplatMapper {
     @Select({
             "select",
             "id, item, projectid, province, city, longitude, latitude, note",
             "from eplat"
+    })
+    @Results({
+            @Result(column="id", property="id", jdbcType=JdbcType.INTEGER, id=true),
+            @Result(column="item", property="item", jdbcType=JdbcType.VARCHAR),
+            @Result(column="projectid", property="projectid", jdbcType=JdbcType.INTEGER),
+            @Result(column="province", property="province", jdbcType=JdbcType.VARCHAR),
+            @Result(column="city", property="city", jdbcType=JdbcType.VARCHAR),
+            @Result(column="longitude", property="longitude", jdbcType=JdbcType.VARCHAR),
+            @Result(column="latitude", property="latitude", jdbcType=JdbcType.VARCHAR),
+            @Result(column="note", property="note", jdbcType=JdbcType.VARCHAR)
     })
     List<Eplat> selectAll();
 
@@ -21,13 +30,33 @@ public interface EplatMapper {
             "from eplat",
             "where ${sql}"
     })
+    @Results({
+            @Result(column="id", property="id", jdbcType=JdbcType.INTEGER, id=true),
+            @Result(column="item", property="item", jdbcType=JdbcType.VARCHAR),
+            @Result(column="projectid", property="projectid", jdbcType=JdbcType.INTEGER),
+            @Result(column="province", property="province", jdbcType=JdbcType.VARCHAR),
+            @Result(column="city", property="city", jdbcType=JdbcType.VARCHAR),
+            @Result(column="longitude", property="longitude", jdbcType=JdbcType.VARCHAR),
+            @Result(column="latitude", property="latitude", jdbcType=JdbcType.VARCHAR),
+            @Result(column="note", property="note", jdbcType=JdbcType.VARCHAR)
+    })
     List<Eplat> selectBySql(@Param("sql") String sql);
 
     @Select({
             "select",
             "id, item, projectid, province, city, longitude, latitude, note",
             "from eplat",
-            "where id = #{id}"
+            "where id = #{id,jdbcType=INTEGER}"
+    })
+    @Results({
+            @Result(column="id", property="id", jdbcType=JdbcType.INTEGER, id=true),
+            @Result(column="item", property="item", jdbcType=JdbcType.VARCHAR),
+            @Result(column="projectid", property="projectid", jdbcType=JdbcType.INTEGER),
+            @Result(column="province", property="province", jdbcType=JdbcType.VARCHAR),
+            @Result(column="city", property="city", jdbcType=JdbcType.VARCHAR),
+            @Result(column="longitude", property="longitude", jdbcType=JdbcType.VARCHAR),
+            @Result(column="latitude", property="latitude", jdbcType=JdbcType.VARCHAR),
+            @Result(column="note", property="note", jdbcType=JdbcType.VARCHAR)
     })
     Eplat selectByPrimaryKey(Integer id);
 
@@ -37,7 +66,14 @@ public interface EplatMapper {
             "from eplat"
     })
     @Results({
-            @Result(column="projectid", property="projectid"),
+            @Result(column="id", property="id", jdbcType=JdbcType.INTEGER, id=true),
+            @Result(column="item", property="item", jdbcType=JdbcType.VARCHAR),
+            @Result(column="projectid", property="projectid", jdbcType=JdbcType.INTEGER),
+            @Result(column="province", property="province", jdbcType=JdbcType.VARCHAR),
+            @Result(column="city", property="city", jdbcType=JdbcType.VARCHAR),
+            @Result(column="longitude", property="longitude", jdbcType=JdbcType.VARCHAR),
+            @Result(column="latitude", property="latitude", jdbcType=JdbcType.VARCHAR),
+            @Result(column="note", property="note", jdbcType=JdbcType.VARCHAR),
             @Result(column = "projectid",property = "project",
                     one = @One(select = "com.iot.mapper.EprojectMapper.selectByPrimaryKey"))
     })
@@ -50,7 +86,14 @@ public interface EplatMapper {
             "where ${sql}"
     })
     @Results({
-            @Result(column="projectid", property="projectid"),
+            @Result(column="id", property="id", jdbcType=JdbcType.INTEGER, id=true),
+            @Result(column="item", property="item", jdbcType=JdbcType.VARCHAR),
+            @Result(column="projectid", property="projectid", jdbcType=JdbcType.INTEGER),
+            @Result(column="province", property="province", jdbcType=JdbcType.VARCHAR),
+            @Result(column="city", property="city", jdbcType=JdbcType.VARCHAR),
+            @Result(column="longitude", property="longitude", jdbcType=JdbcType.VARCHAR),
+            @Result(column="latitude", property="latitude", jdbcType=JdbcType.VARCHAR),
+            @Result(column="note", property="note", jdbcType=JdbcType.VARCHAR),
             @Result(column = "projectid",property = "project",
                     one = @One(select = "com.iot.mapper.EprojectMapper.selectByPrimaryKey"))
     })
@@ -60,10 +103,17 @@ public interface EplatMapper {
             "select",
             "id, item, projectid, province, city, longitude, latitude, note",
             "from eplat",
-            "where id = #{id}"
+            "where id = #{id,jdbcType=INTEGER}"
     })
     @Results({
-            @Result(column="projectid", property="projectid"),
+            @Result(column="id", property="id", jdbcType=JdbcType.INTEGER, id=true),
+            @Result(column="item", property="item", jdbcType=JdbcType.VARCHAR),
+            @Result(column="projectid", property="projectid", jdbcType=JdbcType.INTEGER),
+            @Result(column="province", property="province", jdbcType=JdbcType.VARCHAR),
+            @Result(column="city", property="city", jdbcType=JdbcType.VARCHAR),
+            @Result(column="longitude", property="longitude", jdbcType=JdbcType.VARCHAR),
+            @Result(column="latitude", property="latitude", jdbcType=JdbcType.VARCHAR),
+            @Result(column="note", property="note", jdbcType=JdbcType.VARCHAR),
             @Result(column = "projectid",property = "project",
                     one = @One(select = "com.iot.mapper.EprojectMapper.selectByPrimaryKey"))
     })
@@ -73,7 +123,17 @@ public interface EplatMapper {
             "select",
             "id, item, projectid, province, city, longitude, latitude, note",
             "from eplat",
-            "where projectid = #{projectid}"
+            "where projectid = #{projectid,jdbcType=INTEGER}"
+    })
+    @Results({
+            @Result(column="id", property="id", jdbcType=JdbcType.INTEGER, id=true),
+            @Result(column="item", property="item", jdbcType=JdbcType.VARCHAR),
+            @Result(column="projectid", property="projectid", jdbcType=JdbcType.INTEGER),
+            @Result(column="province", property="province", jdbcType=JdbcType.VARCHAR),
+            @Result(column="city", property="city", jdbcType=JdbcType.VARCHAR),
+            @Result(column="longitude", property="longitude", jdbcType=JdbcType.VARCHAR),
+            @Result(column="latitude", property="latitude", jdbcType=JdbcType.VARCHAR),
+            @Result(column="note", property="note", jdbcType=JdbcType.VARCHAR)
     })
     List<Eplat> selectSubAll(Integer projectid);
 
@@ -81,7 +141,17 @@ public interface EplatMapper {
             "select",
             "id, item, projectid, province, city, longitude, latitude, note",
             "from eplat",
-            "where projectid = #{projectid} and ${sql}"
+            "where projectid = #{projectid,jdbcType=INTEGER} and ${sql}"
+    })
+    @Results({
+            @Result(column="id", property="id", jdbcType=JdbcType.INTEGER, id=true),
+            @Result(column="item", property="item", jdbcType=JdbcType.VARCHAR),
+            @Result(column="projectid", property="projectid", jdbcType=JdbcType.INTEGER),
+            @Result(column="province", property="province", jdbcType=JdbcType.VARCHAR),
+            @Result(column="city", property="city", jdbcType=JdbcType.VARCHAR),
+            @Result(column="longitude", property="longitude", jdbcType=JdbcType.VARCHAR),
+            @Result(column="latitude", property="latitude", jdbcType=JdbcType.VARCHAR),
+            @Result(column="note", property="note", jdbcType=JdbcType.VARCHAR)
     })
     List<Eplat> selectSubBySql(Integer projectid, @Param("sql") String sql);
 
@@ -89,7 +159,17 @@ public interface EplatMapper {
             "select",
             "id, item, projectid, province, city, longitude, latitude, note",
             "from eplat",
-            "where projectid = #{projectid} and id = #{id}"
+            "where projectid = #{projectid,jdbcType=INTEGER} and id = #{id,jdbcType=INTEGER}"
+    })
+    @Results({
+            @Result(column="id", property="id", jdbcType=JdbcType.INTEGER, id=true),
+            @Result(column="item", property="item", jdbcType=JdbcType.VARCHAR),
+            @Result(column="projectid", property="projectid", jdbcType=JdbcType.INTEGER),
+            @Result(column="province", property="province", jdbcType=JdbcType.VARCHAR),
+            @Result(column="city", property="city", jdbcType=JdbcType.VARCHAR),
+            @Result(column="longitude", property="longitude", jdbcType=JdbcType.VARCHAR),
+            @Result(column="latitude", property="latitude", jdbcType=JdbcType.VARCHAR),
+            @Result(column="note", property="note", jdbcType=JdbcType.VARCHAR)
     })
     Eplat selectSubByPrimaryKey(Integer projectid, Integer id);
 
@@ -97,10 +177,17 @@ public interface EplatMapper {
             "select",
             "id, item, projectid, province, city, longitude, latitude, note",
             "from eplat",
-            "where projectid = #{projectid}"
+            "where projectid = #{projectid,jdbcType=INTEGER}"
     })
     @Results({
-            @Result(column="projectid", property="projectid"),
+            @Result(column="id", property="id", jdbcType=JdbcType.INTEGER, id=true),
+            @Result(column="item", property="item", jdbcType=JdbcType.VARCHAR),
+            @Result(column="projectid", property="projectid", jdbcType=JdbcType.INTEGER),
+            @Result(column="province", property="province", jdbcType=JdbcType.VARCHAR),
+            @Result(column="city", property="city", jdbcType=JdbcType.VARCHAR),
+            @Result(column="longitude", property="longitude", jdbcType=JdbcType.VARCHAR),
+            @Result(column="latitude", property="latitude", jdbcType=JdbcType.VARCHAR),
+            @Result(column="note", property="note", jdbcType=JdbcType.VARCHAR),
             @Result(column = "projectid",property = "project",
                     one = @One(select = "com.iot.mapper.EprojectMapper.selectByPrimaryKey"))
     })
@@ -110,10 +197,17 @@ public interface EplatMapper {
             "select",
             "id, item, projectid, province, city, longitude, latitude, note",
             "from eplat",
-            "where projectid = #{projectid} and ${sql}"
+            "where projectid = #{projectid,jdbcType=INTEGER} and ${sql}"
     })
     @Results({
-            @Result(column="projectid", property="projectid"),
+            @Result(column="id", property="id", jdbcType=JdbcType.INTEGER, id=true),
+            @Result(column="item", property="item", jdbcType=JdbcType.VARCHAR),
+            @Result(column="projectid", property="projectid", jdbcType=JdbcType.INTEGER),
+            @Result(column="province", property="province", jdbcType=JdbcType.VARCHAR),
+            @Result(column="city", property="city", jdbcType=JdbcType.VARCHAR),
+            @Result(column="longitude", property="longitude", jdbcType=JdbcType.VARCHAR),
+            @Result(column="latitude", property="latitude", jdbcType=JdbcType.VARCHAR),
+            @Result(column="note", property="note", jdbcType=JdbcType.VARCHAR),
             @Result(column = "projectid",property = "project",
                     one = @One(select = "com.iot.mapper.EprojectMapper.selectByPrimaryKey"))
     })
@@ -123,10 +217,17 @@ public interface EplatMapper {
             "select",
             "id, item, projectid, province, city, longitude, latitude, note",
             "from eplat",
-            "where projectid = #{projectid} and id = #{id}"
+            "where projectid = #{projectid,jdbcType=INTEGER} and id = #{id,jdbcType=INTEGER}"
     })
     @Results({
-            @Result(column="projectid", property="projectid"),
+            @Result(column="id", property="id", jdbcType=JdbcType.INTEGER, id=true),
+            @Result(column="item", property="item", jdbcType=JdbcType.VARCHAR),
+            @Result(column="projectid", property="projectid", jdbcType=JdbcType.INTEGER),
+            @Result(column="province", property="province", jdbcType=JdbcType.VARCHAR),
+            @Result(column="city", property="city", jdbcType=JdbcType.VARCHAR),
+            @Result(column="longitude", property="longitude", jdbcType=JdbcType.VARCHAR),
+            @Result(column="latitude", property="latitude", jdbcType=JdbcType.VARCHAR),
+            @Result(column="note", property="note", jdbcType=JdbcType.VARCHAR),
             @Result(column = "projectid",property = "project",
                     one = @One(select = "com.iot.mapper.EprojectMapper.selectByPrimaryKey"))
     })
@@ -134,28 +235,32 @@ public interface EplatMapper {
 
     @Delete({
         "delete from eplat",
-        "where id = #{id}"
+        "where id = #{id,jdbcType=INTEGER}"
     })
     int deleteByPrimaryKey(Integer id);
 
     @Insert({
-        "insert into eplat",
-        "(id, item, projectid, province, city, longitude, latitude, note)",
-        "values (#{id}, #{item}, #{projectid}, #{province}, #{city}, #{longitude}, #{latitude}, #{note})"
+        "insert into eplat (id, item, ",
+        "projectid, province, ",
+        "city, longitude, ",
+        "latitude, note)",
+        "values (#{id,jdbcType=INTEGER}, #{item,jdbcType=VARCHAR}, ",
+        "#{projectid,jdbcType=INTEGER}, #{province,jdbcType=VARCHAR}, ",
+        "#{city,jdbcType=VARCHAR}, #{longitude,jdbcType=VARCHAR}, ",
+        "#{latitude,jdbcType=VARCHAR}, #{note,jdbcType=VARCHAR})"
     })
-    @Options(useGeneratedKeys = true, keyProperty = "id")
     int insert(Eplat record);
 
     @Update({
         "update eplat",
-        "set item = #{item},",
-          "projectid = #{projectid},",
-          "province = #{province},",
-          "city = #{city},",
-          "longitude = #{longitude},",
-          "latitude = #{latitude},",
-          "note = #{note}",
-        "where id = #{id}"
+        "set item = #{item,jdbcType=VARCHAR},",
+          "projectid = #{projectid,jdbcType=INTEGER},",
+          "province = #{province,jdbcType=VARCHAR},",
+          "city = #{city,jdbcType=VARCHAR},",
+          "longitude = #{longitude,jdbcType=VARCHAR},",
+          "latitude = #{latitude,jdbcType=VARCHAR},",
+          "note = #{note,jdbcType=VARCHAR}",
+        "where id = #{id,jdbcType=INTEGER}"
     })
     int updateByPrimaryKey(Eplat record);
 }

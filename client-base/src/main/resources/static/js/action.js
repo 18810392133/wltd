@@ -24,7 +24,7 @@ function bimPlatFormatter(value,row,index){
 function onBimProjectSelect(data){
     var row = $('#bimList').datagrid('getSelected');
     var index = $('#bimList').datagrid('getRowIndex',row);
-    $('#bimList').edatagrid('getEditor', {'index':index < 0 ? 0 : index, 'field':'platid'}).target.combobox('reload', 'plat/combobox?projectid=' + data.value);
+    $('#bimList').edatagrid('getEditor', {'index':index < 0 ? 0 : index, 'field':'platid'}).target.combobox('reload', 'plat/list?projectid=' + data.value);
 }
 
 function onBimPlatLoad(){
@@ -42,7 +42,7 @@ function onBimPlatLoad(){
 }
 
 function onBimFilterProjectSelect(data){
-    $('#bimList').edatagrid('getFilterComponent', 'platid').combobox('reload', 'plat/combobox?projectid=' + data.value);
+    $('#bimList').edatagrid('getFilterComponent', 'platid').combobox('reload', 'plat/list?projectid=' + data.value);
 }
 
 //sensor start
@@ -64,7 +64,7 @@ function sensorBimFormatter(value,row,index){
 function onSensorProjectSelect(data){
     var row = $('#sensorList').datagrid('getSelected');
     var index = $('#sensorList').datagrid('getRowIndex',row);
-    $('#sensorList').edatagrid('getEditor', {'index':index < 0 ? 0 : index, 'field':'platid'}).target.combobox('reload', 'sensor/platSelect?projectid=' + data.value);
+    $('#sensorList').edatagrid('getEditor', {'index':index < 0 ? 0 : index, 'field':'platid'}).target.combobox('reload', 'plat/list?projectid=' + data.value);
 }
 
 function onSensorPlatLoad(){
@@ -89,7 +89,7 @@ function onSensorPlatLoad(){
 function onSensorPlatSelect(data){
     var row = $('#sensorList').datagrid('getSelected');
     var index = $('#sensorList').datagrid('getRowIndex',row);
-    $('#sensorList').edatagrid('getEditor', {'index':index < 0 ? 0 : index, 'field':'bimid'}).target.combobox('reload', 'sensor/bimSelect?platid=' + data.value);
+    $('#sensorList').edatagrid('getEditor', {'index':index < 0 ? 0 : index, 'field':'bimid'}).target.combobox('reload', 'bim/list?platid=' + data.value);
 }
 
 function onSensorBimLoad(){
@@ -107,11 +107,11 @@ function onSensorBimLoad(){
 }
 
 function onSensorFilterProjectSelect(data){
-    $('#sensorList').edatagrid('getFilterComponent', 'platid').combobox('reload', 'sensor/platSelect?projectid=' + data.value);
+    $('#sensorList').edatagrid('getFilterComponent', 'platid').combobox('reload', 'plat/list?projectid=' + data.value);
 }
 
 function onSensorFilterPlatSelect(data){
-    $('#sensorList').edatagrid('getFilterComponent', 'bimid').combobox('reload', 'sensor/bimSelect?platid=' + data.value);
+    $('#sensorList').edatagrid('getFilterComponent', 'bimid').combobox('reload', 'bim/list?platid=' + data.value);
 }
 
 function onSensorFilterPlatLoad(){
@@ -155,7 +155,7 @@ function attrSensorFormatter(value,row,index){
 function onAttrProjectSelect(data){
     var row = $('#attrList').datagrid('getSelected');
     var index = $('#attrList').datagrid('getRowIndex',row);
-    $('#attrList').edatagrid('getEditor', {'index':index < 0 ? 0 : index, 'field':'platid'}).target.combobox('reload', 'attr/platSelect?projectid=' + data.value);
+    $('#attrList').edatagrid('getEditor', {'index':index < 0 ? 0 : index, 'field':'platid'}).target.combobox('reload', 'plat/list?projectid=' + data.value);
 }
 
 function onAttrPlatLoad(){
@@ -180,7 +180,7 @@ function onAttrPlatLoad(){
 function onAttrPlatSelect(data){
     var row = $('#attrList').datagrid('getSelected');
     var index = $('#attrList').datagrid('getRowIndex',row);
-    $('#attrList').edatagrid('getEditor', {'index':index < 0 ? 0 : index, 'field':'bimid'}).target.combobox('reload', 'attr/bimSelect?platid=' + data.value);
+    $('#attrList').edatagrid('getEditor', {'index':index < 0 ? 0 : index, 'field':'bimid'}).target.combobox('reload', 'bim/list?platid=' + data.value);
 }
 
 function onAttrBimLoad(){
@@ -205,7 +205,7 @@ function onAttrBimLoad(){
 function onAttrBimSelect(data){
     var row = $('#attrList').datagrid('getSelected');
     var index = $('#attrList').datagrid('getRowIndex',row);
-    $('#attrList').edatagrid('getEditor', {'index':index < 0 ? 0 : index, 'field':'sensorid'}).target.combobox('reload', 'attr/sensorSelect?bimid=' + data.value);
+    $('#attrList').edatagrid('getEditor', {'index':index < 0 ? 0 : index, 'field':'sensorid'}).target.combobox('reload', 'sensor/list?bimid=' + data.value);
 }
 
 function onAttrSensorLoad(){
@@ -223,11 +223,11 @@ function onAttrSensorLoad(){
 }
 
 function onAttrFilterProjectSelect(data){
-    $('#attrList').edatagrid('getFilterComponent', 'platid').combobox('reload', 'attr/platSelect?projectid=' + data.value);
+    $('#attrList').edatagrid('getFilterComponent', 'platid').combobox('reload', 'plat/list?projectid=' + data.value);
 }
 
 function onAttrFilterPlatSelect(data){
-    $('#attrList').edatagrid('getFilterComponent', 'bimid').combobox('reload', 'attr/bimSelect?platid=' + data.value);
+    $('#attrList').edatagrid('getFilterComponent', 'bimid').combobox('reload', 'bim/list?platid=' + data.value);
 }
 
 function onAttrFilterPlatLoad(){
@@ -248,7 +248,7 @@ function onAttrFilterPlatLoad(){
 }
 
 function onAttrFilterBimSelect(data){
-    $('#attrList').edatagrid('getFilterComponent', 'sensorid').combobox('reload', 'attr/sensorSelect?bimid=' + data.value);
+    $('#attrList').edatagrid('getFilterComponent', 'sensorid').combobox('reload', 'sensor/list?bimid=' + data.value);
 }
 
 function onAttrFilterBimLoad(){

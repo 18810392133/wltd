@@ -1,17 +1,10 @@
 var chartInt = 0;
 var dataInt = [];
 var realInt = 0;
+var baseUrl = "http://localhost";
 
 window.onload = function(){
-    $.ajax({
-        url:"user/info",
-        type:"GET",
-        success:function(data){
-            if(!data.isSuccess) {
-                location = 'http://localhost/base/index.html';
-            }
-        }
-    });
+
 }
 
 function openTag(title, url, page){
@@ -69,7 +62,7 @@ function dataList(page){
                 });
                 $('#projectMenu').menu({
                     onClick:function(item){
-                        window.open("http://localhost/" + row.servicename + "/index","");
+                        window.open(baseUrl + "/" + row.servicename + "/index.html","");
                     }
                 });
             }
@@ -96,14 +89,14 @@ function dataList(page){
             }
         });
         $('#userList').datagrid('enableFilter', [
-            {field:'item', type:'text', op:'contains'},
+            {field:'username', type:'text', op:'contains'},
             {field:'password', type:'label'},
-            {field:'projectid', type:'combobox', op:['same'], options:{url:'project/combobox', valueField:'value', textField:'text', editable:false, panelHeight:'auto', panelMaxHeight:'200'}},
-            {field:'type', type:'combobox', op:['same'], options:{url:'user/typeCombobox', valueField:'value', textField:'text', editable:false, panelHeight:'auto', panelMaxHeight:'200'}},
+            {field:'projectid', type:'combobox', op:['same'], options:{url:'project/list', valueField:'value', textField:'text', editable:false, panelHeight:'auto', panelMaxHeight:'200'}},
+            {field:'type', type:'combobox', op:['same'], options:{url:'user/typeList', valueField:'value', textField:'text', editable:false, panelHeight:'auto', panelMaxHeight:'200'}},
             {field:'realname', type:'text', op:'contains'},
             {field:'age', type:'numberbox', op:['equal', 'notequal', 'less', 'lessorequal', 'greater', 'greaterorequal']},
             {field:'time', type:'datetimebox', op:['beginwith', 'endwith']},
-            {field:'status', type:'combobox', op:['same'], options:{url:'user/statusCombobox', valueField:'value', textField:'text', editable:false, panelHeight:'auto', panelMaxHeight:'200'}}
+            {field:'status', type:'combobox', op:['same'], options:{url:'user/statusList', valueField:'value', textField:'text', editable:false, panelHeight:'auto', panelMaxHeight:'200'}}
         ]);
     }else if(page == "plat"){
         $('#platList').edatagrid({
@@ -121,8 +114,8 @@ function dataList(page){
         });
         $('#platList').datagrid('enableFilter', [
             {field:'item', type:'text', op:'contains'},
-            {field:'projectid', type:'combobox', op:['same'], options:{url:'project/combobox', valueField:'value', textField:'text', editable:false, panelHeight:'auto', panelMaxHeight:'200'}},
-            {field:'province', type:'combobox', op:['same'], options:{url:'plat/provinceCombobox', valueField:'value', textField:'text', editable:false, panelHeight:'auto', panelMaxHeight:'200'}},
+            {field:'projectid', type:'combobox', op:['same'], options:{url:'project/list', valueField:'value', textField:'text', editable:false, panelHeight:'auto', panelMaxHeight:'200'}},
+            {field:'province', type:'combobox', op:['same'], options:{url:'plat/provinceList', valueField:'value', textField:'text', editable:false, panelHeight:'auto', panelMaxHeight:'200'}},
             {field:'city', type:'text', op:'contains'},
             {field:'longitude', type:'numberbox', options:{precision:6}, op:['equal', 'notequal', 'less', 'lessorequal', 'greater', 'greaterorequal']},
             {field:'latitude', type:'numberbox', options:{precision:6}, op:['equal', 'notequal', 'less', 'lessorequal', 'greater', 'greaterorequal']},
@@ -145,19 +138,19 @@ function dataList(page){
         });
         $('#bimList').datagrid('enableFilter', [
             {field:'item', type:'text', op:'contains'},
-            {field:'projectid', type:'combobox', options:{url:'project/combobox', onSelect:onBimFilterProjectSelect, valueField:'value', textField:'text', editable:false, panelHeight:'auto', panelMaxHeight:'200'}},
-            {field:'platid', type:'combobox', op:['same'], options:{url:'plat/combobox', onLoadSuccess:onBimPlatLoad, valueField:'value', textField:'text', editable:false, panelHeight:'auto', panelMaxHeight:'200'}},
+            {field:'projectid', type:'combobox', options:{url:'project/list', onSelect:onBimFilterProjectSelect, valueField:'value', textField:'text', editable:false, panelHeight:'auto', panelMaxHeight:'200'}},
+            {field:'platid', type:'combobox', op:['same'], options:{url:'plat/list', onLoadSuccess:onBimPlatLoad, valueField:'value', textField:'text', editable:false, panelHeight:'auto', panelMaxHeight:'200'}},
             {field:'longitude', type:'numberbox', options:{precision:6}, op:['equal', 'notequal', 'less', 'lessorequal', 'greater', 'greaterorequal']},
             {field:'latitude', type:'numberbox', options:{precision:6}, op:['equal', 'notequal', 'less', 'lessorequal', 'greater', 'greaterorequal']},
-            {field:'status', type:'combobox', op:['same'], options:{url:'bim/statusCombobox', valueField:'value', textField:'text', editable:false, panelHeight:'auto', panelMaxHeight:'200'}},
+            {field:'status', type:'combobox', op:['same'], options:{url:'bim/statusList', valueField:'value', textField:'text', editable:false, panelHeight:'auto', panelMaxHeight:'200'}},
             {field:'note', type:'text', op:'contains'}
         ]);
     }else if(page == "sensor"){
         $('#sensorList').edatagrid({
-            url:'sensor/sensorSelect',
-            saveUrl:'sensor/sensorInsert',
-            updateUrl:'sensor/sensorUpdate',
-            destroyUrl:'sensor/sensorDelete',
+            url:'sensor/selectVByPage',
+            saveUrl:'sensor/insert',
+            updateUrl:'sensor/update',
+            destroyUrl:'sensor/delete',
             remoteFilter:true,
             destroyMsg:{norecord:{title:'警告', msg:'没有选中要删除的记录.'}, confirm:{title:'确认', msg:'确定删除选中的记录么?'}},
             onError:function(index, row){alert(row.msg);},
@@ -170,20 +163,20 @@ function dataList(page){
         });
         $('#sensorList').datagrid('enableFilter', [
             {field:'item', type:'text', op:'contains'},
-            {field:'projectid', type:'combobox', options:{url:'sensor/projectSelect', onSelect:onSensorFilterProjectSelect, valueField:'value', textField:'text', editable:false, panelHeight:'auto', panelMaxHeight:'200'}},
-            {field:'platid', type:'combobox', options:{url:'sensor/platSelect', onLoadSuccess:onSensorFilterPlatLoad, onSelect:onSensorFilterPlatSelect, valueField:'value', textField:'text', editable:false, panelHeight:'auto', panelMaxHeight:'200'}},
-            {field:'bimid', type:'combobox', op:['same'], options:{url:'sensor/bimSelect', onLoadSuccess:onSensorBimLoad, valueField:'value', textField:'text', editable:false, panelHeight:'auto', panelMaxHeight:'200'}},
+            {field:'projectid', type:'combobox', options:{url:'project/list', onSelect:onSensorFilterProjectSelect, valueField:'value', textField:'text', editable:false, panelHeight:'auto', panelMaxHeight:'200'}},
+            {field:'platid', type:'combobox', options:{url:'plat/list', onLoadSuccess:onSensorFilterPlatLoad, onSelect:onSensorFilterPlatSelect, valueField:'value', textField:'text', editable:false, panelHeight:'auto', panelMaxHeight:'200'}},
+            {field:'bimid', type:'combobox', op:['same'], options:{url:'bim/list', onLoadSuccess:onSensorBimLoad, valueField:'value', textField:'text', editable:false, panelHeight:'auto', panelMaxHeight:'200'}},
             {field:'protocol', type:'text', op:'contains'},
             {field:'timer', type:'numberbox', op:['equal', 'notequal', 'less', 'lessorequal', 'greater', 'greaterorequal']},
-            {field:'status', type:'combobox', op:['same'], options:{url:'sensor/statusSelect', valueField:'value', textField:'text', editable:false, panelHeight:'auto', panelMaxHeight:'200'}},
+            {field:'status', type:'combobox', op:['same'], options:{url:'sensor/statusList', valueField:'value', textField:'text', editable:false, panelHeight:'auto', panelMaxHeight:'200'}},
             {field:'note', type:'text', op:'contains'}
         ]);
     }else if(page == "attr"){
         $('#attrList').edatagrid({
-            url:'attr/attrSelect',
-            saveUrl:'attr/attrInsert',
-            updateUrl:'attr/attrUpdate',
-            destroyUrl:'attr/attrDelete',
+            url:'attr/selectVByPage',
+            saveUrl:'attr/insert',
+            updateUrl:'attr/update',
+            destroyUrl:'attr/delete',
             remoteFilter:true,
             destroyMsg:{norecord:{title:'警告', msg:'没有选中要删除的记录.'}, confirm:{title:'确认', msg:'确定删除选中的记录么?'}},
             onError:function(index, row){alert(row.msg);},
@@ -196,12 +189,12 @@ function dataList(page){
             }
         });
         $('#attrList').datagrid('enableFilter', [
-            {field:'projectid', type:'combobox', options:{url:'attr/projectSelect', onSelect:onAttrFilterProjectSelect, valueField:'value', textField:'text', editable:false, panelHeight:'auto', panelMaxHeight:'200'}},
-            {field:'platid', type:'combobox', options:{url:'attr/platSelect', onLoadSuccess:onAttrFilterPlatLoad, onSelect:onAttrFilterPlatSelect, valueField:'value', textField:'text', editable:false, panelHeight:'auto', panelMaxHeight:'200'}},
-            {field:'bimid', type:'combobox', options:{url:'attr/bimSelect', onLoadSuccess:onAttrFilterBimLoad, onSelect:onAttrFilterBimSelect, valueField:'value', textField:'text', editable:false, panelHeight:'auto', panelMaxHeight:'200'}},
-            {field:'sensorid', type:'combobox', op:['same'], options:{url:'attr/sensorSelect', onLoadSuccess:onAttrSensorLoad, valueField:'value', textField:'text', editable:false, panelHeight:'auto', panelMaxHeight:'200'}},
+            {field:'projectid', type:'combobox', options:{url:'project/list', onSelect:onAttrFilterProjectSelect, valueField:'value', textField:'text', editable:false, panelHeight:'auto', panelMaxHeight:'200'}},
+            {field:'platid', type:'combobox', options:{url:'plat/list', onLoadSuccess:onAttrFilterPlatLoad, onSelect:onAttrFilterPlatSelect, valueField:'value', textField:'text', editable:false, panelHeight:'auto', panelMaxHeight:'200'}},
+            {field:'bimid', type:'combobox', options:{url:'bim/list', onLoadSuccess:onAttrFilterBimLoad, onSelect:onAttrFilterBimSelect, valueField:'value', textField:'text', editable:false, panelHeight:'auto', panelMaxHeight:'200'}},
+            {field:'sensorid', type:'combobox', op:['same'], options:{url:'sensor/list', onLoadSuccess:onAttrSensorLoad, valueField:'value', textField:'text', editable:false, panelHeight:'auto', panelMaxHeight:'200'}},
             {field:'protocol', type:'text', op:'contains'},
-            {field:'type', type:'combobox', op:['same'], options:{url:'attr/typeSelect', valueField:'value', textField:'text', editable:false, panelHeight:'auto', panelMaxHeight:'200'}},
+            {field:'type', type:'combobox', op:['same'], options:{url:'attr/typeList', valueField:'value', textField:'text', editable:false, panelHeight:'auto', panelMaxHeight:'200'}},
             {field:'unit', type:'text', op:'contains'},
             {field:'thresholdl', type:'numberbox', options:{precision:2}, op:['equal', 'notequal', 'less', 'lessorequal', 'greater', 'greaterorequal']},
             {field:'thresholdm', type:'numberbox', options:{precision:2}, op:['equal', 'notequal', 'less', 'lessorequal', 'greater', 'greaterorequal']},

@@ -10,8 +10,8 @@
 	<thead>
 		<tr>
 			<th field="item" width="200px" sortable="true" editor="{type:'validatebox',options:{required:true}}">区域名</th>
-			<th field="projectid" width="200px" sortable="true" editor="{type: 'combobox', options:{url:'project/combobox', valueField:'value', textField:'text', editable:false, panelHeight:'auto', panelMaxHeight:'200'}}" data-options="formatter:platProjectFormatter">项目</th>
-			<th field="province" width="200px" sortable="true" editor="{type: 'combobox', options:{url:'plat/provinceCombobox', valueField:'value', textField:'text', editable:false, panelHeight:'auto', panelMaxHeight:'200'}}">省</th>
+			<th field="projectid" width="200px" sortable="true" editor="{type: 'combobox', options:{url:'project/list', valueField:'value', textField:'text', editable:false, panelHeight:'auto', panelMaxHeight:'200'}}" data-options="formatter:platProjectFormatter">项目</th>
+			<th field="province" width="200px" sortable="true" editor="{type: 'combobox', options:{url:'plat/provinceList', valueField:'value', textField:'text', editable:false, panelHeight:'auto', panelMaxHeight:'200'}}">省</th>
 			<th field="city" width="200px" sortable="true" editor="text">市</th>
 			<th field="longitude" width="200px" sortable="true" editor="{type:'numberbox', options:{precision:6}}">中心经度</th>
 			<th field="latitude" width="200px" sortable="true" editor="{type:'numberbox', options:{precision:6}}">中心纬度</th>

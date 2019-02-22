@@ -1,15 +1,9 @@
 package com.iot.action;
 
-import com.alibaba.fastjson.JSONArray;
 import com.github.pagehelper.PageInfo;
-import com.iot.bean.Esensor;
-import com.iot.bean.Esensorv;
-import com.iot.bean.Select;
-import com.iot.service.EbimService;
+import com.iot.bean.*;
 import com.iot.service.EsensorService;
-import com.iot.service.EplatService;
 import com.iot.service.EprojectService;
-import org.apache.commons.beanutils.BeanMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -24,14 +18,11 @@ public class EsensorAction {
 	@Resource
 	private EsensorService esensorService;
 	@Resource
-	private EbimService ebimService;
+	private EprojectService eprojectService;
 
-	@RequestMapping(value = "/select", method = RequestMethod.GET)
-	public Map<Object, Object> select(){
-		List<Esensor> list = esensorService.selectAll();
-		Map<Object, Object> map = new HashMap<Object, Object>();
-		map.put("list", list);
-		return map;
+	@RequestMapping(value = "/selectAll", method = RequestMethod.GET)
+	public List<Esensor> selectAll(){
+		return esensorService.selectAll();
 	}
 
 	@RequestMapping(value = "/selectByPage", method = RequestMethod.GET)
@@ -45,27 +36,18 @@ public class EsensorAction {
 	}
 
 	@RequestMapping(value = "/selectBySql", method = RequestMethod.GET)
-	public Map<Object, Object> selectBySql(String sql){
-		List<Esensor> list = esensorService.selectBySql(sql);
-		Map<Object, Object> map = new HashMap<Object, Object>();
-		map.put("list", list);
-		return map;
+	public List<Esensor> selectBySql(String sql){
+		return esensorService.selectBySql(sql);
 	}
 
 	@RequestMapping(value = "/selectByPrimaryKey", method = RequestMethod.GET)
-	public Map<Object, Object> selectByPrimaryKey(Integer id){
-		Esensor object = esensorService.selectByPrimaryKey(id);
-		Map<Object, Object> map = new HashMap<Object, Object>();
-		map.put("object", object);
-		return map;
+	public Esensor selectByPrimaryKey(Integer id){
+		return esensorService.selectByPrimaryKey(id);
 	}
 
 	@RequestMapping(value = "/selectVAll", method = RequestMethod.GET)
-	public Map<Object, Object> selectVAll(){
-		List<Esensorv> list = esensorService.selectVAll();
-		Map<Object, Object> map = new HashMap<Object, Object>();
-		map.put("list", list);
-		return map;
+	public List<Esensorv>  selectVAll(){
+		return esensorService.selectVAll();
 	}
 
 	@RequestMapping(value = "/selectVByPage", method = RequestMethod.GET)
@@ -79,27 +61,18 @@ public class EsensorAction {
 	}
 
 	@RequestMapping(value = "/selectVBySql", method = RequestMethod.GET)
-	public Map<Object, Object> selectVBySql(String sql){
-		List<Esensorv> list = esensorService.selectVBySql(sql);
-		Map<Object, Object> map = new HashMap<Object, Object>();
-		map.put("list", list);
-		return map;
+	public List<Esensorv> selectVBySql(String sql){
+		return esensorService.selectVBySql(sql);
 	}
 
 	@RequestMapping(value = "/selectVByPrimaryKey", method = RequestMethod.GET)
-	public Map<Object, Object> selectVByPrimaryKey(Integer id){
-		Esensorv object = esensorService.selectVByPrimaryKey(id);
-		Map<Object, Object> map = new HashMap<Object, Object>();
-		map.put("object", object);
-		return map;
+	public Esensorv selectVByPrimaryKey(Integer id){
+		return esensorService.selectVByPrimaryKey(id);
 	}
 
 	@RequestMapping(value = "/selectSubAll", method = RequestMethod.GET)
-	public Map<Object, Object> selectSubAll(Integer projectid){
-		List<Esensor> list = esensorService.selectSubAll(projectid);
-		Map<Object, Object> map = new HashMap<Object, Object>();
-		map.put("list", list);
-		return map;
+	public List<Esensor> selectSubAll(Integer projectid){
+		return esensorService.selectSubAll(projectid);
 	}
 
 	@RequestMapping(value = "/selectSubByPage", method = RequestMethod.GET)
@@ -113,27 +86,18 @@ public class EsensorAction {
 	}
 
 	@RequestMapping(value = "/selectSubBySql", method = RequestMethod.GET)
-	public Map<Object, Object> selectSubBySql(Integer projectid, String sql){
-		List<Esensor> list = esensorService.selectSubBySql(projectid, sql);
-		Map<Object, Object> map = new HashMap<Object, Object>();
-		map.put("list", list);
-		return map;
+	public List<Esensor> selectSubBySql(Integer projectid, String sql){
+		return esensorService.selectSubBySql(projectid, sql);
 	}
 
 	@RequestMapping(value = "/selectSubByPrimaryKey", method = RequestMethod.GET)
-	public Map<Object, Object> selectSubByPrimaryKey(Integer projectid, Integer id){
-		Esensor object = esensorService.selectSubByPrimaryKey(projectid, id);
-		Map<Object, Object> map = new HashMap<Object, Object>();
-		map.put("object", object);
-		return map;
+	public Esensor selectSubByPrimaryKey(Integer projectid, Integer id){
+		return esensorService.selectSubByPrimaryKey(projectid, id);
 	}
 
 	@RequestMapping(value = "/selectSubVAll", method = RequestMethod.GET)
-	public Map<Object, Object> selectSubVAll(Integer projectid){
-		List<Esensorv> list = esensorService.selectSubVAll(projectid);
-		Map<Object, Object> map = new HashMap<Object, Object>();
-		map.put("list", list);
-		return map;
+	public List<Esensorv> selectSubVAll(Integer projectid){
+		return esensorService.selectSubVAll(projectid);
 	}
 
 	@RequestMapping(value = "/selectSubVByPage", method = RequestMethod.GET)
@@ -147,117 +111,45 @@ public class EsensorAction {
 	}
 
 	@RequestMapping(value = "/selectSubVBySql", method = RequestMethod.GET)
-	public Map<Object, Object> selectSubVBySql(Integer projectid, String sql){
-		List<Esensorv> list = esensorService.selectSubVBySql(projectid, sql);
-		Map<Object, Object> map = new HashMap<Object, Object>();
-		map.put("list", list);
-		return map;
+	public List<Esensorv> selectSubVBySql(Integer projectid, String sql){
+		return esensorService.selectSubVBySql(projectid, sql);
 	}
 
 	@RequestMapping(value = "/selectSubVByPrimaryKey", method = RequestMethod.GET)
-	public Map<Object, Object> selectSubVByPrimaryKey(Integer projectid, Integer id){
-		Esensorv object = esensorService.selectSubVByPrimaryKey(projectid, id);
-		Map<Object, Object> map = new HashMap<Object, Object>();
-		map.put("object", object);
-		return map;
+	public Esensorv selectSubVByPrimaryKey(Integer projectid, Integer id){
+		return esensorService.selectSubVByPrimaryKey(projectid, id);
 	}
 
 	@RequestMapping(value = "/insert", method = RequestMethod.POST)
-	public Map<Object, Object> insert(String item, Integer bimid, String protocol, Integer timer, String status, String note){
-		Map<Object, Object> map = new HashMap<Object, Object>();
-		if(isValidate(item, bimid,0)){
-			Esensorv sensor = new Esensorv();
-			sensor.setItem(item);
-			sensor.setBimid(bimid);
-			sensor.setProtocol(protocol);
-			sensor.setTimer(timer);
-			sensor.setStatus(status);
-			sensor.setNote(note);
-			esensorService.insert(sensor);
-			sensor.setBim(ebimService.selectVByPrimaryKey(bimid));
-			map = new BeanMap(sensor);
-		}else{
-			map.put("isError", true);
-			map.put("msg", "该传感器已存在");
-		}
-		return map;
+	public Esensorv insert(String item, Integer projectid, String protocol, Integer timer, String note){
+		Esensorv sensor = new Esensorv();
+		sensor.setItem(item);
+		sensor.setProjectid(projectid);
+		sensor.setProtocol(protocol);
+		sensor.setTimer(timer);
+		sensor.setNote(note);
+		esensorService.insert(sensor);
+		sensor.setProject(eprojectService.selectByPrimaryKey(projectid));
+		return sensor;
 	}
 
 	@RequestMapping(value = "/update", method = RequestMethod.PUT)
-	public Map<Object, Object> update(Integer id, String item, Integer bimid, String protocol, Integer timer, String status, String note){
-		Map<Object, Object> map = new HashMap<Object, Object>();
-		if(isValidate(item, bimid, id)){
-			Esensorv sensor = esensorService.selectVByPrimaryKey(id);
-			if(sensor != null){
-				sensor.setItem(item);
-				sensor.setBimid(bimid);
-				sensor.setProtocol(protocol);
-				sensor.setTimer(timer);
-				sensor.setStatus(status);
-				sensor.setNote(note);
-				esensorService.updateByPrimaryKey(sensor);
-				sensor.setBim(ebimService.selectVByPrimaryKey(bimid));
-				map = new BeanMap(sensor);
-			}
-		}else{
-			map.put("isError", true);
-			map.put("msg", "该用户名已存在");
+	public Esensorv update(Integer id, String item, Integer projectid, String protocol, Integer timer, String note){
+		Esensorv sensor = esensorService.selectVByPrimaryKey(id);
+		if(sensor != null) {
+			sensor.setItem(item);
+			sensor.setProjectid(projectid);
+			sensor.setProtocol(protocol);
+			sensor.setTimer(timer);
+			sensor.setNote(note);
+			esensorService.updateByPrimaryKey(sensor);
+			sensor.setProject(eprojectService.selectByPrimaryKey(projectid));
 		}
-		return map;
+		return sensor;
 	}
 
 	@RequestMapping(value = "/delete", method = RequestMethod.DELETE)
-	public Map<Object, Object> delete(Integer id){
-		Map<Object, Object> map = new HashMap<Object, Object>();
-		esensorService.deleteByPrimaryKey(id);
-		map.put("success", true);
-		return map;
-	}
-
-	@RequestMapping(value = "/statusCombobox", method = RequestMethod.GET)
-	public JSONArray statusCombobox(){
-		JSONArray jsonArray = new JSONArray();
-		Select select = new Select();
-		select.setText("正常");
-		select.setValue("正常");
-		jsonArray.add(select);
-		select = new Select();
-		select.setText("维修");
-		select.setValue("维修");
-		jsonArray.add(select);
-		select = new Select();
-		select.setText("低级告警");
-		select.setValue("低级告警");
-		jsonArray.add(select);
-		select = new Select();
-		select.setText("中级告警");
-		select.setValue("中级告警");
-		jsonArray.add(select);
-		select = new Select();
-		select.setText("高级告警");
-		select.setValue("高级告警");
-		jsonArray.add(select);
-		return jsonArray;
-	}
-
-	@RequestMapping(value = "/combobox", method = RequestMethod.GET)
-	public JSONArray combobox(Integer bimid){
-		JSONArray jsonArray = new JSONArray();
-		List<Esensor> list = esensorService.selectBySql("bimid=" + bimid);
-		for(int i = 0; i < list.size(); i++){
-			Select select = new Select();
-			select.setText(list.get(i).getItem());
-			select.setValue(String.valueOf(list.get(i).getId()));
-			jsonArray.add(select);
-		}
-		return jsonArray;
-	}
-
-	public boolean isValidate(String item, Integer bimid, Integer id){
-		List<Esensor> list = esensorService.selectBySql("item='" + item + "' and bimid=" + bimid + " and id!=" + id);
-		if(list.size() > 0)
-			return false;
-		else
-			return true;
+	public int delete(Integer id){
+		return esensorService.deleteByPrimaryKey(id);
 	}
 }

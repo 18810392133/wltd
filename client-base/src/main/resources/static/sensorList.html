@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<table id="sensorList" style="width:100%;"
+		toolbar="#sensorToolbar" idField="id" pagination="true"
+		rownumbers="true" fitColumns="true" singleSelect="false" ctrlSelect="true"
+		pageSize="20" remoteSort="true" sortName="id" sortOrder="desc">
+	<thead>
+		<tr>
+			<th field="item" width="200px" sortable="true" editor="{type:'validatebox',options:{required:true}}">传感器名</th>
+			<th field="projectid" width="200px" editor="{type: 'combobox', options:{url:'project/list', onSelect:onSensorProjectSelect, valueField:'value', textField:'text', editable:false, panelHeight:'auto', panelMaxHeight:'200'}}" data-options="formatter:sensorProjectFormatter">项目</th>
+			<th field="platid" width="200px" editor="{type: 'combobox', options:{url:'', onLoadSuccess:onSensorPlatLoad, onSelect:onSensorPlatSelect, valueField:'value', textField:'text', editable:false, panelHeight:'auto', panelMaxHeight:'200'}}" data-options="formatter:sensorPlatFormatter">区域</th>
+			<th field="bimid" width="200px" sortable="true" editor="{type: 'combobox', options:{url:'', onLoadSuccess:onSensorBimLoad, valueField:'value', textField:'text', editable:false, panelHeight:'auto', panelMaxHeight:'200'}}" data-options="formatter:sensorBimFormatter">节点</th>
+			<th field="protocol" width="200px" sortable="true" editor="{type:'validatebox'}">数据接口</th>
+			<th field="timer" width="200px" sortable="true" editor="numberbox">时间间隔</th>
+			<th field="status" width="200px" sortable="true" editor="{type: 'combobox', options:{url:'sensor/statusList', valueField:'value', textField:'text', editable:false, panelHeight:'auto', panelMaxHeight:'200'}}">状态</th>
+			<th field="note" width="200px" sortable="true" editor="text">备注</th>
+		</tr>
+	</thead>
+</table>
+<div id="sensorToolbar" style="width:100%;">
+	<span class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="$('#sensorList').edatagrid('unselectAll');$('#sensorList').edatagrid('addRow',0)">新增</span>
+	<span class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="$('#sensorList').edatagrid('destroyRow')">删除</span>
+	<span class="easyui-linkbutton" iconCls="icon-save" plain="true" onclick="$('#sensorList').edatagrid('saveRow')">保存</span>
+	<span class="easyui-linkbutton" iconCls="icon-undo" plain="true" onclick="$('#sensorList').edatagrid('cancelRow')">取消</span>
+	<span class="easyui-linkbutton" iconCls="icon-reload" plain="true" onclick="$('#sensorList').edatagrid('removeFilterRule');$('#sensorList').edatagrid('doFilter')">刷新</span>
+</div>
+</body>  
+</html> 

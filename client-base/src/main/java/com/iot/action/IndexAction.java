@@ -9,6 +9,6 @@ import javax.servlet.http.HttpServletRequest;
 public class IndexAction {
     @RequestMapping("/")
     public String login(){
-        return "login";
+        return "forward:/index.html";
     }
 }

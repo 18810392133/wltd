@@ -10,11 +10,11 @@
 	<thead>
 		<tr>
 			<th field="item" width="200px" sortable="true" editor="{type:'validatebox',options:{required:true}}">节点名</th>
-			<th field="projectid" width="200px" editor="{type: 'combobox', options:{url:'project/combobox', onSelect:onBimProjectSelect, valueField:'value', textField:'text', editable:false, panelHeight:'auto', panelMaxHeight:'200'}}" data-options="formatter:bimProjectFormatter">项目</th>
+			<th field="projectid" width="200px" editor="{type: 'combobox', options:{url:'project/list', onSelect:onBimProjectSelect, valueField:'value', textField:'text', editable:false, panelHeight:'auto', panelMaxHeight:'200'}}" data-options="formatter:bimProjectFormatter">项目</th>
 			<th field="platid" width="200px" sortable="true" editor="{type: 'combobox', options:{url:'', onLoadSuccess:onBimPlatLoad, valueField:'value', textField:'text', editable:false, panelHeight:'auto', panelMaxHeight:'200'}}" data-options="formatter:bimPlatFormatter">区域</th>
 			<th field="longitude" width="200px" sortable="true" editor="{type:'numberbox', options:{precision:6}}">经度</th>
 			<th field="latitude" width="200px" sortable="true" editor="{type:'numberbox', options:{precision:6}}">纬度</th>
-			<th field="status" width="200px" sortable="true" editor="{type: 'combobox', options:{url:'bim/statusCombobox', valueField:'value', textField:'text', editable:false, panelHeight:'auto', panelMaxHeight:'200'}}">状态</th>
+			<th field="status" width="200px" sortable="true" editor="{type: 'combobox', options:{url:'bim/statusList', valueField:'value', textField:'text', editable:false, panelHeight:'auto', panelMaxHeight:'200'}}">状态</th>
 			<th field="note" width="200px" sortable="true" editor="text">备注</th>
 		</tr>
 	</thead>
