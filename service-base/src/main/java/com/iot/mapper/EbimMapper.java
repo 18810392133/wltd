@@ -10,7 +10,7 @@ import java.util.List;
 public interface EbimMapper {
     @Select({
             "select",
-            "id, item, platid, longitude, latitude, status, modelfile, note",
+            "id, item, platid, longitude, latitude, status, level, modelfile, note",
             "from ebim"
     })
     @Results({
@@ -20,6 +20,7 @@ public interface EbimMapper {
             @Result(column="longitude", property="longitude", jdbcType=JdbcType.VARCHAR),
             @Result(column="latitude", property="latitude", jdbcType=JdbcType.VARCHAR),
             @Result(column="status", property="status", jdbcType=JdbcType.VARCHAR),
+            @Result(column="level", property="level", jdbcType=JdbcType.INTEGER),
             @Result(column="modelfile", property="modelfile", jdbcType=JdbcType.VARCHAR),
             @Result(column="note", property="note", jdbcType=JdbcType.VARCHAR)
     })
@@ -27,7 +28,7 @@ public interface EbimMapper {
 
     @Select({
             "select",
-            "id, item, platid, longitude, latitude, status, modelfile, note",
+            "id, item, platid, longitude, latitude, status, level, modelfile, note",
             "from ebim",
             "where ${sql}"
     })
@@ -38,6 +39,7 @@ public interface EbimMapper {
             @Result(column="longitude", property="longitude", jdbcType=JdbcType.VARCHAR),
             @Result(column="latitude", property="latitude", jdbcType=JdbcType.VARCHAR),
             @Result(column="status", property="status", jdbcType=JdbcType.VARCHAR),
+            @Result(column="level", property="level", jdbcType=JdbcType.INTEGER),
             @Result(column="modelfile", property="modelfile", jdbcType=JdbcType.VARCHAR),
             @Result(column="note", property="note", jdbcType=JdbcType.VARCHAR)
     })
@@ -45,7 +47,7 @@ public interface EbimMapper {
 
     @Select({
             "select",
-            "id, item, platid, longitude, latitude, status, modelfile, note",
+            "id, item, platid, longitude, latitude, status, level, modelfile, note",
             "from ebim",
             "where id = #{id,jdbcType=INTEGER}"
     })
@@ -56,6 +58,7 @@ public interface EbimMapper {
             @Result(column="longitude", property="longitude", jdbcType=JdbcType.VARCHAR),
             @Result(column="latitude", property="latitude", jdbcType=JdbcType.VARCHAR),
             @Result(column="status", property="status", jdbcType=JdbcType.VARCHAR),
+            @Result(column="level", property="level", jdbcType=JdbcType.INTEGER),
             @Result(column="modelfile", property="modelfile", jdbcType=JdbcType.VARCHAR),
             @Result(column="note", property="note", jdbcType=JdbcType.VARCHAR)
     })
@@ -63,7 +66,7 @@ public interface EbimMapper {
 
     @Select({
             "select",
-            "id, item, platid, longitude, latitude, status, modelfile, note",
+            "id, item, platid, longitude, latitude, status, level, modelfile, note",
             "from ebim"
     })
     @Results({
@@ -73,6 +76,7 @@ public interface EbimMapper {
             @Result(column="longitude", property="longitude", jdbcType=JdbcType.VARCHAR),
             @Result(column="latitude", property="latitude", jdbcType=JdbcType.VARCHAR),
             @Result(column="status", property="status", jdbcType=JdbcType.VARCHAR),
+            @Result(column="level", property="level", jdbcType=JdbcType.INTEGER),
             @Result(column="modelfile", property="modelfile", jdbcType=JdbcType.VARCHAR),
             @Result(column="note", property="note", jdbcType=JdbcType.VARCHAR),
             @Result(column = "platid", property = "plat",
@@ -82,7 +86,7 @@ public interface EbimMapper {
 
     @Select({
             "select",
-            "id, item, platid, longitude, latitude, status, modelfile, note",
+            "id, item, platid, longitude, latitude, status, level, modelfile, note",
             "from ebim",
             "where ${sql}"
     })
@@ -93,6 +97,7 @@ public interface EbimMapper {
             @Result(column="longitude", property="longitude", jdbcType=JdbcType.VARCHAR),
             @Result(column="latitude", property="latitude", jdbcType=JdbcType.VARCHAR),
             @Result(column="status", property="status", jdbcType=JdbcType.VARCHAR),
+            @Result(column="level", property="level", jdbcType=JdbcType.INTEGER),
             @Result(column="modelfile", property="modelfile", jdbcType=JdbcType.VARCHAR),
             @Result(column="note", property="note", jdbcType=JdbcType.VARCHAR),
             @Result(column = "platid", property = "plat",
@@ -102,7 +107,7 @@ public interface EbimMapper {
 
     @Select({
             "select",
-            "id, item, platid, longitude, latitude, status, modelfile, note",
+            "id, item, platid, longitude, latitude, status, level, modelfile, note",
             "from ebim",
             "where id = #{id,jdbcType=INTEGER}"
     })
@@ -113,6 +118,7 @@ public interface EbimMapper {
             @Result(column="longitude", property="longitude", jdbcType=JdbcType.VARCHAR),
             @Result(column="latitude", property="latitude", jdbcType=JdbcType.VARCHAR),
             @Result(column="status", property="status", jdbcType=JdbcType.VARCHAR),
+            @Result(column="level", property="level", jdbcType=JdbcType.INTEGER),
             @Result(column="modelfile", property="modelfile", jdbcType=JdbcType.VARCHAR),
             @Result(column="note", property="note", jdbcType=JdbcType.VARCHAR),
             @Result(column = "platid", property = "plat",
@@ -122,7 +128,7 @@ public interface EbimMapper {
 
     @Select({
             "select",
-            "ebim.id id, ebim.item item, ebim.platid platid, ebim.longitude longitude, ebim.latitude latitude, ebim.status status, ebim.modelfile modelfile, ebim.note note",
+            "ebim.id id, ebim.item item, ebim.platid platid, ebim.longitude longitude, ebim.latitude latitude, ebim.status status, ebim.level level, ebim.modelfile modelfile, ebim.note note",
             "from ebim, eplat",
             "where ebim.platid = eplat.id and eplat.projectid = #{projectid,jdbcType=INTEGER}"
     })
@@ -133,6 +139,7 @@ public interface EbimMapper {
             @Result(column="longitude", property="longitude", jdbcType=JdbcType.VARCHAR),
             @Result(column="latitude", property="latitude", jdbcType=JdbcType.VARCHAR),
             @Result(column="status", property="status", jdbcType=JdbcType.VARCHAR),
+            @Result(column="level", property="level", jdbcType=JdbcType.INTEGER),
             @Result(column="modelfile", property="modelfile", jdbcType=JdbcType.VARCHAR),
             @Result(column="note", property="note", jdbcType=JdbcType.VARCHAR)
     })
@@ -140,7 +147,7 @@ public interface EbimMapper {
 
     @Select({
             "select",
-            "ebim.id id, ebim.item item, ebim.platid platid, ebim.longitude longitude, ebim.latitude latitude, ebim.status status, ebim.modelfile modelfile, ebim.note note",
+            "ebim.id id, ebim.item item, ebim.platid platid, ebim.longitude longitude, ebim.latitude latitude, ebim.status status, ebim.level level, ebim.modelfile modelfile, ebim.note note",
             "from ebim, eplat",
             "where ebim.platid = eplat.id and eplat.projectid = #{projectid,jdbcType=INTEGER} and ${sql}"
     })
@@ -151,6 +158,7 @@ public interface EbimMapper {
             @Result(column="longitude", property="longitude", jdbcType=JdbcType.VARCHAR),
             @Result(column="latitude", property="latitude", jdbcType=JdbcType.VARCHAR),
             @Result(column="status", property="status", jdbcType=JdbcType.VARCHAR),
+            @Result(column="level", property="level", jdbcType=JdbcType.INTEGER),
             @Result(column="modelfile", property="modelfile", jdbcType=JdbcType.VARCHAR),
             @Result(column="note", property="note", jdbcType=JdbcType.VARCHAR)
     })
@@ -158,7 +166,7 @@ public interface EbimMapper {
 
     @Select({
             "select",
-            "ebim.id id, ebim.item item, ebim.platid platid, ebim.longitude longitude, ebim.latitude latitude, ebim.status status, ebim.modelfile modelfile, ebim.note note",
+            "ebim.id id, ebim.item item, ebim.platid platid, ebim.longitude longitude, ebim.latitude latitude, ebim.status status, ebim.level level, ebim.modelfile modelfile, ebim.note note",
             "from ebim, eplat",
             "where ebim.platid = eplat.id and eplat.projectid = #{projectid,jdbcType=INTEGER} and ebim.id = #{id,jdbcType=INTEGER}"
     })
@@ -169,6 +177,7 @@ public interface EbimMapper {
             @Result(column="longitude", property="longitude", jdbcType=JdbcType.VARCHAR),
             @Result(column="latitude", property="latitude", jdbcType=JdbcType.VARCHAR),
             @Result(column="status", property="status", jdbcType=JdbcType.VARCHAR),
+            @Result(column="level", property="level", jdbcType=JdbcType.INTEGER),
             @Result(column="modelfile", property="modelfile", jdbcType=JdbcType.VARCHAR),
             @Result(column="note", property="note", jdbcType=JdbcType.VARCHAR)
     })
@@ -176,7 +185,7 @@ public interface EbimMapper {
 
     @Select({
             "select",
-            "ebim.id id, ebim.item item, ebim.platid platid, ebim.longitude longitude, ebim.latitude latitude, ebim.status status, ebim.modelfile modelfile, ebim.note note",
+            "ebim.id id, ebim.item item, ebim.platid platid, ebim.longitude longitude, ebim.latitude latitude, ebim.status status, ebim.level level, ebim.modelfile modelfile, ebim.note note",
             "from ebim, eplat",
             "where ebim.platid = eplat.id and eplat.projectid = #{projectid,jdbcType=INTEGER}"
     })
@@ -187,6 +196,7 @@ public interface EbimMapper {
             @Result(column="longitude", property="longitude", jdbcType=JdbcType.VARCHAR),
             @Result(column="latitude", property="latitude", jdbcType=JdbcType.VARCHAR),
             @Result(column="status", property="status", jdbcType=JdbcType.VARCHAR),
+            @Result(column="level", property="level", jdbcType=JdbcType.INTEGER),
             @Result(column="modelfile", property="modelfile", jdbcType=JdbcType.VARCHAR),
             @Result(column="note", property="note", jdbcType=JdbcType.VARCHAR),
             @Result(column = "platid", property = "plat",
@@ -196,7 +206,7 @@ public interface EbimMapper {
 
     @Select({
             "select",
-            "ebim.id id, ebim.item item, ebim.platid platid, ebim.longitude longitude, ebim.latitude latitude, ebim.status status, ebim.modelfile modelfile, ebim.note note",
+            "ebim.id id, ebim.item item, ebim.platid platid, ebim.longitude longitude, ebim.latitude latitude, ebim.status status, ebim.level level, ebim.modelfile modelfile, ebim.note note",
             "from ebim, eplat",
             "where ebim.platid = eplat.id and eplat.projectid = #{projectid,jdbcType=INTEGER} and ${sql}"
     })
@@ -207,6 +217,7 @@ public interface EbimMapper {
             @Result(column="longitude", property="longitude", jdbcType=JdbcType.VARCHAR),
             @Result(column="latitude", property="latitude", jdbcType=JdbcType.VARCHAR),
             @Result(column="status", property="status", jdbcType=JdbcType.VARCHAR),
+            @Result(column="level", property="level", jdbcType=JdbcType.INTEGER),
             @Result(column="modelfile", property="modelfile", jdbcType=JdbcType.VARCHAR),
             @Result(column="note", property="note", jdbcType=JdbcType.VARCHAR),
             @Result(column = "platid", property = "plat",
@@ -216,7 +227,7 @@ public interface EbimMapper {
 
     @Select({
             "select",
-            "ebim.id id, ebim.item item, ebim.platid platid, ebim.longitude longitude, ebim.latitude latitude, ebim.status status, ebim.modelfile modelfile, ebim.note note",
+            "ebim.id id, ebim.item item, ebim.platid platid, ebim.longitude longitude, ebim.latitude latitude, ebim.status status, ebim.level level, ebim.modelfile modelfile, ebim.note note",
             "from ebim, eplat",
             "where ebim.platid = eplat.id and eplat.projectid = #{projectid,jdbcType=INTEGER} and ebim.id = #{id,jdbcType=INTEGER}"
     })
@@ -227,6 +238,7 @@ public interface EbimMapper {
             @Result(column="longitude", property="longitude", jdbcType=JdbcType.VARCHAR),
             @Result(column="latitude", property="latitude", jdbcType=JdbcType.VARCHAR),
             @Result(column="status", property="status", jdbcType=JdbcType.VARCHAR),
+            @Result(column="level", property="level", jdbcType=JdbcType.INTEGER),
             @Result(column="modelfile", property="modelfile", jdbcType=JdbcType.VARCHAR),
             @Result(column="note", property="note", jdbcType=JdbcType.VARCHAR),
             @Result(column = "platid", property = "plat",
@@ -243,13 +255,14 @@ public interface EbimMapper {
     @Insert({
         "insert into ebim (id, item, ",
         "platid, longitude, ",
-        "latitude, status, ",
+        "latitude, status, level, ",
         "modelfile, note)",
         "values (#{id,jdbcType=INTEGER}, #{item,jdbcType=VARCHAR}, ",
         "#{platid,jdbcType=INTEGER}, #{longitude,jdbcType=VARCHAR}, ",
-        "#{latitude,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, ",
+        "#{latitude,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, #{level,jdbcType=INTEGER}, ",
         "#{modelfile,jdbcType=VARCHAR}, #{note,jdbcType=VARCHAR})"
     })
+    @Options(useGeneratedKeys = true, keyProperty = "id")
     int insert(Ebim record);
 
     @Update({
@@ -259,6 +272,7 @@ public interface EbimMapper {
           "longitude = #{longitude,jdbcType=VARCHAR},",
           "latitude = #{latitude,jdbcType=VARCHAR},",
           "status = #{status,jdbcType=VARCHAR},",
+          "level = #{level,jdbcType=INTEGER},",
           "modelfile = #{modelfile,jdbcType=VARCHAR},",
           "note = #{note,jdbcType=VARCHAR}",
         "where id = #{id,jdbcType=INTEGER}"

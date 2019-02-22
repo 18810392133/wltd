@@ -67,6 +67,7 @@ public interface EprojectMapper {
         "#{fileurl,jdbcType=VARCHAR}, #{servicename,jdbcType=VARCHAR}, ",
         "#{dburl,jdbcType=VARCHAR}, #{detail,jdbcType=LONGVARCHAR})"
     })
+    @Options(useGeneratedKeys = true, keyProperty = "id")
     int insert(Eproject record);
 
     @Update({

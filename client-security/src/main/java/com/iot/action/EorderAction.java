@@ -3,8 +3,10 @@ package com.iot.action;
 import com.alibaba.fastjson.JSONArray;
 import com.iot.bean.Eorder;
 import com.iot.bean.Eorderv;
+import com.iot.bean.Euserdevice;
 import com.iot.bean.Select;
 import com.iot.service.EorderService;
+import com.iot.service.EuserdeviceService;
 import com.iot.util.AuthToken;
 import org.apache.commons.beanutils.BeanMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,6 +22,86 @@ import java.util.Map;
 public class EorderAction {
     @Resource
     private EorderService eorderService;
+    @Resource
+    private EuserdeviceService euserdeviceService;
+
+    @AuthToken
+    @RequestMapping(value = "/selectUserOrder")
+    public Map<Object, Object> selectUserOrder(Integer userid){
+        Map<Object, Object> map = new HashMap<Object, Object>();
+        String devices = "";
+        List<Euserdevice> userdeviceList = euserdeviceService.selectBySql("userid=" + userid);
+        for(int i = 0; i < userdeviceList.size(); i++){
+            if(i == userdeviceList.size() - 1){
+                devices += userdeviceList.get(i).getDeviceid();
+            }else{
+                devices += userdeviceList.get(i).getDeviceid() + ",";
+            }
+        }
+        if(devices.isEmpty()){
+            map.put("list", null);
+        }else{
+            devices = "(" + devices + ")";
+            List<Eorderv> list = eorderService.selectVByDevices(devices);
+            map.put("list", list);
+        }
+        return map;
+    }
+
+    @AuthToken
+    @RequestMapping(value = "/selectUserDeviceOrder")
+    public Map<Object, Object> selectUserDeviceOrder(Integer userid, Integer deviceid){
+        Map<Object, Object> map = new HashMap<Object, Object>();
+        List<Euserdevice> userdeviceList = euserdeviceService.selectBySql("userid=" + userid + " and deviceid=" + deviceid);
+
+        if(userdeviceList.size() > 0){
+            List<Eorderv> list = eorderService.selectVByDevice(deviceid);
+            map.put("list", list);
+        }else{
+            map.put("list", null);
+        }
+        return map;
+    }
+
+    @AuthToken
+    @RequestMapping(value = "/takeOrder")
+    public Map<Object, Object> takeOrder(Integer id, Integer userid){
+        Map<Object, Object> map = new HashMap<Object, Object>();
+        Eorder order = eorderService.selectByPrimaryKey(id);
+        if(order != null){
+            if(order.getStatus().equals("告警")){
+                map.put("isSuccess", true);
+                map.put("object", eorderService.update(id, order.getItem(), order.getDataid(), userid, "维修", order.getLevel(), order.getType(), order.getTime(), order.getNote()));
+            }else{
+                map.put("isSuccess", false);
+                map.put("msg", "订单已被他人处理");
+            }
+        }else{
+            map.put("isSuccess", false);
+            map.put("msg", "无效订单");
+        }
+        return map;
+    }
+
+    @AuthToken
+    @RequestMapping(value = "/submitOrder")
+    public Map<Object, Object> submitOrder(Integer id, Integer userid, String status, String note){
+        Map<Object, Object> map = new HashMap<Object, Object>();
+        Eorder order = eorderService.selectByPrimaryKey(id);
+        if(order != null){
+            if(order.getUserid().equals(userid)){
+                map.put("isSuccess", true);
+                map.put("object", eorderService.update(id, order.getItem(), order.getDataid(), userid, status, order.getLevel(), order.getType(), order.getTime(), note));
+            }else{
+                map.put("isSuccess", false);
+                map.put("msg", "无权处理该工单");
+            }
+        }else{
+            map.put("isSuccess", false);
+            map.put("msg", "无效订单");
+        }
+        return map;
+    }
 
     @AuthToken
     @RequestMapping(value = "/selectAll")

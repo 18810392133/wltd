@@ -35,6 +35,12 @@ public interface EorderService {
     @RequestMapping(value = "/order/selectVByPrimaryKey", method = RequestMethod.GET)
     public Eorderv selectVByPrimaryKey(@RequestParam("id") Integer id);
 
+    @RequestMapping(value = "/order/selectVByDevices", method = RequestMethod.GET)
+    public List<Eorderv> selectVByDevices(@RequestParam("devices") String devices);
+
+    @RequestMapping(value = "/order/selectVByDevice", method = RequestMethod.GET)
+    public List<Eorderv> selectVByDevice(@RequestParam("deviceid") Integer deviceid);
+
     @RequestMapping(value = "/order/insert", method = RequestMethod.POST)
     public Eorderv insert(@RequestParam("item") String item, @RequestParam("dataid") Integer dataid, @RequestParam("userid") Integer userid, @RequestParam("status") String status, @RequestParam("level") Integer level, @RequestParam("type") String type, @RequestParam("time") String time, @RequestParam("note") String note);
 

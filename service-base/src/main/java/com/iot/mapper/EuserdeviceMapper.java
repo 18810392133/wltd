@@ -210,6 +210,7 @@ public interface EuserdeviceMapper {
         "values (#{id,jdbcType=INTEGER}, #{userid,jdbcType=INTEGER}, ",
         "#{deviceid,jdbcType=INTEGER}, #{note,jdbcType=VARCHAR})"
     })
+    @Options(useGeneratedKeys = true, keyProperty = "id")
     int insert(Euserdevice record);
 
     @Update({

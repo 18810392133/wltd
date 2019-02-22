@@ -60,10 +60,10 @@ public interface EdeviceService {
     public Edevicev selectSubVByPrimaryKey(@RequestParam("projectid") Integer projectid, @RequestParam("id") Integer id);
 
     @RequestMapping(value = "/device/insert", method = RequestMethod.POST)
-    public Edevicev insert(@RequestParam("item") String item, @RequestParam("sensorid") Integer sensorid, @RequestParam("roomid") Integer roomid, @RequestParam("protocol") String protocol, @RequestParam("status") String status, @RequestParam("note") String note);
+    public Edevicev insert(@RequestParam("item") String item, @RequestParam("sensorid") Integer sensorid, @RequestParam("roomid") Integer roomid, @RequestParam("protocol") String protocol, @RequestParam("status") String status, @RequestParam("level") Integer level, @RequestParam("note") String note);
 
     @RequestMapping(value = "/device/update", method = RequestMethod.PUT)
-    public Edevicev update(@RequestParam("id") Integer id, @RequestParam("item") String item, @RequestParam("sensorid") Integer sensorid, @RequestParam("roomid") Integer roomid, @RequestParam("protocol") String protocol, @RequestParam("status") String status, @RequestParam("note") String note);
+    public Edevicev update(@RequestParam("id") Integer id, @RequestParam("item") String item, @RequestParam("sensorid") Integer sensorid, @RequestParam("roomid") Integer roomid, @RequestParam("protocol") String protocol, @RequestParam("status") String status, @RequestParam("level") Integer level, @RequestParam("note") String note);
 
     @RequestMapping(value = "/device/delete", method = RequestMethod.DELETE)
     public int delete(@RequestParam("id") Integer id);

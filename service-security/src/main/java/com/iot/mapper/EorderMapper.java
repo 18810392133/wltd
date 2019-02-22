@@ -125,6 +125,48 @@ public interface EorderMapper {
     })
     Eorderv selectVByPrimaryKey(Integer id);
 
+    @Select({
+            "select",
+            "eorder.id id, eorder.item item, eorder.dataid dataid, eorder.userid userid, eorder.status status, eorder.level level, eorder.type type, eorder.time time, eorder.note note",
+            "from eorder, edata",
+            "where eorder.dataid = edata.id and edata.deviceid in ${devices}"
+    })
+    @Results({
+            @Result(column="id", property="id", jdbcType=JdbcType.INTEGER, id=true),
+            @Result(column="item", property="item", jdbcType=JdbcType.VARCHAR),
+            @Result(column="dataid", property="dataid", jdbcType=JdbcType.INTEGER),
+            @Result(column="userid", property="userid", jdbcType=JdbcType.INTEGER),
+            @Result(column="status", property="status", jdbcType=JdbcType.VARCHAR),
+            @Result(column="level", property="level", jdbcType=JdbcType.INTEGER),
+            @Result(column="type", property="type", jdbcType=JdbcType.VARCHAR),
+            @Result(column="time", property="time", jdbcType=JdbcType.VARCHAR),
+            @Result(column="note", property="note", jdbcType=JdbcType.VARCHAR),
+            @Result(column = "dataid", property = "data",
+                    one = @One(select = "com.iot.mapper.EdataMapper.selectVByPrimaryKey"))
+    })
+    List<Eorderv> selectVByDevices(@Param("devices") String devices);
+
+    @Select({
+            "select",
+            "eorder.id id, eorder.item item, eorder.dataid dataid, eorder.userid userid, eorder.status status, eorder.level level, eorder.type type, eorder.time time, eorder.note note",
+            "from eorder, edata",
+            "where eorder.dataid = edata.id and edata.deviceid = #{deviceid,jdbcType=INTEGER}"
+    })
+    @Results({
+            @Result(column="id", property="id", jdbcType=JdbcType.INTEGER, id=true),
+            @Result(column="item", property="item", jdbcType=JdbcType.VARCHAR),
+            @Result(column="dataid", property="dataid", jdbcType=JdbcType.INTEGER),
+            @Result(column="userid", property="userid", jdbcType=JdbcType.INTEGER),
+            @Result(column="status", property="status", jdbcType=JdbcType.VARCHAR),
+            @Result(column="level", property="level", jdbcType=JdbcType.INTEGER),
+            @Result(column="type", property="type", jdbcType=JdbcType.VARCHAR),
+            @Result(column="time", property="time", jdbcType=JdbcType.VARCHAR),
+            @Result(column="note", property="note", jdbcType=JdbcType.VARCHAR),
+            @Result(column = "dataid", property = "data",
+                    one = @One(select = "com.iot.mapper.EdataMapper.selectVByPrimaryKey"))
+    })
+    List<Eorderv> selectVByDevice(Integer deviceid);
+
     @Delete({
         "delete from eorder",
         "where id = #{id,jdbcType=INTEGER}"
@@ -141,6 +183,7 @@ public interface EorderMapper {
         "#{status,jdbcType=VARCHAR}, #{level,jdbcType=INTEGER}, #{type,jdbcType=VARCHAR}, #{time,jdbcType=VARCHAR}, ",
         "#{note,jdbcType=VARCHAR})"
     })
+    @Options(useGeneratedKeys = true, keyProperty = "id")
     int insert(Eorder record);
 
     @Update({

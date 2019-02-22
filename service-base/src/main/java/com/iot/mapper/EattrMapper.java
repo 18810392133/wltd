@@ -248,6 +248,7 @@ public interface EattrMapper {
         "#{sensorid,jdbcType=INTEGER}, #{protocol,jdbcType=VARCHAR}, ",
         "#{compare,jdbcType=VARCHAR}, #{unit,jdbcType=VARCHAR}, #{timer,jdbcType=INTEGER}, #{note,jdbcType=VARCHAR})"
     })
+    @Options(useGeneratedKeys = true, keyProperty = "id")
     int insert(Eattr record);
 
     @Update({

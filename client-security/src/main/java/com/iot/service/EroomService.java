@@ -61,10 +61,10 @@ public interface EroomService {
     public Eroomv selectSubVByPrimaryKey(@RequestParam("projectid") Integer projectid, @RequestParam("id") Integer id);
 
     @RequestMapping(value = "/room/insert", method = RequestMethod.POST)
-    public Eroomv insert(@RequestParam("item") String item, @RequestParam("bimid") Integer bimid, @RequestParam("status") String status, @RequestParam("modelfile") String modelfile, @RequestParam("note") String note);
+    public Eroomv insert(@RequestParam("item") String item, @RequestParam("bimid") Integer bimid, @RequestParam("status") String status, @RequestParam("level") Integer level, @RequestParam("modelfile") String modelfile, @RequestParam("note") String note);
 
     @RequestMapping(value = "/room/update", method = RequestMethod.PUT)
-    public Eroomv update(@RequestParam("id") Integer id, @RequestParam("item") String item, @RequestParam("bimid") Integer bimid, @RequestParam("status") String status, @RequestParam("modelfile") String modelfile, @RequestParam("note") String note);
+    public Eroomv update(@RequestParam("id") Integer id, @RequestParam("item") String item, @RequestParam("bimid") Integer bimid, @RequestParam("status") String status, @RequestParam("level") Integer level, @RequestParam("modelfile") String modelfile, @RequestParam("note") String note);
 
     @RequestMapping(value = "/room/delete", method = RequestMethod.DELETE)
     public int delete(@RequestParam("id") Integer id);

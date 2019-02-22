@@ -11,7 +11,7 @@ import java.util.List;
 public interface EdeviceMapper {
     @Select({
             "select",
-            "id, item, sensorid, roomid, protocol, status, note",
+            "id, item, sensorid, roomid, protocol, status, level, note",
             "from edevice"
     })
     @Results({
@@ -21,13 +21,14 @@ public interface EdeviceMapper {
             @Result(column="roomid", property="roomid", jdbcType=JdbcType.INTEGER),
             @Result(column="protocol", property="protocol", jdbcType=JdbcType.VARCHAR),
             @Result(column="status", property="status", jdbcType=JdbcType.VARCHAR),
+            @Result(column="level", property="level", jdbcType=JdbcType.INTEGER),
             @Result(column="note", property="note", jdbcType=JdbcType.VARCHAR)
     })
     List<Edevice> selectAll();
 
     @Select({
             "select",
-            "id, item, sensorid, roomid, protocol, status, note",
+            "id, item, sensorid, roomid, protocol, status, level, note",
             "from edevice",
             "where ${sql}"
     })
@@ -38,13 +39,14 @@ public interface EdeviceMapper {
             @Result(column="roomid", property="roomid", jdbcType=JdbcType.INTEGER),
             @Result(column="protocol", property="protocol", jdbcType=JdbcType.VARCHAR),
             @Result(column="status", property="status", jdbcType=JdbcType.VARCHAR),
+            @Result(column="level", property="level", jdbcType=JdbcType.INTEGER),
             @Result(column="note", property="note", jdbcType=JdbcType.VARCHAR)
     })
     List<Edevice> selectBySql(@Param("sql") String sql);
 
     @Select({
             "select",
-            "id, item, sensorid, roomid, protocol, status, note",
+            "id, item, sensorid, roomid, protocol, status, level, note",
             "from edevice",
             "where id = #{id,jdbcType=INTEGER}"
     })
@@ -55,13 +57,14 @@ public interface EdeviceMapper {
             @Result(column="roomid", property="roomid", jdbcType=JdbcType.INTEGER),
             @Result(column="protocol", property="protocol", jdbcType=JdbcType.VARCHAR),
             @Result(column="status", property="status", jdbcType=JdbcType.VARCHAR),
+            @Result(column="level", property="level", jdbcType=JdbcType.INTEGER),
             @Result(column="note", property="note", jdbcType=JdbcType.VARCHAR)
     })
     Edevice selectByPrimaryKey(Integer id);
 
     @Select({
             "select",
-            "id, item, sensorid, roomid, protocol, status, note",
+            "id, item, sensorid, roomid, protocol, status, level, note",
             "from edevice"
     })
     @Results({
@@ -71,6 +74,7 @@ public interface EdeviceMapper {
             @Result(column="roomid", property="roomid", jdbcType=JdbcType.INTEGER),
             @Result(column="protocol", property="protocol", jdbcType=JdbcType.VARCHAR),
             @Result(column="status", property="status", jdbcType=JdbcType.VARCHAR),
+            @Result(column="level", property="level", jdbcType=JdbcType.INTEGER),
             @Result(column="note", property="note", jdbcType=JdbcType.VARCHAR),
             @Result(column = "sensorid", property = "sensor",
                     one = @One(select = "com.iot.mapper.EsensorMapper.selectVByPrimaryKey")),
@@ -81,7 +85,7 @@ public interface EdeviceMapper {
 
     @Select({
             "select",
-            "id, item, sensorid, roomid, protocol, status, note",
+            "id, item, sensorid, roomid, protocol, status, level, note",
             "from edevice",
             "where ${sql}"
     })
@@ -92,6 +96,7 @@ public interface EdeviceMapper {
             @Result(column="roomid", property="roomid", jdbcType=JdbcType.INTEGER),
             @Result(column="protocol", property="protocol", jdbcType=JdbcType.VARCHAR),
             @Result(column="status", property="status", jdbcType=JdbcType.VARCHAR),
+            @Result(column="level", property="level", jdbcType=JdbcType.INTEGER),
             @Result(column="note", property="note", jdbcType=JdbcType.VARCHAR),
             @Result(column = "sensorid", property = "sensor",
                     one = @One(select = "com.iot.mapper.EsensorMapper.selectVByPrimaryKey")),
@@ -102,7 +107,7 @@ public interface EdeviceMapper {
 
     @Select({
             "select",
-            "id, item, sensorid, roomid, protocol, status, note",
+            "id, item, sensorid, roomid, protocol, status, level, note",
             "from edevice",
             "where id = #{id,jdbcType=INTEGER}"
     })
@@ -113,6 +118,7 @@ public interface EdeviceMapper {
             @Result(column="roomid", property="roomid", jdbcType=JdbcType.INTEGER),
             @Result(column="protocol", property="protocol", jdbcType=JdbcType.VARCHAR),
             @Result(column="status", property="status", jdbcType=JdbcType.VARCHAR),
+            @Result(column="level", property="level", jdbcType=JdbcType.INTEGER),
             @Result(column="note", property="note", jdbcType=JdbcType.VARCHAR),
             @Result(column = "sensorid", property = "sensor",
                     one = @One(select = "com.iot.mapper.EsensorMapper.selectVByPrimaryKey")),
@@ -123,7 +129,7 @@ public interface EdeviceMapper {
 
     @Select({
             "select",
-            "edevice.id id, edevice.item item, edevice.sensorid sensorid, edevice.roomid roomid, edevice.protocol protocol, edevice.status status, edevice.note note",
+            "edevice.id id, edevice.item item, edevice.sensorid sensorid, edevice.roomid roomid, edevice.protocol protocol, edevice.status status, edevice.level level, edevice.note note",
             "from edevice, eroom, ebim, eplat",
             "where edevice.roomid = eroom.id and eroom.bimid = ebim.id and ebim.platid = eplat.id and eplat.projectid = #{projectid,jdbcType=INTEGER}"
     })
@@ -134,13 +140,14 @@ public interface EdeviceMapper {
             @Result(column="roomid", property="roomid", jdbcType=JdbcType.INTEGER),
             @Result(column="protocol", property="protocol", jdbcType=JdbcType.VARCHAR),
             @Result(column="status", property="status", jdbcType=JdbcType.VARCHAR),
+            @Result(column="level", property="level", jdbcType=JdbcType.INTEGER),
             @Result(column="note", property="note", jdbcType=JdbcType.VARCHAR)
     })
     List<Edevice> selectSubAll(Integer projectid);
 
     @Select({
             "select",
-            "edevice.id id, edevice.item item, edevice.sensorid sensorid, edevice.roomid roomid, edevice.protocol protocol, edevice.status status, edevice.note note",
+            "edevice.id id, edevice.item item, edevice.sensorid sensorid, edevice.roomid roomid, edevice.protocol protocol, edevice.status status, edevice.level level, edevice.note note",
             "from edevice, eroom, ebim, eplat",
             "where edevice.roomid = eroom.id and eroom.bimid = ebim.id and ebim.platid = eplat.id and eplat.projectid = #{projectid,jdbcType=INTEGER} and ${sql}"
     })
@@ -151,13 +158,14 @@ public interface EdeviceMapper {
             @Result(column="roomid", property="roomid", jdbcType=JdbcType.INTEGER),
             @Result(column="protocol", property="protocol", jdbcType=JdbcType.VARCHAR),
             @Result(column="status", property="status", jdbcType=JdbcType.VARCHAR),
+            @Result(column="level", property="level", jdbcType=JdbcType.INTEGER),
             @Result(column="note", property="note", jdbcType=JdbcType.VARCHAR)
     })
     List<Edevice> selectSubBySql(Integer projectid, @Param("sql") String sql);
 
     @Select({
             "select",
-            "edevice.id id, edevice.item item, edevice.sensorid sensorid, edevice.roomid roomid, edevice.protocol protocol, edevice.status status, edevice.note note",
+            "edevice.id id, edevice.item item, edevice.sensorid sensorid, edevice.roomid roomid, edevice.protocol protocol, edevice.status status, edevice.level level, edevice.note note",
             "from edevice, eroom, ebim, eplat",
             "where edevice.roomid = eroom.id and eroom.bimid = ebim.id and ebim.platid = eplat.id and eplat.projectid = #{projectid,jdbcType=INTEGER} and edevice.id = #{id,jdbcType=INTEGER}"
     })
@@ -168,13 +176,14 @@ public interface EdeviceMapper {
             @Result(column="roomid", property="roomid", jdbcType=JdbcType.INTEGER),
             @Result(column="protocol", property="protocol", jdbcType=JdbcType.VARCHAR),
             @Result(column="status", property="status", jdbcType=JdbcType.VARCHAR),
+            @Result(column="level", property="level", jdbcType=JdbcType.INTEGER),
             @Result(column="note", property="note", jdbcType=JdbcType.VARCHAR)
     })
     Edevice selectSubByPrimaryKey(Integer projectid, Integer id);
 
     @Select({
             "select",
-            "edevice.id id, edevice.item item, edevice.sensorid sensorid, edevice.roomid roomid, edevice.protocol protocol, edevice.status status, edevice.note note",
+            "edevice.id id, edevice.item item, edevice.sensorid sensorid, edevice.roomid roomid, edevice.protocol protocol, edevice.status status, edevice.level level, edevice.note note",
             "from edevice, eroom, ebim, eplat",
             "where edevice.roomid = eroom.id and eroom.bimid = ebim.id and ebim.platid = eplat.id and eplat.projectid = #{projectid,jdbcType=INTEGER}"
     })
@@ -185,6 +194,7 @@ public interface EdeviceMapper {
             @Result(column="roomid", property="roomid", jdbcType=JdbcType.INTEGER),
             @Result(column="protocol", property="protocol", jdbcType=JdbcType.VARCHAR),
             @Result(column="status", property="status", jdbcType=JdbcType.VARCHAR),
+            @Result(column="level", property="level", jdbcType=JdbcType.INTEGER),
             @Result(column="note", property="note", jdbcType=JdbcType.VARCHAR),
             @Result(column = "sensorid", property = "sensor",
                     one = @One(select = "com.iot.mapper.EsensorMapper.selectVByPrimaryKey")),
@@ -195,7 +205,7 @@ public interface EdeviceMapper {
 
     @Select({
             "select",
-            "edevice.id id, edevice.item item, edevice.sensorid sensorid, edevice.roomid roomid, edevice.protocol protocol, edevice.status status, edevice.note note",
+            "edevice.id id, edevice.item item, edevice.sensorid sensorid, edevice.roomid roomid, edevice.protocol protocol, edevice.status status, edevice.level level, edevice.note note",
             "from edevice, eroom, ebim, eplat",
             "where edevice.roomid = eroom.id and eroom.bimid = ebim.id and ebim.platid = eplat.id and eplat.projectid = #{projectid,jdbcType=INTEGER} and ${sql}"
     })
@@ -206,6 +216,7 @@ public interface EdeviceMapper {
             @Result(column="roomid", property="roomid", jdbcType=JdbcType.INTEGER),
             @Result(column="protocol", property="protocol", jdbcType=JdbcType.VARCHAR),
             @Result(column="status", property="status", jdbcType=JdbcType.VARCHAR),
+            @Result(column="level", property="level", jdbcType=JdbcType.INTEGER),
             @Result(column="note", property="note", jdbcType=JdbcType.VARCHAR),
             @Result(column = "sensorid", property = "sensor",
                     one = @One(select = "com.iot.mapper.EsensorMapper.selectVByPrimaryKey")),
@@ -216,7 +227,7 @@ public interface EdeviceMapper {
 
     @Select({
             "select",
-            "edevice.id id, edevice.item item, edevice.sensorid sensorid, edevice.roomid roomid, edevice.protocol protocol, edevice.status status, edevice.note note",
+            "edevice.id id, edevice.item item, edevice.sensorid sensorid, edevice.roomid roomid, edevice.protocol protocol, edevice.status status, edevice.level level, edevice.note note",
             "from edevice, eroom, ebim, eplat",
             "where edevice.roomid = eroom.id and eroom.bimid = ebim.id and ebim.platid = eplat.id and eplat.projectid = #{projectid,jdbcType=INTEGER} and edevice.id = #{id,jdbcType=INTEGER}"
     })
@@ -227,6 +238,7 @@ public interface EdeviceMapper {
             @Result(column="roomid", property="roomid", jdbcType=JdbcType.INTEGER),
             @Result(column="protocol", property="protocol", jdbcType=JdbcType.VARCHAR),
             @Result(column="status", property="status", jdbcType=JdbcType.VARCHAR),
+            @Result(column="level", property="level", jdbcType=JdbcType.INTEGER),
             @Result(column="note", property="note", jdbcType=JdbcType.VARCHAR),
             @Result(column = "sensorid", property = "sensor",
                     one = @One(select = "com.iot.mapper.EsensorMapper.selectVByPrimaryKey")),
@@ -244,11 +256,12 @@ public interface EdeviceMapper {
     @Insert({
         "insert into edevice (id, item, ",
         "sensorid, roomid, protocol, ",
-        "status, note)",
+        "status, level, note)",
         "values (#{id,jdbcType=INTEGER}, #{item,jdbcType=VARCHAR}, ",
         "#{sensorid,jdbcType=INTEGER}, #{roomid,jdbcType=INTEGER}, #{protocol,jdbcType=VARCHAR}, ",
-        "#{status,jdbcType=VARCHAR}, #{note,jdbcType=VARCHAR})"
+        "#{status,jdbcType=VARCHAR}, #{level,jdbcType=INTEGER}, #{note,jdbcType=VARCHAR})"
     })
+    @Options(useGeneratedKeys = true, keyProperty = "id")
     int insert(Edevice record);
     
     @Update({
@@ -258,6 +271,7 @@ public interface EdeviceMapper {
           "roomid = #{roomid,jdbcType=INTEGER},",
           "protocol = #{protocol,jdbcType=VARCHAR},",
           "status = #{status,jdbcType=VARCHAR},",
+          "level = #{level,jdbcType=INTEGER},",
           "note = #{note,jdbcType=VARCHAR}",
         "where id = #{id,jdbcType=INTEGER}"
     })

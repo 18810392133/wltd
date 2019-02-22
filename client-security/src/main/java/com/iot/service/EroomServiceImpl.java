@@ -90,12 +90,12 @@ public class EroomServiceImpl implements EroomService {
     }
 
     @Override
-    public Eroomv insert(String item, Integer bimid, String status, String modelfile, String note) {
+    public Eroomv insert(String item, Integer bimid, String status, Integer level, String modelfile, String note) {
         return null;
     }
 
     @Override
-    public Eroomv update(Integer id, String item, Integer bimid, String status, String modelfile, String note) {
+    public Eroomv update(Integer id, String item, Integer bimid, String status, Integer level, String modelfile, String note) {
         return null;
     }
 

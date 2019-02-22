@@ -224,6 +224,7 @@ public interface EsensorMapper {
         "#{projectid,jdbcType=INTEGER}, #{protocol,jdbcType=VARCHAR}, ",
         "#{timer,jdbcType=INTEGER}, #{note,jdbcType=VARCHAR})"
     })
+    @Options(useGeneratedKeys = true, keyProperty = "id")
     int insert(Esensor record);
 
     @Update({

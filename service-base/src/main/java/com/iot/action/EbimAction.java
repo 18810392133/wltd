@@ -123,13 +123,14 @@ public class EbimAction {
 	}
 
 	@RequestMapping(value = "/insert", method = RequestMethod.POST)
-	public Ebimv insert(String item, Integer platid, String longitude, String latitude, String status, String modelfile, String note){
+	public Ebimv insert(String item, Integer platid, String longitude, String latitude, String status, Integer level, String modelfile, String note){
 		Ebimv bim = new Ebimv();
 		bim.setItem(item);
 		bim.setPlatid(platid);
 		bim.setLongitude(longitude);
 		bim.setLatitude(latitude);
 		bim.setStatus(status);
+		bim.setLevel(level);
 		bim.setModelfile(modelfile);
 		bim.setNote(note);
 		ebimService.insert(bim);
@@ -138,7 +139,7 @@ public class EbimAction {
 	}
 
 	@RequestMapping(value = "/update", method = RequestMethod.PUT)
-	public Ebimv update(Integer id, String item, Integer platid, String longitude, String latitude, String status, String modelfile, String note){
+	public Ebimv update(Integer id, String item, Integer platid, String longitude, String latitude, String status, Integer level, String modelfile, String note){
 		Ebimv bim = ebimService.selectVByPrimaryKey(id);
 		if(bim != null){
 			bim.setItem(item);
@@ -146,6 +147,7 @@ public class EbimAction {
 			bim.setLongitude(longitude);
 			bim.setLatitude(latitude);
 			bim.setStatus(status);
+			bim.setLevel(level);
 			bim.setModelfile(modelfile);
 			bim.setNote(note);
 			ebimService.updateByPrimaryKey(bim);

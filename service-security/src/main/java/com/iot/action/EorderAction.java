@@ -71,6 +71,16 @@ public class EorderAction {
         return eorderService.selectVByPrimaryKey(id);
     }
 
+    @RequestMapping(value = "/selectVByDevices", method = RequestMethod.GET)
+    public List<Eorderv> selectVByDevices(String devices){
+        return eorderService.selectVByDevices(devices);
+    }
+
+    @RequestMapping(value = "/selectVByDevice", method = RequestMethod.GET)
+    public List<Eorderv> selectVByDevice(Integer deviceid){
+        return eorderService.selectVByDevice(deviceid);
+    }
+
     @RequestMapping(value = "/insert", method = RequestMethod.POST)
     public Eorderv insert(String item, Integer dataid, Integer userid, String status, Integer level, String type, String time, String note){
         Eorderv order = new Eorderv();

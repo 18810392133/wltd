@@ -225,6 +225,7 @@ public interface EthresholdMapper {
         "#{attrid,jdbcType=INTEGER}, #{level,jdbcType=INTEGER}, #{overtime,jdbcType=INTEGER}, ",
         "#{note,jdbcType=VARCHAR})"
     })
+    @Options(useGeneratedKeys = true, keyProperty = "id")
     int insert(Ethreshold record);
 
     @Update({

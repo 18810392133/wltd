@@ -15,10 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.Resource;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 @RestController
 @RequestMapping("/user")
@@ -27,6 +25,27 @@ public class EuserAction {
     private EuserService euserService;
 	@Resource
 	private EprojectService eprojectService;
+
+	@AuthToken
+	@RequestMapping(value = "/selectByUsername")
+	public Map<Object, Object> selectByUsername(Integer projectid, String username){
+		Map<Object, Object> map = new HashMap<Object, Object>();
+		List<Euser> list = euserService.selectSubBySql(projectid, "username='" + username + "'");
+		if(list.size() > 0){
+			Euser user = list.get(0);
+			if(user.getType().equals("用户")){
+				map.put("isSuccess", true);
+				map.put("object", user);
+			}else{
+				map.put("isSuccess", false);
+				map.put("msg", "不能关联非普通用户");
+			}
+		}else{
+			map.put("isSuccess", false);
+			map.put("msg", "用户不存在");
+		}
+		return map;
+	}
 
 	@RequestMapping(value = "/login")
 	public Map<Object, Object> login(String username, String password, String servicename){
@@ -53,6 +72,55 @@ public class EuserAction {
 		}else{
 			map.put("isSuccess", false);
 			map.put("msg", "用户名错误");
+		}
+		return map;
+	}
+
+	@RequestMapping(value = "/regist")
+	public Map<Object, Object> regist(String username, String password, String phone, String servicename){
+		Map<Object, Object> map = new HashMap<Object, Object>();
+		List<Eproject> list = eprojectService.selectBySql("servicename='" + servicename + "'");
+		if(list.size() > 0){
+			if(isValidate(username, 0)){
+				SimpleDateFormat frm = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.CHINA);
+				String time = frm.format(new Date());
+				Euser user = euserService.insert(username, password, list.get(0).getId(), "用户", "", phone, "", time, "可用");
+				map.put("isSuccess", true);
+				map.put("user", user);
+			}else{
+				map.put("isSuccess", false);
+				map.put("msg", "该用户已存在");
+			}
+		}else{
+			map.put("isSuccess", false);
+			map.put("msg", "该项目未启动，无法注册");
+		}
+		return map;
+	}
+
+	@RequestMapping(value = "/lost")
+	public Map<Object, Object> lost(String username, String password, String phone, String servicename){
+		Map<Object, Object> map = new HashMap<Object, Object>();
+		List<Eproject> list = eprojectService.selectBySql("servicename='" + servicename + "'");
+		if(list.size() > 0){
+			List<Euser> userList =  euserService.selectBySql("username='" + username + "' and projectid=" + list.get(0).getId());
+			if(userList.size() > 0){
+				Euser user = userList.get(0);
+				if(user.getPhone().equals(phone)){
+					user = euserService.update(user.getId(), user.getUsername(), password, user.getProjectid(), user.getType(), user.getRealname(), user.getPhone(), user.getWechat(), user.getTime(), user.getStatus());
+					map.put("isSuccess", true);
+					map.put("user", user);
+				}else{
+					map.put("isSuccess", false);
+					map.put("msg", "手机号码错误");
+				}
+			}else{
+				map.put("isSuccess", false);
+				map.put("msg", "该用户不存在");
+			}
+		}else{
+			map.put("isSuccess", false);
+			map.put("msg", "该项目未启动，无法注册");
 		}
 		return map;
 	}
@@ -292,7 +360,7 @@ public class EuserAction {
 	public String getToken(String username, String password) {
 		String token = "";
 		token = JWT.create().withAudience(username)
-				.withExpiresAt(new Date(System.currentTimeMillis()+60*1000))
+				.withExpiresAt(new Date(System.currentTimeMillis() + 1000 * 60 * 60))
 				.sign(Algorithm.HMAC256(password));
 		return token;
 	}

@@ -62,6 +62,14 @@ public class EorderServiceImpl implements EorderService {
         return eorderMapper.selectVByPrimaryKey(id);
     }
 
+    public List<Eorderv> selectVByDevices(String devices){
+        return eorderMapper.selectVByDevices(devices);
+    }
+
+    public List<Eorderv> selectVByDevice(Integer deviceid){
+        return eorderMapper.selectVByDevice(deviceid);
+    }
+
     public int deleteByPrimaryKey(Integer id){
         return eorderMapper.deleteByPrimaryKey(id);
     }

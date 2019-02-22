@@ -21,6 +21,10 @@ public interface EorderService {
 
     public Eorderv selectVByPrimaryKey(Integer id);
 
+    public List<Eorderv> selectVByDevices(String devices);
+
+    public List<Eorderv> selectVByDevice(Integer deviceid);
+
     public int deleteByPrimaryKey(Integer id);
 
     public int insert(Eorder record);

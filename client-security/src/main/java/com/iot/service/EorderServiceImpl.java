@@ -50,6 +50,16 @@ public class EorderServiceImpl implements EorderService {
     }
 
     @Override
+    public List<Eorderv> selectVByDevices(String devices) {
+        return null;
+    }
+
+    @Override
+    public List<Eorderv> selectVByDevice(Integer deviceid) {
+        return null;
+    }
+
+    @Override
     public Eorderv insert(String item, Integer dataid, Integer userid, String status, Integer level, String type, String time, String note) {
         return null;
     }

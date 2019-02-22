@@ -22,6 +22,16 @@ public class EroomAction {
     private EroomService eroomService;
 
     @AuthToken
+    @RequestMapping(value = "/selectUserBimRoom")
+    public Map<Object, Object> selectUserBimRoom(Integer userid, Integer bimid){
+        String sql = "bimid=" + bimid + " and id in (select roomid from edevice where id in (select deviceid from euserdevice where userid=" + userid + "))";
+        List<Eroom> list = eroomService.selectBySql(sql);
+        Map<Object, Object> map = new HashMap<Object, Object>();
+        map.put("list", list);
+        return map;
+    }
+
+    @AuthToken
     @RequestMapping(value = "/selectAll")
     public Map<Object, Object> selectAll(){
         List<Eroom> list = eroomService.selectAll();
@@ -155,10 +165,10 @@ public class EroomAction {
 
     @AuthToken
     @RequestMapping(value = "/insert")
-    public Map<Object, Object> insert(String item, Integer bimid, String status, String modelfile, String note) {
+    public Map<Object, Object> insert(String item, Integer bimid, String status, Integer level, String modelfile, String note) {
         Map<Object, Object> map = new HashMap<Object, Object>();
         if(isValidate(item, bimid, 0)){
-            Eroomv room = eroomService.insert(item, bimid, status, modelfile, note);
+            Eroomv room = eroomService.insert(item, bimid, status, level, modelfile, note);
             if(room != null)
                 map = new BeanMap(room);
         }else{
@@ -170,10 +180,10 @@ public class EroomAction {
 
     @AuthToken
     @RequestMapping(value = "/update")
-    public Map<Object, Object> update(Integer id, String item, Integer bimid, String status, String modelfile, String note) {
+    public Map<Object, Object> update(Integer id, String item, Integer bimid, String status, Integer level, String modelfile, String note) {
         Map<Object, Object> map = new HashMap<Object, Object>();
         if(isValidate(item, bimid, id)){
-            Eroomv room = eroomService.update(id, item, bimid, status, modelfile, note);
+            Eroomv room = eroomService.update(id, item, bimid, status, level, modelfile, note);
             if(room != null)
                 map = new BeanMap(room);
         }else{

@@ -11,6 +11,8 @@ public class Eroom implements Serializable {
 
     private String status;
 
+    private Integer level;
+
     private String modelfile;
 
     private String note;
@@ -47,6 +49,14 @@ public class Eroom implements Serializable {
 
     public void setStatus(String status) {
         this.status = status == null ? null : status.trim();
+    }
+
+    public Integer getLevel() {
+        return level;
+    }
+
+    public void setLevel(Integer level) {
+        this.level = level;
     }
 
     public String getModelfile() {

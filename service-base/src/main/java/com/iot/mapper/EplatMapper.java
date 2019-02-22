@@ -249,6 +249,7 @@ public interface EplatMapper {
         "#{city,jdbcType=VARCHAR}, #{longitude,jdbcType=VARCHAR}, ",
         "#{latitude,jdbcType=VARCHAR}, #{note,jdbcType=VARCHAR})"
     })
+    @Options(useGeneratedKeys = true, keyProperty = "id")
     int insert(Eplat record);
 
     @Update({

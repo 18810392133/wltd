@@ -1,10 +1,11 @@
 package com.iot.action;
 
 import com.alibaba.fastjson.JSONArray;
-import com.iot.bean.Edevice;
-import com.iot.bean.Edevicev;
-import com.iot.bean.Select;
+import com.iot.bean.*;
+import com.iot.service.EbimService;
 import com.iot.service.EdeviceService;
+import com.iot.service.EroomService;
+import com.iot.service.EuserdeviceService;
 import com.iot.util.AuthToken;
 import org.apache.commons.beanutils.BeanMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,6 +21,105 @@ import java.util.Map;
 public class EdeviceAction {
     @Resource
     private EdeviceService edeviceService;
+    @Resource
+    private EroomService eroomService;
+    @Resource
+    private EbimService ebimService;
+    @Resource
+    private EuserdeviceService euserdeviceService;
+
+    @AuthToken
+    @RequestMapping(value = "/insertUserDevice")
+    public Map<Object, Object> insertUserDevice(Integer platid, Integer bimid, String bimItem, String longitude, String latitude, Integer roomid, String roomItem, String item, Integer sensorid, String protocol, Integer[] userids) {
+        Map<Object, Object> map = new HashMap<Object, Object>();
+        if(bimid == 0){
+            List<Ebim> bimList = ebimService.selectBySql("item='" + bimItem + "' and platid=" + platid);
+            if(bimList.size() > 0){
+                map.put("isSuccess", false);
+                map.put("msg", "该节点已存在");
+            }else{
+                Ebimv bim = ebimService.insert(bimItem, platid, longitude, latitude, "正常", 0, "", "");
+                bimid = bim.getId();
+                List<Eroom> roomList = eroomService.selectBySql("item='" + roomItem + "' and bimid=" + bimid);
+                if(roomList.size() > 0){
+                    map.put("isSuccess", false);
+                    map.put("msg", "该房间已存在");
+                }else {
+                    Eroomv room = eroomService.insert(roomItem, bimid, "正常", 0, "", "");
+                    roomid = room.getId();
+                    if(isValidate(item, sensorid, roomid, 0)){
+                        Edevicev device = edeviceService.insert(item, sensorid, roomid, protocol, "正常", 0, "");
+                        map.put("isSuccess", true);
+                        map.put("object", device);
+                        for(int i = 0; i < userids.length; i++){
+                            List<Euserdevice> userdeviceList = euserdeviceService.selectBySql("userid=" + userids[i] + " and deviceid=" + device.getId());
+                            if(userdeviceList.size() > 0){
+                                map.put("msg", "某些用户已关联到设备");
+                            }else{
+                                euserdeviceService.insert(userids[i], device.getId(), "");
+                            }
+                        }
+                    }else{
+                        map.put("isSuccess", false);
+                        map.put("msg", "该设备已存在");
+                    }
+                }
+            }
+        }else if(roomid == 0){
+            List<Eroom> roomList = eroomService.selectBySql("item='" + roomItem + "' and bimid=" + bimid);
+            if(roomList.size() > 0){
+                map.put("isSuccess", false);
+                map.put("msg", "该房间已存在");
+            }else {
+                Eroomv room = eroomService.insert(roomItem, bimid, "正常", 0, "", "");
+                roomid = room.getId();
+                if(isValidate(item, sensorid, roomid, 0)){
+                    Edevicev device = edeviceService.insert(item, sensorid, roomid, protocol, "正常", 0, "");
+                    map.put("isSuccess", true);
+                    map.put("object", device);
+                    for(int i = 0; i < userids.length; i++){
+                        List<Euserdevice> userdeviceList = euserdeviceService.selectBySql("userid=" + userids[i] + " and deviceid=" + device.getId());
+                        if(userdeviceList.size() > 0){
+                            map.put("msg", "某些用户已关联到设备");
+                        }else{
+                            euserdeviceService.insert(userids[i], device.getId(), "");
+                        }
+                    }
+                }else{
+                    map.put("isSuccess", false);
+                    map.put("msg", "该设备已存在");
+                }
+            }
+        }else {
+            if (isValidate(item, sensorid, roomid, 0)) {
+                Edevicev device = edeviceService.insert(item, sensorid, roomid, protocol, "正常", 0, "");
+                map.put("isSuccess", true);
+                map.put("object", device);
+                for(int i = 0; i < userids.length; i++){
+                    List<Euserdevice> userdeviceList = euserdeviceService.selectBySql("userid=" + userids[i] + " and deviceid=" + device.getId());
+                    if(userdeviceList.size() > 0){
+                        map.put("msg", "某些用户已关联到设备");
+                    }else{
+                        euserdeviceService.insert(userids[i], device.getId(), "");
+                    }
+                }
+            } else {
+                map.put("isSuccess", false);
+                map.put("msg", "该设备已存在");
+            }
+        }
+        return map;
+    }
+
+    @AuthToken
+    @RequestMapping(value = "/selectUserRoomDevice")
+    public Map<Object, Object> selectUserRoomDevice(Integer userid, Integer roomid){
+        String sql = "roomid=" + roomid + " and id in (select deviceid from euserdevice where userid=" + userid + ")";
+        List<Edevice> list = edeviceService.selectBySql(sql);
+        Map<Object, Object> map = new HashMap<Object, Object>();
+        map.put("list", list);
+        return map;
+    }
 
     @AuthToken
     @RequestMapping(value = "/selectAll")
@@ -155,10 +255,10 @@ public class EdeviceAction {
 
     @AuthToken
     @RequestMapping(value = "/insert")
-    public Map<Object, Object> insert(String item, Integer sensorid, Integer roomid, String protocol, String status, String note) {
+    public Map<Object, Object> insert(String item, Integer sensorid, Integer roomid, String protocol, String status, Integer level, String note) {
         Map<Object, Object> map = new HashMap<Object, Object>();
         if(isValidate(item, sensorid, roomid, 0)){
-            Edevicev device = edeviceService.insert(item, sensorid, roomid, protocol, status, note);
+            Edevicev device = edeviceService.insert(item, sensorid, roomid, protocol, status, level, note);
             if(device != null)
                 map = new BeanMap(device);
         }else{
@@ -170,10 +270,10 @@ public class EdeviceAction {
 
     @AuthToken
     @RequestMapping(value = "/update")
-    public Map<Object, Object> update(Integer id, String item, Integer sensorid, Integer roomid, String protocol, String status, String note) {
+    public Map<Object, Object> update(Integer id, String item, Integer sensorid, Integer roomid, String protocol, String status, Integer level, String note) {
         Map<Object, Object> map = new HashMap<Object, Object>();
         if(isValidate(item, sensorid, roomid, id)){
-            Edevicev device = edeviceService.update(id, item, sensorid, roomid, protocol, status, note);
+            Edevicev device = edeviceService.update(id, item, sensorid, roomid, protocol, status, level, note);
             if(device != null)
                 map = new BeanMap(device);
         }else{

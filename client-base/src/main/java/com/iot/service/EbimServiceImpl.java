@@ -90,12 +90,12 @@ public class EbimServiceImpl implements EbimService {
     }
 
     @Override
-    public Ebimv insert(String item, Integer platid, String longitude, String latitude, String status, String modelfile, String note) {
+    public Ebimv insert(String item, Integer platid, String longitude, String latitude, String status, Integer level, String modelfile, String note) {
         return null;
     }
 
     @Override
-    public Ebimv update(Integer id, String item, Integer bimid, String longitude, String latitude, String status, String modelfile, String note) {
+    public Ebimv update(Integer id, String item, Integer bimid, String longitude, String latitude, String status, Integer level, String modelfile, String note) {
         return null;
     }
 

@@ -11,7 +11,7 @@ import java.util.List;
 public interface EroomMapper {
     @Select({
             "select",
-            "id, item, bimid, status, modelfile, note",
+            "id, item, bimid, status, level, modelfile, note",
             "from eroom"
     })
     @Results({
@@ -19,6 +19,7 @@ public interface EroomMapper {
         @Result(column="item", property="item", jdbcType=JdbcType.VARCHAR),
         @Result(column="bimid", property="bimid", jdbcType=JdbcType.INTEGER),
         @Result(column="status", property="status", jdbcType=JdbcType.VARCHAR),
+        @Result(column="level", property="level", jdbcType=JdbcType.INTEGER),
         @Result(column="modelfile", property="modelfile", jdbcType=JdbcType.VARCHAR),
         @Result(column="note", property="note", jdbcType=JdbcType.VARCHAR)
     })
@@ -26,7 +27,7 @@ public interface EroomMapper {
 
     @Select({
             "select",
-            "id, item, bimid, status, modelfile, note",
+            "id, item, bimid, status, level, modelfile, note",
             "from eroom",
             "where ${sql}"
     })
@@ -35,6 +36,7 @@ public interface EroomMapper {
         @Result(column="item", property="item", jdbcType=JdbcType.VARCHAR),
         @Result(column="bimid", property="bimid", jdbcType=JdbcType.INTEGER),
         @Result(column="status", property="status", jdbcType=JdbcType.VARCHAR),
+        @Result(column="level", property="level", jdbcType=JdbcType.INTEGER),
         @Result(column="modelfile", property="modelfile", jdbcType=JdbcType.VARCHAR),
         @Result(column="note", property="note", jdbcType=JdbcType.VARCHAR)
     })
@@ -42,7 +44,7 @@ public interface EroomMapper {
 
     @Select({
             "select",
-            "id, item, bimid, status, modelfile, note",
+            "id, item, bimid, status, level, modelfile, note",
             "from eroom",
             "where id = #{id,jdbcType=INTEGER}"
     })
@@ -51,6 +53,7 @@ public interface EroomMapper {
         @Result(column="item", property="item", jdbcType=JdbcType.VARCHAR),
         @Result(column="bimid", property="bimid", jdbcType=JdbcType.INTEGER),
         @Result(column="status", property="status", jdbcType=JdbcType.VARCHAR),
+        @Result(column="level", property="level", jdbcType=JdbcType.INTEGER),
         @Result(column="modelfile", property="modelfile", jdbcType=JdbcType.VARCHAR),
         @Result(column="note", property="note", jdbcType=JdbcType.VARCHAR)
     })
@@ -58,7 +61,7 @@ public interface EroomMapper {
 
     @Select({
             "select",
-            "id, item, bimid, status, modelfile, note",
+            "id, item, bimid, status, level, modelfile, note",
             "from eroom"
     })
     @Results({
@@ -66,6 +69,7 @@ public interface EroomMapper {
         @Result(column="item", property="item", jdbcType=JdbcType.VARCHAR),
         @Result(column="bimid", property="bimid", jdbcType=JdbcType.INTEGER),
         @Result(column="status", property="status", jdbcType=JdbcType.VARCHAR),
+        @Result(column="level", property="level", jdbcType=JdbcType.INTEGER),
         @Result(column="modelfile", property="modelfile", jdbcType=JdbcType.VARCHAR),
         @Result(column="note", property="note", jdbcType=JdbcType.VARCHAR),
         @Result(column = "bimid", property = "bim",
@@ -75,7 +79,7 @@ public interface EroomMapper {
 
     @Select({
             "select",
-            "id, item, bimid, status, modelfile, note",
+            "id, item, bimid, status, level, modelfile, note",
             "from eroom",
             "where ${sql}"
     })
@@ -84,6 +88,7 @@ public interface EroomMapper {
         @Result(column="item", property="item", jdbcType=JdbcType.VARCHAR),
         @Result(column="bimid", property="bimid", jdbcType=JdbcType.INTEGER),
         @Result(column="status", property="status", jdbcType=JdbcType.VARCHAR),
+        @Result(column="level", property="level", jdbcType=JdbcType.INTEGER),
         @Result(column="modelfile", property="modelfile", jdbcType=JdbcType.VARCHAR),
         @Result(column="note", property="note", jdbcType=JdbcType.VARCHAR),
         @Result(column = "bimid", property = "bim",
@@ -93,7 +98,7 @@ public interface EroomMapper {
 
     @Select({
             "select",
-            "id, item, bimid, status, modelfile, note",
+            "id, item, bimid, status, level, modelfile, note",
             "from eroom",
             "where id = #{id,jdbcType=INTEGER}"
     })
@@ -102,6 +107,7 @@ public interface EroomMapper {
         @Result(column="item", property="item", jdbcType=JdbcType.VARCHAR),
         @Result(column="bimid", property="bimid", jdbcType=JdbcType.INTEGER),
         @Result(column="status", property="status", jdbcType=JdbcType.VARCHAR),
+        @Result(column="level", property="level", jdbcType=JdbcType.INTEGER),
         @Result(column="modelfile", property="modelfile", jdbcType=JdbcType.VARCHAR),
         @Result(column="note", property="note", jdbcType=JdbcType.VARCHAR),
         @Result(column = "bimid", property = "bim",
@@ -111,7 +117,7 @@ public interface EroomMapper {
 
     @Select({
             "select",
-            "eroom.id id, eroom.item item, eroom.bimid bimid, eroom.status status, eroom.modelfile modelfile, eroom.note note",
+            "eroom.id id, eroom.item item, eroom.bimid bimid, eroom.status status, eroom.level level, eroom.modelfile modelfile, eroom.note note",
             "from eroom, ebim, eplat",
             "where eroom.bimid = ebim.id and ebim.platid = eplat.id and eplat.projectid = #{projectid,jdbcType=INTEGER}"
     })
@@ -120,6 +126,7 @@ public interface EroomMapper {
         @Result(column="item", property="item", jdbcType=JdbcType.VARCHAR),
         @Result(column="bimid", property="bimid", jdbcType=JdbcType.INTEGER),
         @Result(column="status", property="status", jdbcType=JdbcType.VARCHAR),
+        @Result(column="level", property="level", jdbcType=JdbcType.INTEGER),
         @Result(column="modelfile", property="modelfile", jdbcType=JdbcType.VARCHAR),
         @Result(column="note", property="note", jdbcType=JdbcType.VARCHAR)
     })
@@ -127,7 +134,7 @@ public interface EroomMapper {
 
     @Select({
             "select",
-            "eroom.id id, eroom.item item, eroom.bimid bimid, eroom.status status, eroom.modelfile modelfile, eroom.note note",
+            "eroom.id id, eroom.item item, eroom.bimid bimid, eroom.status status, eroom.level level, eroom.modelfile modelfile, eroom.note note",
             "from eroom, ebim, eplat",
             "where eroom.bimid = ebim.id and ebim.platid = eplat.id and eplat.projectid = #{projectid,jdbcType=INTEGER} and ${sql}"
     })
@@ -136,6 +143,7 @@ public interface EroomMapper {
         @Result(column="item", property="item", jdbcType=JdbcType.VARCHAR),
         @Result(column="bimid", property="bimid", jdbcType=JdbcType.INTEGER),
         @Result(column="status", property="status", jdbcType=JdbcType.VARCHAR),
+        @Result(column="level", property="level", jdbcType=JdbcType.INTEGER),
         @Result(column="modelfile", property="modelfile", jdbcType=JdbcType.VARCHAR),
         @Result(column="note", property="note", jdbcType=JdbcType.VARCHAR)
     })
@@ -143,7 +151,7 @@ public interface EroomMapper {
 
     @Select({
             "select",
-            "eroom.id id, eroom.item item, eroom.bimid bimid, eroom.status status, eroom.modelfile modelfile, eroom.note note",
+            "eroom.id id, eroom.item item, eroom.bimid bimid, eroom.status status, eroom.level level, eroom.modelfile modelfile, eroom.note note",
             "from eroom, ebim, eplat",
             "where eroom.bimid = ebim.id and ebim.platid = eplat.id and eplat.projectid = #{projectid,jdbcType=INTEGER} and eroom.id = #{id,jdbcType=INTEGER}"
     })
@@ -152,6 +160,7 @@ public interface EroomMapper {
         @Result(column="item", property="item", jdbcType=JdbcType.VARCHAR),
         @Result(column="bimid", property="bimid", jdbcType=JdbcType.INTEGER),
         @Result(column="status", property="status", jdbcType=JdbcType.VARCHAR),
+        @Result(column="level", property="level", jdbcType=JdbcType.INTEGER),
         @Result(column="modelfile", property="modelfile", jdbcType=JdbcType.VARCHAR),
         @Result(column="note", property="note", jdbcType=JdbcType.VARCHAR)
     })
@@ -159,7 +168,7 @@ public interface EroomMapper {
 
     @Select({
             "select",
-            "eroom.id id, eroom.item item, eroom.bimid bimid, eroom.status status, eroom.modelfile modelfile, eroom.note note",
+            "eroom.id id, eroom.item item, eroom.bimid bimid, eroom.status status, eroom.level level, eroom.modelfile modelfile, eroom.note note",
             "from eroom, ebim, eplat",
             "where eroom.bimid = ebim.id and ebim.platid = eplat.id and eplat.projectid = #{projectid,jdbcType=INTEGER}"
     })
@@ -168,6 +177,7 @@ public interface EroomMapper {
         @Result(column="item", property="item", jdbcType=JdbcType.VARCHAR),
         @Result(column="bimid", property="bimid", jdbcType=JdbcType.INTEGER),
         @Result(column="status", property="status", jdbcType=JdbcType.VARCHAR),
+        @Result(column="level", property="level", jdbcType=JdbcType.INTEGER),
         @Result(column="modelfile", property="modelfile", jdbcType=JdbcType.VARCHAR),
         @Result(column="note", property="note", jdbcType=JdbcType.VARCHAR),
         @Result(column = "bimid", property = "bim",
@@ -177,7 +187,7 @@ public interface EroomMapper {
 
     @Select({
             "select",
-            "eroom.id id, eroom.item item, eroom.bimid bimid, eroom.status status, eroom.modelfile modelfile, eroom.note note",
+            "eroom.id id, eroom.item item, eroom.bimid bimid, eroom.status status, eroom.level level, eroom.modelfile modelfile, eroom.note note",
             "from eroom, ebim, eplat",
             "where eroom.bimid = ebim.id and ebim.platid = eplat.id and eplat.projectid = #{projectid,jdbcType=INTEGER} and ${sql}"
     })
@@ -186,6 +196,7 @@ public interface EroomMapper {
         @Result(column="item", property="item", jdbcType=JdbcType.VARCHAR),
         @Result(column="bimid", property="bimid", jdbcType=JdbcType.INTEGER),
         @Result(column="status", property="status", jdbcType=JdbcType.VARCHAR),
+        @Result(column="level", property="level", jdbcType=JdbcType.INTEGER),
         @Result(column="modelfile", property="modelfile", jdbcType=JdbcType.VARCHAR),
         @Result(column="note", property="note", jdbcType=JdbcType.VARCHAR),
         @Result(column = "bimid", property = "bim",
@@ -195,7 +206,7 @@ public interface EroomMapper {
 
     @Select({
             "select",
-            "eroom.id id, eroom.item item, eroom.bimid bimid, eroom.status status, eroom.modelfile modelfile, eroom.note note",
+            "eroom.id id, eroom.item item, eroom.bimid bimid, eroom.status status, eroom.level level, eroom.modelfile modelfile, eroom.note note",
             "from eroom, ebim, eplat",
             "where eroom.bimid = ebim.id and ebim.platid = eplat.id and eplat.projectid = #{projectid,jdbcType=INTEGER} and eroom.id = #{id,jdbcType=INTEGER}"
     })
@@ -204,6 +215,7 @@ public interface EroomMapper {
         @Result(column="item", property="item", jdbcType=JdbcType.VARCHAR),
         @Result(column="bimid", property="bimid", jdbcType=JdbcType.INTEGER),
         @Result(column="status", property="status", jdbcType=JdbcType.VARCHAR),
+        @Result(column="level", property="level", jdbcType=JdbcType.INTEGER),
         @Result(column="modelfile", property="modelfile", jdbcType=JdbcType.VARCHAR),
         @Result(column="note", property="note", jdbcType=JdbcType.VARCHAR),
         @Result(column = "bimid", property = "bim",
@@ -219,12 +231,13 @@ public interface EroomMapper {
 
     @Insert({
         "insert into eroom (id, item, ",
-        "bimid, status, modelfile, ",
+        "bimid, status, level, modelfile, ",
         "note)",
         "values (#{id,jdbcType=INTEGER}, #{item,jdbcType=VARCHAR}, ",
-        "#{bimid,jdbcType=INTEGER}, #{status,jdbcType=VARCHAR}, #{modelfile,jdbcType=VARCHAR}, ",
+        "#{bimid,jdbcType=INTEGER}, #{status,jdbcType=VARCHAR}, #{level,jdbcType=INTEGER}, #{modelfile,jdbcType=VARCHAR}, ",
         "#{note,jdbcType=VARCHAR})"
     })
+    @Options(useGeneratedKeys = true, keyProperty = "id")
     int insert(Eroom record);
     
     @Update({
@@ -232,6 +245,7 @@ public interface EroomMapper {
         "set item = #{item,jdbcType=VARCHAR},",
           "bimid = #{bimid,jdbcType=INTEGER},",
           "status = #{status,jdbcType=VARCHAR},",
+          "level = #{level,jdbcType=INTEGER},",
           "modelfile = #{modelfile,jdbcType=VARCHAR},",
           "note = #{note,jdbcType=VARCHAR}",
         "where id = #{id,jdbcType=INTEGER}"

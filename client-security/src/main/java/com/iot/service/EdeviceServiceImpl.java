@@ -91,12 +91,12 @@ public class EdeviceServiceImpl implements EdeviceService {
     }
 
     @Override
-    public Edevicev insert(String item, Integer sensorid, Integer roomid, String protocol, String status, String note) {
+    public Edevicev insert(String item, Integer sensorid, Integer roomid, String protocol, String status, Integer level, String note) {
         return null;
     }
 
     @Override
-    public Edevicev update(Integer id, String item, Integer sensorid, Integer roomid, String protocol, String status, String note) {
+    public Edevicev update(Integer id, String item, Integer sensorid, Integer roomid, String protocol, String status, Integer level, String note) {
         return null;
     }
 

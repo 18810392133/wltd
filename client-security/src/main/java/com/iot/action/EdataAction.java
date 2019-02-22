@@ -1,16 +1,17 @@
 package com.iot.action;
 
 import com.alibaba.fastjson.JSONArray;
-import com.iot.bean.Edata;
-import com.iot.bean.Edatav;
-import com.iot.bean.Select;
+import com.iot.bean.*;
+import com.iot.service.EattrService;
 import com.iot.service.EdataService;
+import com.iot.service.EdeviceService;
 import com.iot.util.AuthToken;
 import org.apache.commons.beanutils.BeanMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.Resource;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -20,6 +21,49 @@ import java.util.Map;
 public class EdataAction {
     @Resource
     private EdataService edataService;
+    @Resource
+    private EattrService eattrService;
+    @Resource
+    private EdeviceService edeviceService;
+
+    @AuthToken
+    @RequestMapping(value = "/selectRealData")
+    public Map<Object, Object> selectRealData(Integer deviceid, String time){
+        Map<Object, Object> map = new HashMap<Object, Object>();
+        List list = new ArrayList();
+        String sql = "sensorid=(select sensorid from edevice where id=" + deviceid + ")";
+        List<Eattr> attrList = eattrService.selectBySql(sql);
+        for(int i = 0; i < attrList.size(); i++){
+            Map<Object, Object> attrMap = new HashMap<Object, Object>();
+            attrMap.put("attr", attrList.get(i));
+            List<Edata> dataList = edataService.selectBySql("deviceid=" + deviceid + " and attrid=" + attrList.get(i).getId() + " and time>'" + time + "'");
+            attrMap.put("dataList", dataList);
+            list.add(attrMap);
+        }
+        map.put("list", list);
+        return map;
+    }
+
+    @AuthToken
+    @RequestMapping(value = "/selectNewData")
+    public Map<Object, Object> selectNewData(Integer deviceid){
+        Map<Object, Object> map = new HashMap<Object, Object>();
+        Edevicev device = edeviceService.selectVByPrimaryKey(deviceid);
+        map.put("object", device);
+        List list = new ArrayList();
+        String sql = "sensorid=(select sensorid from edevice where id=" + deviceid + ")";
+        List<Eattr> attrList = eattrService.selectBySql(sql);
+        for(int i = 0; i < attrList.size(); i++){
+            Map<Object, Object> attrMap = new HashMap<Object, Object>();
+            attrMap.put("attr", attrList.get(i));
+            List<Edata> dataList = edataService.selectBySql("deviceid=" + deviceid + " and attrid=" + attrList.get(i).getId() + " order by time desc limit 1");
+            if(dataList.size() > 0)
+                attrMap.put("data", dataList.get(0));
+            list.add(attrMap);
+        }
+        map.put("list", list);
+        return map;
+    }
 
     @AuthToken
     @RequestMapping(value = "/selectAll")

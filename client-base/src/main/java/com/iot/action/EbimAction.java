@@ -22,6 +22,16 @@ public class EbimAction {
     private EbimService ebimService;
 
     @AuthToken
+    @RequestMapping(value = "/selectUserBim")
+    public Map<Object, Object> selectUserBim(Integer userid){
+        String sql = "id in (select bimid from eroom where id in (select roomid from edevice where id in (select deviceid from euserdevice where userid=" + userid + ")))";
+        List<Ebim> list = ebimService.selectBySql(sql);
+        Map<Object, Object> map = new HashMap<Object, Object>();
+        map.put("list", list);
+        return map;
+    }
+
+    @AuthToken
     @RequestMapping(value = "/selectAll")
     public Map<Object, Object> selectAll(){
         List<Ebim> list = ebimService.selectAll();
@@ -155,10 +165,10 @@ public class EbimAction {
 
     @AuthToken
     @RequestMapping(value = "/insert")
-    public Map<Object, Object> insert(String item, Integer platid, String longitude, String latitude, String status, String modelfile, String note) {
+    public Map<Object, Object> insert(String item, Integer platid, String longitude, String latitude, String status, Integer level, String modelfile, String note) {
         Map<Object, Object> map = new HashMap<Object, Object>();
         if(isValidate(item, platid, 0)){
-            Ebimv bim = ebimService.insert(item, platid, longitude, latitude, status, modelfile, note);
+            Ebimv bim = ebimService.insert(item, platid, longitude, latitude, status, level, modelfile, note);
             if(bim != null)
                 map = new BeanMap(bim);
         }else{
@@ -170,10 +180,10 @@ public class EbimAction {
 
     @AuthToken
     @RequestMapping(value = "/update")
-    public Map<Object, Object> update(Integer id, String item, Integer platid, String longitude, String latitude, String status, String modelfile, String note) {
+    public Map<Object, Object> update(Integer id, String item, Integer platid, String longitude, String latitude, String status, Integer level, String modelfile, String note) {
         Map<Object, Object> map = new HashMap<Object, Object>();
         if(isValidate(item, platid, id)){
-            Ebimv bim = ebimService.update(id, item, platid, longitude, latitude, status, modelfile, note);
+            Ebimv bim = ebimService.update(id, item, platid, longitude, latitude, status, level, modelfile, note);
             if(bim != null)
                 map = new BeanMap(bim);
         }else{

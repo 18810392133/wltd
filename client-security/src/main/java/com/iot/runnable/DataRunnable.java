@@ -61,7 +61,7 @@ public class DataRunnable implements Runnable {
                                         Edevicev device = edeviceService.selectVByPrimaryKey(deviceid);
                                         String orderItem = device.getRoom().getBim().getPlat().getItem() + " "
                                                 + device.getRoom().getBim().getItem() + " " + device.getRoom().getItem() + " "
-                                                + device.getItem() + "" + attrList.get(j).getItem();
+                                                + device.getSensor().getItem() + " " + device.getItem() + "" + attrList.get(j).getItem();
                                         int level = 0;
                                                 List<Ethreshold> thresholdList = ethresholdService.selectBySql("attrid=" + attrList.get(j).getId() + " order by level asc");
                                         for(int k = 0; k < thresholdList.size(); k++){
@@ -73,9 +73,17 @@ public class DataRunnable implements Runnable {
                                                 level = thresholdList.get(k).getLevel();
                                             }
                                         }
-                                        if(level > 0){
-                                            orderItem += " " +level + "级告警";
-                                            eorderService.insert(orderItem, data.getId(), null, "告警", level, "正常", time, "");
+                                        if(level > 0) {
+                                            orderItem += " 告警";
+                                            List<Eorder> orderList = eorderService.selectBySql("item='" + orderItem + "' and status!='完成' order by time desc");
+                                            if (orderList.size() > 0) {
+                                                Eorder order = orderList.get(0);
+                                                if (order.getLevel() < level) {
+                                                    eorderService.update(order.getId(), orderItem, data.getId(), null, "告警", level, "正常", time, "");
+                                                }
+                                            } else {
+                                                eorderService.insert(orderItem, data.getId(), null, "告警", level, "正常", time, "");
+                                            }
                                         }
                                     }
                                 }

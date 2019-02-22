@@ -15,6 +15,8 @@ public class Edevice implements Serializable {
 
     private String status;
 
+    private Integer level;
+
     private String note;
 
     private static final long serialVersionUID = 1L;
@@ -65,6 +67,14 @@ public class Edevice implements Serializable {
 
     public void setStatus(String status) {
         this.status = status == null ? null : status.trim();
+    }
+
+    public Integer getLevel() {
+        return level;
+    }
+
+    public void setLevel(Integer level) {
+        this.level = level;
     }
 
     public String getNote() {

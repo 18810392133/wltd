@@ -122,11 +122,12 @@ public class EroomAction {
     }
 
     @RequestMapping(value = "/insert", method = RequestMethod.POST)
-    public Eroomv insert(String item, Integer bimid, String status, String modelfile, String note){
+    public Eroomv insert(String item, Integer bimid, String status, Integer level, String modelfile, String note){
         Eroomv room = new Eroomv();
         room.setItem(item);
         room.setBimid(bimid);
         room.setStatus(status);
+        room.setLevel(level);
         room.setModelfile(modelfile);
         room.setNote(note);
         eroomService.insert(room);
@@ -135,12 +136,13 @@ public class EroomAction {
     }
 
     @RequestMapping(value = "/update", method = RequestMethod.PUT)
-    public Eroomv update(Integer id, String item, Integer bimid, String status, String modelfile, String note){
+    public Eroomv update(Integer id, String item, Integer bimid, String status, Integer level, String modelfile, String note){
         Eroomv room = eroomService.selectVByPrimaryKey(id);
         if(room != null) {
             room.setItem(item);
             room.setBimid(bimid);
             room.setStatus(status);
+            room.setLevel(level);
             room.setModelfile(modelfile);
             room.setNote(note);
             eroomService.updateByPrimaryKey(room);

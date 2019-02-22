@@ -210,6 +210,7 @@ public interface EuserthresholdMapper {
         "values (#{id,jdbcType=INTEGER}, #{userid,jdbcType=INTEGER}, ",
         "#{thresholdid,jdbcType=INTEGER}, #{note,jdbcType=VARCHAR})"
     })
+    @Options(useGeneratedKeys = true, keyProperty = "id")
     int insert(Euserthreshold record);
 
     @Update({

@@ -276,6 +276,7 @@ public interface EuserMapper {
         "#{phone,jdbcType=VARCHAR}, #{wechat,jdbcType=VARCHAR}, #{time,jdbcType=VARCHAR}, ",
         "#{status,jdbcType=VARCHAR})"
     })
+    @Options(useGeneratedKeys = true, keyProperty = "id")
     int insert(Euser record);
 
     @Update({

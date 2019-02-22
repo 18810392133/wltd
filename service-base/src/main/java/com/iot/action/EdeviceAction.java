@@ -122,13 +122,14 @@ public class EdeviceAction {
     }
 
     @RequestMapping(value = "/insert", method = RequestMethod.POST)
-    public Edevicev insert(String item, Integer sensorid, Integer roomid, String protocol, String status, String note){
+    public Edevicev insert(String item, Integer sensorid, Integer roomid, String protocol, String status, Integer level, String note){
         Edevicev device = new Edevicev();
         device.setItem(item);
         device.setSensorid(sensorid);
         device.setRoomid(roomid);
         device.setProtocol(protocol);
         device.setStatus(status);
+        device.setLevel(level);
         device.setNote(note);
         edeviceService.insert(device);
         device.setSensor(esensorService.selectVByPrimaryKey(sensorid));
@@ -137,7 +138,7 @@ public class EdeviceAction {
     }
 
     @RequestMapping(value = "/update", method = RequestMethod.PUT)
-    public Edevicev update(Integer id, String item, Integer sensorid, Integer roomid, String protocol, String status, String note){
+    public Edevicev update(Integer id, String item, Integer sensorid, Integer roomid, String protocol, String status, Integer level, String note){
         Edevicev device = edeviceService.selectVByPrimaryKey(id);
         if(device != null){
             device.setItem(item);
@@ -145,6 +146,7 @@ public class EdeviceAction {
             device.setRoomid(roomid);
             device.setProtocol(protocol);
             device.setStatus(status);
+            device.setLevel(level);
             device.setNote(note);
             edeviceService.updateByPrimaryKey(device);
             device.setSensor(esensorService.selectVByPrimaryKey(sensorid));

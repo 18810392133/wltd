@@ -115,6 +115,7 @@ public interface EdataMapper {
         "#{deviceid,jdbcType=INTEGER}, #{attrid,jdbcType=INTEGER}, ",
         "#{time,jdbcType=VARCHAR}, #{note,jdbcType=VARCHAR})"
     })
+    @Options(useGeneratedKeys = true, keyProperty = "id")
     int insert(Edata record);
 
     @Update({

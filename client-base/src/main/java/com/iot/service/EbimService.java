@@ -60,10 +60,10 @@ public interface EbimService {
     public Ebimv selectSubVByPrimaryKey(@RequestParam("projectid") Integer projectid, @RequestParam("id") Integer id);
 
     @RequestMapping(value = "/bim/insert", method = RequestMethod.POST)
-    public Ebimv insert(@RequestParam("item") String item, @RequestParam("platid") Integer platid, @RequestParam("longitude") String longitude, @RequestParam("latitude") String latitude, @RequestParam("status") String status, @RequestParam("modelfile") String modelfile, @RequestParam("note") String note);
+    public Ebimv insert(@RequestParam("item") String item, @RequestParam("platid") Integer platid, @RequestParam("longitude") String longitude, @RequestParam("latitude") String latitude, @RequestParam("status") String status, @RequestParam("level") Integer level, @RequestParam("modelfile") String modelfile, @RequestParam("note") String note);
 
     @RequestMapping(value = "/bim/update", method = RequestMethod.PUT)
-    public Ebimv update(@RequestParam("id") Integer id, @RequestParam("item") String item, @RequestParam("bimid") Integer bimid, @RequestParam("longitude") String longitude, @RequestParam("latitude") String latitude, @RequestParam("status") String status, @RequestParam("modelfile") String modelfile, @RequestParam("note") String note);
+    public Ebimv update(@RequestParam("id") Integer id, @RequestParam("item") String item, @RequestParam("bimid") Integer bimid, @RequestParam("longitude") String longitude, @RequestParam("latitude") String latitude, @RequestParam("status") String status, @RequestParam("level") Integer level, @RequestParam("modelfile") String modelfile, @RequestParam("note") String note);
 
     @RequestMapping(value = "/bim/delete", method = RequestMethod.DELETE)
     public int delete(@RequestParam("id") Integer id);
