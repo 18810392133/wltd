@@ -36,6 +36,9 @@ public interface EuserthresholdService {
     @RequestMapping(value = "/userthreshold/selectVByPrimaryKey", method = RequestMethod.GET)
     public Euserthresholdv selectVByPrimaryKey(@RequestParam("id") Integer id);
 
+    @RequestMapping(value = "/userthreshold/selectVByUserAttr", method = RequestMethod.GET)
+    public List<Euserthresholdv> selectVByUserAttr(@RequestParam("userid") Integer userid, @RequestParam("attrid") Integer attrid);
+
     @RequestMapping(value = "/userthreshold/selectSubAll", method = RequestMethod.GET)
     public List<Euserthreshold> selectSubAll(@RequestParam("projectid") Integer projectid);
 

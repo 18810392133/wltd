@@ -88,6 +88,15 @@ public class EuserthresholdAction {
     }
 
     @AuthToken
+    @RequestMapping(value = "/selectVByUserAttr")
+    public Map<Object, Object> selectVByUserAttr(Integer userid, Integer attrid){
+        List<Euserthresholdv> list = euserthresholdService.selectVByUserAttr(userid, attrid);
+        Map<Object, Object> map = new HashMap<Object, Object>();
+        map.put("list", list);
+        return map;
+    }
+
+    @AuthToken
     @RequestMapping(value = "/selectSubAll")
     public Map<Object, Object> selectSubAll(Integer projectid){
         List<Euserthreshold> list = euserthresholdService.selectSubAll(projectid);

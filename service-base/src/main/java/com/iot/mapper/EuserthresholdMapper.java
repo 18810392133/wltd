@@ -103,6 +103,24 @@ public interface EuserthresholdMapper {
     Euserthresholdv selectVByPrimaryKey(Integer id);
 
     @Select({
+            "select",
+            "euserthreshold.id id, euserthreshold.userid userid, euserthreshold.thresholdid thresholdid, euserthreshold.note note",
+            "from euserthreshold, ethreshold",
+            "where euserthreshold.userid = #{userid,jdbcType=INTEGER} and euserthreshold.thresholdid = ethreshold.id and ethreshold.attrid = #{attrid,jdbcType=INTEGER}"
+    })
+    @Results({
+            @Result(column="id", property="id", jdbcType=JdbcType.INTEGER, id=true),
+            @Result(column="userid", property="userid", jdbcType=JdbcType.INTEGER),
+            @Result(column="thresholdid", property="thresholdid", jdbcType=JdbcType.INTEGER),
+            @Result(column="note", property="note", jdbcType=JdbcType.VARCHAR),
+            @Result(column = "userid",property = "user",
+                    one = @One(select = "com.iot.mapper.EuserMapper.selectVByPrimaryKey")),
+            @Result(column = "thresholdid",property = "threshold",
+                    one = @One(select = "com.iot.mapper.EthresholdMapper.selectVByPrimaryKey"))
+    })
+    List<Euserthresholdv> selectVByUserAttr(Integer userid, Integer attrid);
+
+    @Select({
         "select",
         "euserthreshold.id id, euserthreshold.userid userid, euserthreshold.thresholdid thresholdid, euserthreshold.note note",
         "from euserthreshold, euser",

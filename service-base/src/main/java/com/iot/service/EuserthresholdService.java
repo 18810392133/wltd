@@ -21,6 +21,8 @@ public interface EuserthresholdService {
 
     public Euserthresholdv selectVByPrimaryKey(Integer id);
 
+    public List<Euserthresholdv> selectVByUserAttr(Integer userid, Integer attrid);
+
     public List<Euserthreshold> selectSubAll(Integer projectid);
 
     public List<Euserthreshold> selectSubByPage(Integer projectid, Integer page, Integer rows, String sort, String order, String filterRules);

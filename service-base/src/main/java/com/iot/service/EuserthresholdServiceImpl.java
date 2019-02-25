@@ -63,6 +63,10 @@ public class EuserthresholdServiceImpl implements EuserthresholdService {
         return euserthresholdMapper.selectVByPrimaryKey(id);
     }
 
+    public List<Euserthresholdv> selectVByUserAttr(Integer userid, Integer attrid){
+        return euserthresholdMapper.selectVByUserAttr(userid, attrid);
+    }
+
     public List<Euserthreshold> selectSubAll(Integer projectid){
         return euserthresholdMapper.selectSubAll(projectid);
     }

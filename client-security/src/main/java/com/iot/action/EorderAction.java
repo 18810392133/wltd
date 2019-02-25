@@ -1,27 +1,37 @@
 package com.iot.action;
 
 import com.alibaba.fastjson.JSONArray;
-import com.iot.bean.Eorder;
-import com.iot.bean.Eorderv;
-import com.iot.bean.Euserdevice;
-import com.iot.bean.Select;
-import com.iot.service.EorderService;
-import com.iot.service.EuserdeviceService;
+import com.alibaba.fastjson.JSONObject;
+import com.iot.bean.*;
+import com.iot.service.*;
 import com.iot.util.AuthToken;
 import org.apache.commons.beanutils.BeanMap;
+import org.eclipse.paho.client.mqttv3.*;
+import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.Resource;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 @RestController
 @RequestMapping("/order")
 public class EorderAction {
     @Resource
     private EorderService eorderService;
+    @Resource
+    private EdataService edataService;
+    @Resource
+    private EattrService eattrService;
+    @Resource
+    private EthresholdService ethresholdService;
+    @Resource
+    private EdeviceService edeviceService;
+    @Resource
+    private EroomService eroomService;
+    @Resource
+    private EbimService ebimService;
     @Resource
     private EuserdeviceService euserdeviceService;
 
@@ -53,7 +63,6 @@ public class EorderAction {
     public Map<Object, Object> selectUserDeviceOrder(Integer userid, Integer deviceid){
         Map<Object, Object> map = new HashMap<Object, Object>();
         List<Euserdevice> userdeviceList = euserdeviceService.selectBySql("userid=" + userid + " and deviceid=" + deviceid);
-
         if(userdeviceList.size() > 0){
             List<Eorderv> list = eorderService.selectVByDevice(deviceid);
             map.put("list", list);
@@ -70,15 +79,22 @@ public class EorderAction {
         Eorder order = eorderService.selectByPrimaryKey(id);
         if(order != null){
             if(order.getStatus().equals("告警")){
-                map.put("isSuccess", true);
-                map.put("object", eorderService.update(id, order.getItem(), order.getDataid(), userid, "维修", order.getLevel(), order.getType(), order.getTime(), order.getNote()));
+                Eorderv orderv = eorderService.update(id, order.getItem(), order.getDataid(), userid, "维修", order.getLevel(), order.getType(), order.getTime(), order.getNote());
+                if(orderv != null) {
+                    map.put("isSuccess", true);
+                    map.put("object", orderv);
+                    setAllStatus(orderv.getData().getDeviceid());
+                }else{
+                    map.put("isSuccess", false);
+                    map.put("msg", "工单处理错误，请重试");
+                }
             }else{
                 map.put("isSuccess", false);
-                map.put("msg", "订单已被他人处理");
+                map.put("msg", "工单已被他人处理");
             }
         }else{
             map.put("isSuccess", false);
-            map.put("msg", "无效订单");
+            map.put("msg", "无效工单");
         }
         return map;
     }
@@ -87,20 +103,146 @@ public class EorderAction {
     @RequestMapping(value = "/submitOrder")
     public Map<Object, Object> submitOrder(Integer id, Integer userid, String status, String note){
         Map<Object, Object> map = new HashMap<Object, Object>();
-        Eorder order = eorderService.selectByPrimaryKey(id);
+        Eorderv order = eorderService.selectVByPrimaryKey(id);
         if(order != null){
             if(order.getUserid().equals(userid)){
-                map.put("isSuccess", true);
-                map.put("object", eorderService.update(id, order.getItem(), order.getDataid(), userid, status, order.getLevel(), order.getType(), order.getTime(), note));
+                if(status.equals("完成")){
+                    map.put("isSuccess", false);
+                    map.put("msg", "提交成功，系统正在验证设备状态，请稍后查看是否验证成功");
+                    setAllStatus(order.getData().getDeviceid());
+                    Edevicev device = edeviceService.selectVByPrimaryKey(order.getData().getDeviceid());
+                    Eattrv attr = eattrService.selectVByPrimaryKey(order.getData().getAttrid());
+                    List<Ethresholdv> thresholdList = ethresholdService.selectVBySql("attrid" + attr.getId() + " order by level asc");
+                    if(device != null) {
+                        try {
+                            MqttClient client = new MqttClient("tcp://129.204.174.96:3883", "wuliantiandi", new MemoryPersistence());
+                            MqttConnectOptions options = new MqttConnectOptions();
+                            options.setCleanSession(true);
+                            options.setUserName("wuliantiandi");
+                            options.setPassword("GHkAHs8421La".toCharArray());
+                            options.setConnectionTimeout(10);
+                            options.setKeepAliveInterval(20);
+                            client.setCallback(new MqttCallback() {
+                                public void connectionLost(Throwable cause) {
+                                    System.out.println("connectionLost");
+                                }
+                                public void messageArrived(String topic, MqttMessage message) throws Exception {
+                                    JSONObject res = JSONObject.parseObject(new String(message.getPayload()));
+                                    String dataItem = res.getString(attr.getProtocol());
+                                    int level = 0;
+                                    for(int i = 0; i < thresholdList.size(); i++){
+                                        if(attr.getCompare().equals(">") && Integer.parseInt(dataItem) > Integer.parseInt(thresholdList.get(i).getItem()) ||
+                                                attr.getCompare().equals("<") && Integer.parseInt(dataItem) < Integer.parseInt(thresholdList.get(i).getItem()) ||
+                                                attr.getCompare().equals(">") && Integer.parseInt(dataItem) > Integer.parseInt(thresholdList.get(i).getItem()) ||
+                                                attr.getCompare().equals(">=") && Integer.parseInt(dataItem) >= Integer.parseInt(thresholdList.get(i).getItem()) ||
+                                                attr.getCompare().equals("<=") && Integer.parseInt(dataItem) <= Integer.parseInt(thresholdList.get(i).getItem()) ||
+                                                attr.getCompare().equals("=") && Integer.parseInt(dataItem) == Integer.parseInt(thresholdList.get(i).getItem())){
+                                            level = thresholdList.get(i).getLevel();
+                                        }
+                                    }
+                                    if(level == 0){
+                                        Eorderv orderv = eorderService.selectVByPrimaryKey(id);
+                                        if(orderv != null) {
+                                            SimpleDateFormat frm = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.CHINA);
+                                            String time = frm.format(new Date());
+                                            Edatav data = edataService.insert(dataItem, device.getId(), attr.getId(), time, "");
+                                            if(data != null) {
+                                                orderv = eorderService.update(id, orderv.getItem(), orderv.getDataid(), userid, status, orderv.getLevel(), orderv.getType(), orderv.getTime(), note);
+                                                if (orderv != null) {
+                                                    setAllStatus(device.getId());
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                public void deliveryComplete(IMqttDeliveryToken token) {
+                                    System.out.println("deliveryComplete---------" + token.isComplete());
+                                }
+                            });
+                            client.connect(options);
+                            client.subscribe(device.getProtocol(), 1);
+                        } catch (MqttException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }else{
+                    order = eorderService.update(id, order.getItem(), order.getDataid(), userid, status, order.getLevel(), order.getType(), order.getTime(), note);
+                    if (order != null) {
+                        map.put("isSuccess", true);
+                        map.put("object", order);
+                        setAllStatus(order.getData().getDeviceid());
+                    } else {
+                        map.put("isSuccess", false);
+                        map.put("msg", "工单提交错误，请重试");
+                    }
+                }
             }else{
                 map.put("isSuccess", false);
                 map.put("msg", "无权处理该工单");
             }
         }else{
             map.put("isSuccess", false);
-            map.put("msg", "无效订单");
+            map.put("msg", "无效工单");
         }
         return map;
+    }
+
+    public void setAllStatus(Integer deviceid){
+        List<Eorderv> list = eorderService.selectVByDevice(deviceid);
+        String status = "正常";
+        int level = 0;
+        for(int i = 0; i < list.size(); i++){
+            if(list.get(i).getStatus().equals("告警")) {
+                status = "告警";
+                if(list.get(i).getLevel() > level)
+                    level = list.get(i).getLevel();
+            }else if(list.get(i).getStatus().equals("维修")){
+                if(status.equals("正常"))
+                    status = "维修";
+                if(list.get(i).getLevel() > level)
+                    level = list.get(i).getLevel();
+            }
+        }
+        Edevicev device = edeviceService.selectVByPrimaryKey(deviceid);
+        device = edeviceService.update(device.getId(), device.getItem(), device.getSensorid(), device.getRoomid(), device.getProtocol(), status, level, device.getNote());
+        if(device != null) {
+            List<Edevicev> deviceList = edeviceService.selectVBySql("roomid=" + device.getRoomid());
+            status = "正常";
+            level = 0;
+            for(int i = 0; i < deviceList.size(); i++){
+                if(deviceList.get(i).getStatus().equals("告警")) {
+                    status = "告警";
+                    if(deviceList.get(i).getLevel() > level)
+                        level = deviceList.get(i).getLevel();
+                }else if(deviceList.get(i).getStatus().equals("维修")){
+                    if(status.equals("正常"))
+                        status = "维修";
+                    if(deviceList.get(i).getLevel() > level)
+                        level = deviceList.get(i).getLevel();
+                }
+            }
+            Eroomv room = eroomService.selectVByPrimaryKey(device.getRoomid());
+            room = eroomService.update(room.getId(), room.getItem(), room.getBimid(), status, level, room.getModelfile(), room.getNote());
+            if(room != null){
+                List<Eroomv> roomList = eroomService.selectVBySql("bimid=" + room.getBimid());
+                status = "正常";
+                level = 0;
+                for(int i = 0; i < roomList.size(); i++){
+                    if(roomList.get(i).getStatus().equals("告警")) {
+                        status = "告警";
+                        if(roomList.get(i).getLevel() > level)
+                            level = roomList.get(i).getLevel();
+                    }else if(roomList.get(i).getStatus().equals("维修")){
+                        if(status.equals("正常"))
+                            status = "维修";
+                        if(roomList.get(i).getLevel() > level)
+                            level = roomList.get(i).getLevel();
+                    }
+                }
+                Ebimv bim = ebimService.selectVByPrimaryKey(room.getBimid());
+                ebimService.update(bim.getId(), bim.getItem(), bim.getPlatid(), bim.getLongitude(), bim.getLatitude(), status, level, bim.getModelfile(), bim.getNote());
+            }
+        }
     }
 
     @AuthToken

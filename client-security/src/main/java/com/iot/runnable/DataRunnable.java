@@ -1,6 +1,14 @@
 package com.iot.runnable;
 
 import com.alibaba.fastjson.JSONObject;
+import com.aliyuncs.CommonRequest;
+import com.aliyuncs.CommonResponse;
+import com.aliyuncs.DefaultAcsClient;
+import com.aliyuncs.IAcsClient;
+import com.aliyuncs.exceptions.ClientException;
+import com.aliyuncs.exceptions.ServerException;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.profile.DefaultProfile;
 import com.iot.bean.*;
 import com.iot.service.*;
 import org.eclipse.paho.client.mqttv3.*;
@@ -15,17 +23,26 @@ public class DataRunnable implements Runnable {
     private EorderService eorderService;
     private EattrService eattrService;
     private EdeviceService edeviceService;
+    private EuserdeviceService euserdeviceService;
+    private EuserthresholdService euserthresholdService;
+    private EroomService eroomService;
+    private EbimService ebimService;
     private EthresholdService ethresholdService;
     private Integer id;
 
-    public DataRunnable(Integer id, EdataService edataService, EorderService eorderService, EattrService eattrService, EdeviceService edeviceService, EthresholdService ethresholdService){
+    public DataRunnable(Integer id, EdataService edataService, EorderService eorderService, EattrService eattrService, EdeviceService edeviceService, EuserdeviceService euserdeviceService, EuserthresholdService euserthresholdService, EroomService eroomService, EbimService ebimService, EthresholdService ethresholdService){
         this.edataService = edataService;
         this.eorderService = eorderService;
         this.eattrService = eattrService;
         this.edeviceService = edeviceService;
+        this.euserdeviceService = euserdeviceService;
+        this.euserthresholdService = euserthresholdService;
+        this.eroomService = eroomService;
+        this.ebimService = ebimService;
         this.ethresholdService = ethresholdService;
         this.id = id;
     }
+
     @Override
     public void run() {
         System.out.println(id);
@@ -63,7 +80,7 @@ public class DataRunnable implements Runnable {
                                                 + device.getRoom().getBim().getItem() + " " + device.getRoom().getItem() + " "
                                                 + device.getSensor().getItem() + " " + device.getItem() + "" + attrList.get(j).getItem();
                                         int level = 0;
-                                                List<Ethreshold> thresholdList = ethresholdService.selectBySql("attrid=" + attrList.get(j).getId() + " order by level asc");
+                                        List<Ethreshold> thresholdList = ethresholdService.selectBySql("attrid=" + attrList.get(j).getId() + " order by level asc");
                                         for(int k = 0; k < thresholdList.size(); k++){
                                             if(attrList.get(j).getCompare().equals(">") && Integer.parseInt(dataItem) > Integer.parseInt(thresholdList.get(k).getItem()) ||
                                                     attrList.get(j).getCompare().equals("<") && Integer.parseInt(dataItem) < Integer.parseInt(thresholdList.get(k).getItem()) ||
@@ -79,10 +96,18 @@ public class DataRunnable implements Runnable {
                                             if (orderList.size() > 0) {
                                                 Eorder order = orderList.get(0);
                                                 if (order.getLevel() < level) {
-                                                    eorderService.update(order.getId(), orderItem, data.getId(), null, "告警", level, "正常", time, "");
+                                                    order = eorderService.insert(orderItem, data.getId(), null, "告警", level, "正常", time, "");
+                                                    if(order != null) {
+                                                        sendMsgs(deviceid, attrid, orderItem, level, time);
+                                                        setAllStatus(deviceid);
+                                                    }
                                                 }
                                             } else {
-                                                eorderService.insert(orderItem, data.getId(), null, "告警", level, "正常", time, "");
+                                                Eorder order = eorderService.insert(orderItem, data.getId(), null, "告警", level, "正常", time, "");
+                                                if(order != null) {
+                                                    sendMsgs(deviceid, attrid, orderItem, level, time);
+                                                    setAllStatus(deviceid);
+                                                }
                                             }
                                         }
                                     }
@@ -98,6 +123,104 @@ public class DataRunnable implements Runnable {
                 client.subscribe(deviceList.get(i).getProtocol(), 1);
             } catch (MqttException e) {
                 e.printStackTrace();
+            }
+        }
+    }
+
+    public void sendMsgs(Integer deviceid, Integer attrid, String item, Integer level, String time){
+        List<Euserdevicev> userdeviceList = euserdeviceService.selectVBySql("deviceid=" + deviceid);
+        String phone = "";
+        for(int i = 0; i < userdeviceList.size(); i++){
+            List<Euserthresholdv> userthresholdList = euserthresholdService.selectVByUserAttr(userdeviceList.get(i).getUserid(), attrid);
+            if(userthresholdList.size() > 0){
+                Euserthresholdv userthreshold = userthresholdList.get(0);
+                if(level >= userthreshold.getThreshold().getLevel()){
+                    sendMsg(userdeviceList.get(i).getUser().getPhone(), item, level ,time);
+                }
+            }else{
+                sendMsg(userdeviceList.get(i).getUser().getPhone(), item, level ,time);
+            }
+        }
+    }
+
+    public void sendMsg(String phone, String item, Integer level, String time){
+        if(phone != null && !phone.isEmpty()){
+            DefaultProfile profile = DefaultProfile.getProfile("default", "LTAIXpoDTXW3Cvat", "0nsk97XkQwGAe8DZLg4rLp5qtBvN8Z");
+            IAcsClient client = new DefaultAcsClient(profile);
+            CommonRequest request = new CommonRequest();
+            request.setMethod(MethodType.POST);
+            request.setDomain("dysmsapi.aliyuncs.com");
+            request.setVersion("2017-05-25");
+            request.setAction("SendSms");
+            request.putQueryParameter("PhoneNumbers", phone);
+            request.putQueryParameter("SignName", "物联天地");
+            request.putQueryParameter("TemplateCode", "SMS_158547302");
+            request.putQueryParameter("TemplateParam", "{\"item\":\"" + item + "\", \"level\": " + level + ", \"time\":\"" + time + "\"}");
+            try {
+                CommonResponse response = client.getCommonResponse(request);
+                JSONObject data = JSONObject.parseObject(response.getData());
+            } catch (ServerException e) {
+                e.printStackTrace();
+            } catch (ClientException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public void setAllStatus(Integer deviceid){
+        List<Eorderv> list = eorderService.selectVByDevice(deviceid);
+        String status = "正常";
+        int level = 0;
+        for(int i = 0; i < list.size(); i++){
+            if(list.get(i).getStatus().equals("告警")) {
+                status = "告警";
+                if(list.get(i).getLevel() > level)
+                    level = list.get(i).getLevel();
+            }else if(list.get(i).getStatus().equals("维修")){
+                if(status.equals("正常"))
+                    status = "维修";
+                if(list.get(i).getLevel() > level)
+                    level = list.get(i).getLevel();
+            }
+        }
+        Edevicev device = edeviceService.selectVByPrimaryKey(deviceid);
+        device = edeviceService.update(device.getId(), device.getItem(), device.getSensorid(), device.getRoomid(), device.getProtocol(), status, level, device.getNote());
+        if(device != null) {
+            List<Edevicev> deviceList = edeviceService.selectVBySql("roomid=" + device.getRoomid());
+            status = "正常";
+            level = 0;
+            for(int i = 0; i < deviceList.size(); i++){
+                if(deviceList.get(i).getStatus().equals("告警")) {
+                    status = "告警";
+                    if(deviceList.get(i).getLevel() > level)
+                        level = deviceList.get(i).getLevel();
+                }else if(deviceList.get(i).getStatus().equals("维修")){
+                    if(status.equals("正常"))
+                        status = "维修";
+                    if(deviceList.get(i).getLevel() > level)
+                        level = deviceList.get(i).getLevel();
+                }
+            }
+            Eroomv room = eroomService.selectVByPrimaryKey(device.getRoomid());
+            room = eroomService.update(room.getId(), room.getItem(), room.getBimid(), status, level, room.getModelfile(), room.getNote());
+            if(room != null){
+                List<Eroomv> roomList = eroomService.selectVBySql("bimid=" + room.getBimid());
+                status = "正常";
+                level = 0;
+                for(int i = 0; i < roomList.size(); i++){
+                    if(roomList.get(i).getStatus().equals("告警")) {
+                        status = "告警";
+                        if(roomList.get(i).getLevel() > level)
+                            level = roomList.get(i).getLevel();
+                    }else if(roomList.get(i).getStatus().equals("维修")){
+                        if(status.equals("正常"))
+                            status = "维修";
+                        if(roomList.get(i).getLevel() > level)
+                            level = roomList.get(i).getLevel();
+                    }
+                }
+                Ebimv bim = ebimService.selectVByPrimaryKey(room.getBimid());
+                ebimService.update(bim.getId(), bim.getItem(), bim.getPlatid(), bim.getLongitude(), bim.getLatitude(), status, level, bim.getModelfile(), bim.getNote());
             }
         }
     }

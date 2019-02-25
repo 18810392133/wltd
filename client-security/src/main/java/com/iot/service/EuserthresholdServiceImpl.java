@@ -51,6 +51,11 @@ public class EuserthresholdServiceImpl implements EuserthresholdService {
     }
 
     @Override
+    public List<Euserthresholdv> selectVByUserAttr(Integer userid, Integer attrid) {
+        return null;
+    }
+
+    @Override
     public List<Euserthreshold> selectSubAll(Integer projectid) {
         return null;
     }

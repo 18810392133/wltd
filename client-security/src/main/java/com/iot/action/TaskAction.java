@@ -25,6 +25,14 @@ public class TaskAction {
     @Resource
     private EdeviceService edeviceService;
     @Resource
+    private EuserdeviceService euserdeviceService;
+    @Resource
+    private EuserthresholdService euserthresholdService;
+    @Resource
+    private EroomService eroomService;
+    @Resource
+    private EbimService ebimService;
+    @Resource
     private EthresholdService ethresholdService;
     @Resource
     private EsensorService esensorService;
@@ -64,7 +72,7 @@ public class TaskAction {
             String protocol = sensorList.get(i).getProtocol();
             Integer timer = sensorList.get(i).getTimer();
             if(protocol.equals("DataRunnable")) {
-                DataRunnable runnable = new DataRunnable(id, edataService, eorderService, eattrService, edeviceService, ethresholdService);
+                DataRunnable runnable = new DataRunnable(id, edataService, eorderService, eattrService, edeviceService, euserdeviceService, euserthresholdService, eroomService, ebimService, ethresholdService);
                 futures.add(threadPoolTaskScheduler.schedule(runnable, new CronTrigger(getCron(timer))));
             }
         }

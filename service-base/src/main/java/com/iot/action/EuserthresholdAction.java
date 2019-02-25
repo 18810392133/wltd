@@ -71,6 +71,11 @@ public class EuserthresholdAction {
         return euserthresholdService.selectVByPrimaryKey(id);
     }
 
+    @RequestMapping(value = "/selectVByUserAttr", method = RequestMethod.GET)
+    public List<Euserthresholdv> selectVByUserAttr(Integer userid, Integer attrid){
+        return euserthresholdService.selectVByUserAttr(userid, attrid);
+    }
+
     @RequestMapping(value = "/selectSubAll", method = RequestMethod.GET)
     public List<Euserthreshold> selectSubAll(Integer projectid){
         return euserthresholdService.selectSubAll(projectid);
