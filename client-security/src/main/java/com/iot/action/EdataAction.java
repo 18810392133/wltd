@@ -56,7 +56,7 @@ public class EdataAction {
         for(int i = 0; i < attrList.size(); i++){
             Map<Object, Object> attrMap = new HashMap<Object, Object>();
             attrMap.put("attr", attrList.get(i));
-            List<Edata> dataList = edataService.selectBySql("deviceid=" + deviceid + " and attrid=" + attrList.get(i).getId() + " order by time desc limit 1");
+            List<Edata> dataList = edataService.selectBySql("deviceid=" + deviceid + " and attrid=" + attrList.get(i).getId() + " order by id desc limit 1");
             if(dataList.size() > 0)
                 attrMap.put("data", dataList.get(0));
             list.add(attrMap);

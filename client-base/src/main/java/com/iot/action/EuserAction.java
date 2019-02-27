@@ -34,15 +34,15 @@ public class EuserAction {
 		if(list.size() > 0){
 			Euser user = list.get(0);
 			if(user.getType().equals("用户")){
-				map.put("isSuccess", true);
+				map.put("status", 260);
 				map.put("object", user);
 			}else{
-				map.put("isSuccess", false);
-				map.put("msg", "不能关联非普通用户");
+				map.put("status", 240);
+				map.put("message", "不能关联非普通用户");
 			}
 		}else{
-			map.put("isSuccess", false);
-			map.put("msg", "用户不存在");
+			map.put("status", 240);
+			map.put("message", "用户不存在");
 		}
 		return map;
 	}
@@ -56,22 +56,22 @@ public class EuserAction {
 			Eproject project = eprojectService.selectByPrimaryKey(user.getProjectid());
 			if(project != null && project.getServicename().equals(servicename)){
 				if(list.get(0).getPassword().equals(password)){
-					map.put("isSuccess", true);
+					map.put("status", 260);
 					map.put("user", list.get(0));
 					map.put("projectid", user.getProjectid());
 					map.put("servicename", servicename);
 					map.put("token", getToken(username, password));
 				}else{
-					map.put("isSuccess", false);
-					map.put("msg", "密码错误");
+					map.put("status", 240);
+					map.put("message", "密码错误");
 				}
 			}else{
-				map.put("isSuccess", false);
-				map.put("msg", "用户名错误");
+				map.put("status", 240);
+				map.put("message", "用户名错误");
 			}
 		}else{
-			map.put("isSuccess", false);
-			map.put("msg", "用户名错误");
+			map.put("status", 240);
+			map.put("message", "用户名错误");
 		}
 		return map;
 	}
@@ -85,15 +85,15 @@ public class EuserAction {
 				SimpleDateFormat frm = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.CHINA);
 				String time = frm.format(new Date());
 				Euser user = euserService.insert(username, password, list.get(0).getId(), "用户", "", phone, "", time, "可用");
-				map.put("isSuccess", true);
+				map.put("status", 260);
 				map.put("user", user);
 			}else{
-				map.put("isSuccess", false);
-				map.put("msg", "该用户已存在");
+				map.put("status", 240);
+				map.put("message", "该用户已存在");
 			}
 		}else{
-			map.put("isSuccess", false);
-			map.put("msg", "该项目未启动，无法注册");
+			map.put("status", 240);
+			map.put("message", "该项目未启动，无法注册");
 		}
 		return map;
 	}
@@ -108,19 +108,19 @@ public class EuserAction {
 				Euser user = userList.get(0);
 				if(user.getPhone().equals(phone)){
 					user = euserService.update(user.getId(), user.getUsername(), password, user.getProjectid(), user.getType(), user.getRealname(), user.getPhone(), user.getWechat(), user.getTime(), user.getStatus());
-					map.put("isSuccess", true);
+					map.put("status", 260);
 					map.put("user", user);
 				}else{
-					map.put("isSuccess", false);
-					map.put("msg", "手机号码错误");
+					map.put("status", 240);
+					map.put("message", "手机号码错误");
 				}
 			}else{
-				map.put("isSuccess", false);
-				map.put("msg", "该用户不存在");
+				map.put("status", 240);
+				map.put("message", "该用户不存在");
 			}
 		}else{
-			map.put("isSuccess", false);
-			map.put("msg", "该项目未启动，无法注册");
+			map.put("status", 240);
+			map.put("message", "该项目未启动，无法注册");
 		}
 		return map;
 	}

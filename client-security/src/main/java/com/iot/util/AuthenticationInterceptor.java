@@ -46,7 +46,7 @@ public class AuthenticationInterceptor implements HandlerInterceptor {
                 response.setCharacterEncoding("UTF-8");
                 if (token == null) {
                     Map<String,Object> map = new HashMap<>();
-                    map.put("code", "401");
+                    map.put("status", 401);
                     map.put("message", "无token，请重新登录");
                     try {
                         response.getWriter().write(JSON.toJSONString(map));
@@ -64,7 +64,7 @@ public class AuthenticationInterceptor implements HandlerInterceptor {
                             jwtVerifier.verify(token);
                         } catch (JWTVerificationException j) {
                             Map<String,Object> map = new HashMap<>();
-                            map.put("code", "401");
+                            map.put("status", 401);
                             map.put("message", "token无效，请重新登录");
                             try {
                                 response.getWriter().write(JSON.toJSONString(map));
@@ -75,7 +75,7 @@ public class AuthenticationInterceptor implements HandlerInterceptor {
                         }
                     } else {
                         Map<String,Object> map = new HashMap<>();
-                        map.put("code", "401");
+                        map.put("status", 401);
                         map.put("message", "用户不存在，请重新登录");
                         try {
                             response.getWriter().write(JSON.toJSONString(map));
@@ -86,7 +86,7 @@ public class AuthenticationInterceptor implements HandlerInterceptor {
                     }
                 } catch (JWTDecodeException j) {
                     Map<String,Object> map = new HashMap<>();
-                    map.put("code", "401");
+                    map.put("status", 401);
                     map.put("message", "token无效，请重新登录");
                     try {
                         response.getWriter().write(JSON.toJSONString(map));

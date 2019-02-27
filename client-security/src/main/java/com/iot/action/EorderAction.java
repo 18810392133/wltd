@@ -81,20 +81,20 @@ public class EorderAction {
             if(order.getStatus().equals("告警")){
                 Eorderv orderv = eorderService.update(id, order.getItem(), order.getDataid(), userid, "维修", order.getLevel(), order.getType(), order.getTime(), order.getNote());
                 if(orderv != null) {
-                    map.put("isSuccess", true);
+                    map.put("status", 260);
                     map.put("object", orderv);
                     setAllStatus(orderv.getData().getDeviceid());
                 }else{
-                    map.put("isSuccess", false);
-                    map.put("msg", "工单处理错误，请重试");
+                    map.put("status", 240);
+                    map.put("message", "工单处理错误，请重试");
                 }
             }else{
-                map.put("isSuccess", false);
-                map.put("msg", "工单已被他人处理");
+                map.put("status", 240);
+                map.put("message", "工单已被他人处理");
             }
         }else{
-            map.put("isSuccess", false);
-            map.put("msg", "无效工单");
+            map.put("status", 240);
+            map.put("message", "无效工单");
         }
         return map;
     }
@@ -107,82 +107,60 @@ public class EorderAction {
         if(order != null){
             if(order.getUserid().equals(userid)){
                 if(status.equals("完成")){
-                    map.put("isSuccess", false);
-                    map.put("msg", "提交成功，系统正在验证设备状态，请稍后查看是否验证成功");
-                    setAllStatus(order.getData().getDeviceid());
-                    Edevicev device = edeviceService.selectVByPrimaryKey(order.getData().getDeviceid());
-                    Eattrv attr = eattrService.selectVByPrimaryKey(order.getData().getAttrid());
-                    List<Ethresholdv> thresholdList = ethresholdService.selectVBySql("attrid" + attr.getId() + " order by level asc");
-                    if(device != null) {
-                        try {
-                            MqttClient client = new MqttClient("tcp://129.204.174.96:3883", "wuliantiandi", new MemoryPersistence());
-                            MqttConnectOptions options = new MqttConnectOptions();
-                            options.setCleanSession(true);
-                            options.setUserName("wuliantiandi");
-                            options.setPassword("GHkAHs8421La".toCharArray());
-                            options.setConnectionTimeout(10);
-                            options.setKeepAliveInterval(20);
-                            client.setCallback(new MqttCallback() {
-                                public void connectionLost(Throwable cause) {
-                                    System.out.println("connectionLost");
+                    List<Edatav> dataList = edataService.selectVBySql("deviceid=" + order.getData().getDeviceid() + " and attrid=" + order.getData().getAttrid() + " order by id desc limit 1");
+                    if(dataList.size() > 0){
+                        Edatav data = dataList.get(0);
+                        Eattrv attr = eattrService.selectVByPrimaryKey(order.getData().getAttrid());
+                        if(attr != null){
+                            List<Ethresholdv> thresholdList = ethresholdService.selectVBySql("attrid" + order.getData().getAttrid() + " order by level asc");
+                            int level = 0;
+                            for(int i = 0; i < thresholdList.size(); i++){
+                                if(attr.getCompare().equals(">") && Integer.parseInt(data.getItem()) > Integer.parseInt(thresholdList.get(i).getItem()) ||
+                                        attr.getCompare().equals("<") && Integer.parseInt(data.getItem()) < Integer.parseInt(thresholdList.get(i).getItem()) ||
+                                        attr.getCompare().equals(">") && Integer.parseInt(data.getItem()) > Integer.parseInt(thresholdList.get(i).getItem()) ||
+                                        attr.getCompare().equals(">=") && Integer.parseInt(data.getItem()) >= Integer.parseInt(thresholdList.get(i).getItem()) ||
+                                        attr.getCompare().equals("<=") && Integer.parseInt(data.getItem()) <= Integer.parseInt(thresholdList.get(i).getItem()) ||
+                                        attr.getCompare().equals("=") && Integer.parseInt(data.getItem()) == Integer.parseInt(thresholdList.get(i).getItem())){
+                                    level = thresholdList.get(i).getLevel();
                                 }
-                                public void messageArrived(String topic, MqttMessage message) throws Exception {
-                                    JSONObject res = JSONObject.parseObject(new String(message.getPayload()));
-                                    String dataItem = res.getString(attr.getProtocol());
-                                    int level = 0;
-                                    for(int i = 0; i < thresholdList.size(); i++){
-                                        if(attr.getCompare().equals(">") && Integer.parseInt(dataItem) > Integer.parseInt(thresholdList.get(i).getItem()) ||
-                                                attr.getCompare().equals("<") && Integer.parseInt(dataItem) < Integer.parseInt(thresholdList.get(i).getItem()) ||
-                                                attr.getCompare().equals(">") && Integer.parseInt(dataItem) > Integer.parseInt(thresholdList.get(i).getItem()) ||
-                                                attr.getCompare().equals(">=") && Integer.parseInt(dataItem) >= Integer.parseInt(thresholdList.get(i).getItem()) ||
-                                                attr.getCompare().equals("<=") && Integer.parseInt(dataItem) <= Integer.parseInt(thresholdList.get(i).getItem()) ||
-                                                attr.getCompare().equals("=") && Integer.parseInt(dataItem) == Integer.parseInt(thresholdList.get(i).getItem())){
-                                            level = thresholdList.get(i).getLevel();
-                                        }
-                                    }
-                                    if(level == 0){
-                                        Eorderv orderv = eorderService.selectVByPrimaryKey(id);
-                                        if(orderv != null) {
-                                            SimpleDateFormat frm = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.CHINA);
-                                            String time = frm.format(new Date());
-                                            Edatav data = edataService.insert(dataItem, device.getId(), attr.getId(), time, "");
-                                            if(data != null) {
-                                                orderv = eorderService.update(id, orderv.getItem(), orderv.getDataid(), userid, status, orderv.getLevel(), orderv.getType(), orderv.getTime(), note);
-                                                if (orderv != null) {
-                                                    setAllStatus(device.getId());
-                                                }
-                                            }
-                                        }
-                                    }
+                            }
+                            if(level == 0){
+                                order = eorderService.update(id, order.getItem(), order.getDataid(), userid, status, order.getLevel(), order.getType(), order.getTime(), note);
+                                if (order != null) {
+                                    map.put("status", 260);
+                                    map.put("object", order);
+                                    setAllStatus(order.getData().getDeviceid());
                                 }
-                                public void deliveryComplete(IMqttDeliveryToken token) {
-                                    System.out.println("deliveryComplete---------" + token.isComplete());
-                                }
-                            });
-                            client.connect(options);
-                            client.subscribe(device.getProtocol(), 1);
-                        } catch (MqttException e) {
-                            e.printStackTrace();
+                            }else{
+                                map.put("status", 240);
+                                map.put("message", "设备仍处于报警状态，请处理完成后重新提交");
+                            }
+                        }else{
+                            map.put("status", 240);
+                            map.put("message", "数据不存在");
                         }
+                    }else{
+                        map.put("status", 240);
+                        map.put("message", "数据不存在");
                     }
                 }else{
                     order = eorderService.update(id, order.getItem(), order.getDataid(), userid, status, order.getLevel(), order.getType(), order.getTime(), note);
                     if (order != null) {
-                        map.put("isSuccess", true);
+                        map.put("status", 260);
                         map.put("object", order);
                         setAllStatus(order.getData().getDeviceid());
                     } else {
-                        map.put("isSuccess", false);
-                        map.put("msg", "工单提交错误，请重试");
+                        map.put("status", 240);
+                        map.put("message", "工单提交错误，请重试");
                     }
                 }
             }else{
-                map.put("isSuccess", false);
-                map.put("msg", "无权处理该工单");
+                map.put("status", 240);
+                map.put("message", "无权处理该工单");
             }
         }else{
-            map.put("isSuccess", false);
-            map.put("msg", "无效工单");
+            map.put("status", 240);
+            map.put("message", "无效工单");
         }
         return map;
     }

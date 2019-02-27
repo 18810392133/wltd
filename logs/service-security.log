@@ -1,213 +1,114 @@
-2019-02-25 18:27:51.667  INFO 17696 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'configurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$d257aa6a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-02-25 18:27:52.714  INFO 17696 --- [main] c.i.s.ServiceSecurityApplication         : The following profiles are active: dev
-2019-02-25 18:27:54.042  INFO 17696 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-2019-02-25 18:27:54.214  INFO 17696 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-02-25 18:27:54.245  INFO 17696 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 15ms. Found 0 repository interfaces.
-2019-02-25 18:27:54.605  INFO 17696 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=52c07227-ebdb-3080-8dd3-39f0645e9614
-2019-02-25 18:27:54.746  INFO 17696 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$b63da76d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-02-25 18:27:54.777  INFO 17696 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$d257aa6a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-02-25 18:27:55.292  INFO 17696 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8181 (http)
-2019-02-25 18:27:55.339  INFO 17696 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-02-25 18:27:55.339  INFO 17696 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.14]
-2019-02-25 18:27:55.339  INFO 17696 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\software\Java\jdk1.8.0_131\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;D:\software\Java\jdk1.8.0_131\bin\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\GtkSharp\2.12\bin;D:\software\Rational\common;D:\program\android-sdk-windows-all\tools\;D:\program\android-sdk-windows-all\platform-tools\;D:\software\gradle-4.0\bin;D:\software\VisualSVN Server\bin;C:\Program Files (x86)\Skype\Phone\;C:\Program Files\Common Files\Autodesk Shared\;D:\software\nodejs\;D:\software\Git\cmd;D:\software\Microsoft Visual Studio\Common\Tools\WinNT;D:\software\Microsoft Visual Studio\Common\MSDev98\Bin;D:\software\Microsoft Visual Studio\Common\Tools;D:\software\Microsoft Visual Studio\VC98\bin;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Users\Lenovo\AppData\Local\Microsoft\WindowsApps;C:\Users\Lenovo\AppData\Local\GitHubDesktop\bin;D:\software\SSH Secure Shell;C:\Users\Lenovo\AppData\Roaming\npm;.]
-2019-02-25 18:27:55.683  INFO 17696 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-02-25 18:27:55.683  INFO 17696 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2953 ms
-2019-02-25 18:27:56.402  WARN 17696 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
-2019-02-25 18:27:56.402  INFO 17696 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
-2019-02-25 18:27:56.418  WARN 17696 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
-2019-02-25 18:27:56.418  INFO 17696 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
-2019-02-25 18:27:56.699  INFO 17696 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-02-25 18:27:58.965  INFO 17696 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
-2019-02-25 18:27:58.996  INFO 17696 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
-2019-02-25 18:27:59.527  INFO 17696 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
-2019-02-25 18:27:59.527  INFO 17696 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
-2019-02-25 18:27:59.652  INFO 17696 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
-2019-02-25 18:27:59.652  INFO 17696 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
-2019-02-25 18:27:59.934  INFO 17696 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-25 18:28:00.246  INFO 17696 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
-2019-02-25 18:28:00.246  INFO 17696 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
-2019-02-25 18:28:00.246  INFO 17696 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
-2019-02-25 18:28:00.246  INFO 17696 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
-2019-02-25 18:28:00.246  INFO 17696 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
-2019-02-25 18:28:00.246  INFO 17696 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
-2019-02-25 18:28:00.246  INFO 17696 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
-2019-02-25 18:28:00.418  INFO 17696 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
-2019-02-25 18:28:00.434  INFO 17696 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
-2019-02-25 18:28:00.434  INFO 17696 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
-2019-02-25 18:28:00.434  INFO 17696 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1551090480434 with initial instances count: 3
-2019-02-25 18:28:00.590  INFO 17696 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application SERVICE-SECURITY with eureka with status UP
-2019-02-25 18:28:00.590  INFO 17696 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1551090480590, current=UP, previous=STARTING]
-2019-02-25 18:28:00.590  INFO 17696 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_SERVICE-SECURITY/windows10.microdone.cn:service-security:8181: registering service...
-2019-02-25 18:28:00.652  INFO 17696 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8181 (http) with context path ''
-2019-02-25 18:28:00.652  INFO 17696 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8181
-2019-02-25 18:28:00.652  INFO 17696 --- [main] c.i.s.ServiceSecurityApplication         : Started ServiceSecurityApplication in 12.22 seconds (JVM running for 16.016)
-2019-02-25 18:28:00.652  INFO 17696 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_SERVICE-SECURITY/windows10.microdone.cn:service-security:8181 - registration status: 204
-2019-02-25 18:33:00.258  INFO 17696 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-25 18:38:00.261  INFO 17696 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-25 18:43:00.263  INFO 17696 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-25 18:48:00.267  INFO 17696 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-25 18:53:00.271  INFO 17696 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-25 18:58:00.273  INFO 17696 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-25 19:03:00.276  INFO 17696 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-25 19:08:00.278  INFO 17696 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-25 19:13:00.279  INFO 17696 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-25 19:18:00.282  INFO 17696 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-25 19:23:00.284  INFO 17696 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-25 19:28:00.285  INFO 17696 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-25 19:33:00.286  INFO 17696 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-25 19:38:00.289  INFO 17696 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-25 19:41:23.853  INFO 17696 --- [http-nio-8181-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-02-25 19:41:23.869  INFO 17696 --- [http-nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2019-02-25 19:41:23.900  INFO 17696 --- [http-nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 31 ms
-2019-02-25 19:41:24.184  INFO 17696 --- [http-nio-8181-exec-1] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
-2019-02-25 19:41:24.199 DEBUG 17696 --- [http-nio-8181-exec-1] c.i.m.EorderMapper.selectByPrimaryKey    : ==>  Preparing: select id, item, dataid, userid, status, level, type, time, note from eorder where id = ? 
-2019-02-25 19:41:24.215 DEBUG 17696 --- [http-nio-8181-exec-1] c.i.m.EorderMapper.selectByPrimaryKey    : ==> Parameters: 2018(Integer)
-2019-02-25 19:41:24.246 DEBUG 17696 --- [http-nio-8181-exec-1] c.i.m.EorderMapper.selectByPrimaryKey    : <==      Total: 1
-2019-02-25 19:41:24.357 DEBUG 17696 --- [http-nio-8181-exec-2] c.i.m.EorderMapper.selectVByPrimaryKey   : ==>  Preparing: select id, item, dataid, userid, status, level, type, time, note from eorder where id = ? 
-2019-02-25 19:41:24.357 DEBUG 17696 --- [http-nio-8181-exec-2] c.i.m.EorderMapper.selectVByPrimaryKey   : ==> Parameters: 2018(Integer)
-2019-02-25 19:41:24.373 DEBUG 17696 --- [http-nio-8181-exec-2] c.i.m.EdataMapper.selectVByPrimaryKey    : ====>  Preparing: select id, item, deviceid, attrid, time, note from edata where id = ? 
-2019-02-25 19:41:24.373 DEBUG 17696 --- [http-nio-8181-exec-2] c.i.m.EdataMapper.selectVByPrimaryKey    : ====> Parameters: 2176(Integer)
-2019-02-25 19:41:24.443 DEBUG 17696 --- [http-nio-8181-exec-2] c.i.m.EdataMapper.selectVByPrimaryKey    : <====      Total: 1
-2019-02-25 19:41:24.444 DEBUG 17696 --- [http-nio-8181-exec-2] c.i.m.EorderMapper.selectVByPrimaryKey   : <==      Total: 1
-2019-02-25 19:41:24.444 DEBUG 17696 --- [http-nio-8181-exec-2] c.i.m.EorderMapper.updateByPrimaryKey    : ==>  Preparing: update eorder set item = ?, dataid = ?, userid = ?, status = ?, level = ?, type = ?, time = ?, note = ? where id = ? 
-2019-02-25 19:41:24.447 DEBUG 17696 --- [http-nio-8181-exec-2] c.i.m.EorderMapper.updateByPrimaryKey    : ==> Parameters: 东城区 北京物联天地信息技术有限公司 101 烟雾报警器 101-01 烟量 告警(String), 2176(Integer), 308(Integer), 维修(String), 1(Integer), 正常(String), 2019-02-22 09:32:10(String), null, 2018(Integer)
-2019-02-25 19:41:24.768 DEBUG 17696 --- [http-nio-8181-exec-2] c.i.m.EorderMapper.updateByPrimaryKey    : <==    Updates: 1
-2019-02-25 19:41:24.769 DEBUG 17696 --- [http-nio-8181-exec-2] c.i.m.EdataMapper.selectVByPrimaryKey    : ==>  Preparing: select id, item, deviceid, attrid, time, note from edata where id = ? 
-2019-02-25 19:41:24.769 DEBUG 17696 --- [http-nio-8181-exec-2] c.i.m.EdataMapper.selectVByPrimaryKey    : ==> Parameters: 2176(Integer)
-2019-02-25 19:41:24.770 DEBUG 17696 --- [http-nio-8181-exec-2] c.i.m.EdataMapper.selectVByPrimaryKey    : <==      Total: 1
-2019-02-25 19:41:24.806 DEBUG 17696 --- [http-nio-8181-exec-3] c.i.mapper.EorderMapper.selectVByDevice  : ==>  Preparing: select eorder.id id, eorder.item item, eorder.dataid dataid, eorder.userid userid, eorder.status status, eorder.level level, eorder.type type, eorder.time time, eorder.note note from eorder, edata where eorder.dataid = edata.id and edata.deviceid = ? 
-2019-02-25 19:41:24.806 DEBUG 17696 --- [http-nio-8181-exec-3] c.i.mapper.EorderMapper.selectVByDevice  : ==> Parameters: 29(Integer)
-2019-02-25 19:41:24.806 DEBUG 17696 --- [http-nio-8181-exec-3] c.i.m.EdataMapper.selectVByPrimaryKey    : ====>  Preparing: select id, item, deviceid, attrid, time, note from edata where id = ? 
-2019-02-25 19:41:24.806 DEBUG 17696 --- [http-nio-8181-exec-3] c.i.m.EdataMapper.selectVByPrimaryKey    : ====> Parameters: 2169(Integer)
-2019-02-25 19:41:24.822 DEBUG 17696 --- [http-nio-8181-exec-3] c.i.m.EdataMapper.selectVByPrimaryKey    : <====      Total: 1
-2019-02-25 19:41:24.822 DEBUG 17696 --- [http-nio-8181-exec-3] c.i.m.EdataMapper.selectVByPrimaryKey    : ====>  Preparing: select id, item, deviceid, attrid, time, note from edata where id = ? 
-2019-02-25 19:41:24.822 DEBUG 17696 --- [http-nio-8181-exec-3] c.i.m.EdataMapper.selectVByPrimaryKey    : ====> Parameters: 2172(Integer)
-2019-02-25 19:41:24.838 DEBUG 17696 --- [http-nio-8181-exec-3] c.i.m.EdataMapper.selectVByPrimaryKey    : <====      Total: 1
-2019-02-25 19:41:24.838 DEBUG 17696 --- [http-nio-8181-exec-3] c.i.m.EdataMapper.selectVByPrimaryKey    : ====>  Preparing: select id, item, deviceid, attrid, time, note from edata where id = ? 
-2019-02-25 19:41:24.838 DEBUG 17696 --- [http-nio-8181-exec-3] c.i.m.EdataMapper.selectVByPrimaryKey    : ====> Parameters: 2176(Integer)
-2019-02-25 19:41:24.838 DEBUG 17696 --- [http-nio-8181-exec-3] c.i.m.EdataMapper.selectVByPrimaryKey    : <====      Total: 1
-2019-02-25 19:41:24.838 DEBUG 17696 --- [http-nio-8181-exec-3] c.i.mapper.EorderMapper.selectVByDevice  : <==      Total: 3
-2019-02-25 19:42:26.431 DEBUG 17696 --- [http-nio-8181-exec-5] c.i.m.EorderMapper.selectByPrimaryKey    : ==>  Preparing: select id, item, dataid, userid, status, level, type, time, note from eorder where id = ? 
-2019-02-25 19:42:26.431 DEBUG 17696 --- [http-nio-8181-exec-5] c.i.m.EorderMapper.selectByPrimaryKey    : ==> Parameters: 2018(Integer)
-2019-02-25 19:42:26.432 DEBUG 17696 --- [http-nio-8181-exec-5] c.i.m.EorderMapper.selectByPrimaryKey    : <==      Total: 1
-2019-02-25 19:43:00.045 DEBUG 17696 --- [http-nio-8181-exec-7] c.i.m.EorderMapper.selectByPrimaryKey    : ==>  Preparing: select id, item, dataid, userid, status, level, type, time, note from eorder where id = ? 
-2019-02-25 19:43:00.045 DEBUG 17696 --- [http-nio-8181-exec-7] c.i.m.EorderMapper.selectByPrimaryKey    : ==> Parameters: 2018(Integer)
-2019-02-25 19:43:00.047 DEBUG 17696 --- [http-nio-8181-exec-7] c.i.m.EorderMapper.selectByPrimaryKey    : <==      Total: 1
-2019-02-25 19:43:00.058 DEBUG 17696 --- [http-nio-8181-exec-8] c.i.m.EorderMapper.selectVByPrimaryKey   : ==>  Preparing: select id, item, dataid, userid, status, level, type, time, note from eorder where id = ? 
-2019-02-25 19:43:00.058 DEBUG 17696 --- [http-nio-8181-exec-8] c.i.m.EorderMapper.selectVByPrimaryKey   : ==> Parameters: 2018(Integer)
-2019-02-25 19:43:00.061 DEBUG 17696 --- [http-nio-8181-exec-8] c.i.m.EdataMapper.selectVByPrimaryKey    : ====>  Preparing: select id, item, deviceid, attrid, time, note from edata where id = ? 
-2019-02-25 19:43:00.061 DEBUG 17696 --- [http-nio-8181-exec-8] c.i.m.EdataMapper.selectVByPrimaryKey    : ====> Parameters: 2176(Integer)
-2019-02-25 19:43:00.063 DEBUG 17696 --- [http-nio-8181-exec-8] c.i.m.EdataMapper.selectVByPrimaryKey    : <====      Total: 1
-2019-02-25 19:43:00.063 DEBUG 17696 --- [http-nio-8181-exec-8] c.i.m.EorderMapper.selectVByPrimaryKey   : <==      Total: 1
-2019-02-25 19:43:00.064 DEBUG 17696 --- [http-nio-8181-exec-8] c.i.m.EorderMapper.updateByPrimaryKey    : ==>  Preparing: update eorder set item = ?, dataid = ?, userid = ?, status = ?, level = ?, type = ?, time = ?, note = ? where id = ? 
-2019-02-25 19:43:00.064 DEBUG 17696 --- [http-nio-8181-exec-8] c.i.m.EorderMapper.updateByPrimaryKey    : ==> Parameters: 东城区 北京物联天地信息技术有限公司 101 烟雾报警器 101-01 烟量 告警(String), 2176(Integer), 308(Integer), 维修(String), 1(Integer), 正常(String), 2019-02-22 09:32:10(String), null, 2018(Integer)
-2019-02-25 19:43:00.151 DEBUG 17696 --- [http-nio-8181-exec-8] c.i.m.EorderMapper.updateByPrimaryKey    : <==    Updates: 1
-2019-02-25 19:43:00.151 DEBUG 17696 --- [http-nio-8181-exec-8] c.i.m.EdataMapper.selectVByPrimaryKey    : ==>  Preparing: select id, item, deviceid, attrid, time, note from edata where id = ? 
-2019-02-25 19:43:00.151 DEBUG 17696 --- [http-nio-8181-exec-8] c.i.m.EdataMapper.selectVByPrimaryKey    : ==> Parameters: 2176(Integer)
-2019-02-25 19:43:00.152 DEBUG 17696 --- [http-nio-8181-exec-8] c.i.m.EdataMapper.selectVByPrimaryKey    : <==      Total: 1
-2019-02-25 19:43:00.160 DEBUG 17696 --- [http-nio-8181-exec-9] c.i.mapper.EorderMapper.selectVByDevice  : ==>  Preparing: select eorder.id id, eorder.item item, eorder.dataid dataid, eorder.userid userid, eorder.status status, eorder.level level, eorder.type type, eorder.time time, eorder.note note from eorder, edata where eorder.dataid = edata.id and edata.deviceid = ? 
-2019-02-25 19:43:00.161 DEBUG 17696 --- [http-nio-8181-exec-9] c.i.mapper.EorderMapper.selectVByDevice  : ==> Parameters: 29(Integer)
-2019-02-25 19:43:00.164 DEBUG 17696 --- [http-nio-8181-exec-9] c.i.m.EdataMapper.selectVByPrimaryKey    : ====>  Preparing: select id, item, deviceid, attrid, time, note from edata where id = ? 
-2019-02-25 19:43:00.164 DEBUG 17696 --- [http-nio-8181-exec-9] c.i.m.EdataMapper.selectVByPrimaryKey    : ====> Parameters: 2169(Integer)
-2019-02-25 19:43:00.165 DEBUG 17696 --- [http-nio-8181-exec-9] c.i.m.EdataMapper.selectVByPrimaryKey    : <====      Total: 1
-2019-02-25 19:43:00.167 DEBUG 17696 --- [http-nio-8181-exec-9] c.i.m.EdataMapper.selectVByPrimaryKey    : ====>  Preparing: select id, item, deviceid, attrid, time, note from edata where id = ? 
-2019-02-25 19:43:00.167 DEBUG 17696 --- [http-nio-8181-exec-9] c.i.m.EdataMapper.selectVByPrimaryKey    : ====> Parameters: 2172(Integer)
-2019-02-25 19:43:00.170 DEBUG 17696 --- [http-nio-8181-exec-9] c.i.m.EdataMapper.selectVByPrimaryKey    : <====      Total: 1
-2019-02-25 19:43:00.171 DEBUG 17696 --- [http-nio-8181-exec-9] c.i.m.EdataMapper.selectVByPrimaryKey    : ====>  Preparing: select id, item, deviceid, attrid, time, note from edata where id = ? 
-2019-02-25 19:43:00.171 DEBUG 17696 --- [http-nio-8181-exec-9] c.i.m.EdataMapper.selectVByPrimaryKey    : ====> Parameters: 2176(Integer)
-2019-02-25 19:43:00.181 DEBUG 17696 --- [http-nio-8181-exec-9] c.i.m.EdataMapper.selectVByPrimaryKey    : <====      Total: 1
-2019-02-25 19:43:00.182 DEBUG 17696 --- [http-nio-8181-exec-9] c.i.mapper.EorderMapper.selectVByDevice  : <==      Total: 3
-2019-02-25 19:43:00.290  INFO 17696 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-25 19:44:23.484 DEBUG 17696 --- [http-nio-8181-exec-1] c.i.m.EorderMapper.selectVByPrimaryKey   : ==>  Preparing: select id, item, dataid, userid, status, level, type, time, note from eorder where id = ? 
-2019-02-25 19:44:23.485 DEBUG 17696 --- [http-nio-8181-exec-1] c.i.m.EorderMapper.selectVByPrimaryKey   : ==> Parameters: 2018(Integer)
-2019-02-25 19:44:23.486 DEBUG 17696 --- [http-nio-8181-exec-1] c.i.m.EdataMapper.selectVByPrimaryKey    : ====>  Preparing: select id, item, deviceid, attrid, time, note from edata where id = ? 
-2019-02-25 19:44:23.486 DEBUG 17696 --- [http-nio-8181-exec-1] c.i.m.EdataMapper.selectVByPrimaryKey    : ====> Parameters: 2176(Integer)
-2019-02-25 19:44:23.487 DEBUG 17696 --- [http-nio-8181-exec-1] c.i.m.EdataMapper.selectVByPrimaryKey    : <====      Total: 1
-2019-02-25 19:44:23.487 DEBUG 17696 --- [http-nio-8181-exec-1] c.i.m.EorderMapper.selectVByPrimaryKey   : <==      Total: 1
-2019-02-25 19:44:23.496 DEBUG 17696 --- [http-nio-8181-exec-2] c.i.m.EorderMapper.selectVByPrimaryKey   : ==>  Preparing: select id, item, dataid, userid, status, level, type, time, note from eorder where id = ? 
-2019-02-25 19:44:23.496 DEBUG 17696 --- [http-nio-8181-exec-2] c.i.m.EorderMapper.selectVByPrimaryKey   : ==> Parameters: 2018(Integer)
-2019-02-25 19:44:23.498 DEBUG 17696 --- [http-nio-8181-exec-2] c.i.m.EdataMapper.selectVByPrimaryKey    : ====>  Preparing: select id, item, deviceid, attrid, time, note from edata where id = ? 
-2019-02-25 19:44:23.499 DEBUG 17696 --- [http-nio-8181-exec-2] c.i.m.EdataMapper.selectVByPrimaryKey    : ====> Parameters: 2176(Integer)
-2019-02-25 19:44:23.502 DEBUG 17696 --- [http-nio-8181-exec-2] c.i.m.EdataMapper.selectVByPrimaryKey    : <====      Total: 1
-2019-02-25 19:44:23.502 DEBUG 17696 --- [http-nio-8181-exec-2] c.i.m.EorderMapper.selectVByPrimaryKey   : <==      Total: 1
-2019-02-25 19:44:23.502 DEBUG 17696 --- [http-nio-8181-exec-2] c.i.m.EorderMapper.updateByPrimaryKey    : ==>  Preparing: update eorder set item = ?, dataid = ?, userid = ?, status = ?, level = ?, type = ?, time = ?, note = ? where id = ? 
-2019-02-25 19:44:23.503 DEBUG 17696 --- [http-nio-8181-exec-2] c.i.m.EorderMapper.updateByPrimaryKey    : ==> Parameters: 东城区 北京物联天地信息技术有限公司 101 烟雾报警器 101-01 烟量 告警(String), 2176(Integer), 308(Integer), 告警(String), 1(Integer), 正常(String), 2019-02-22 09:32:10(String), 退单(String), 2018(Integer)
-2019-02-25 19:44:23.655 DEBUG 17696 --- [http-nio-8181-exec-2] c.i.m.EorderMapper.updateByPrimaryKey    : <==    Updates: 1
-2019-02-25 19:44:23.656 DEBUG 17696 --- [http-nio-8181-exec-2] c.i.m.EdataMapper.selectVByPrimaryKey    : ==>  Preparing: select id, item, deviceid, attrid, time, note from edata where id = ? 
-2019-02-25 19:44:23.656 DEBUG 17696 --- [http-nio-8181-exec-2] c.i.m.EdataMapper.selectVByPrimaryKey    : ==> Parameters: 2176(Integer)
-2019-02-25 19:44:23.657 DEBUG 17696 --- [http-nio-8181-exec-2] c.i.m.EdataMapper.selectVByPrimaryKey    : <==      Total: 1
-2019-02-25 19:44:23.666 DEBUG 17696 --- [http-nio-8181-exec-3] c.i.mapper.EorderMapper.selectVByDevice  : ==>  Preparing: select eorder.id id, eorder.item item, eorder.dataid dataid, eorder.userid userid, eorder.status status, eorder.level level, eorder.type type, eorder.time time, eorder.note note from eorder, edata where eorder.dataid = edata.id and edata.deviceid = ? 
-2019-02-25 19:44:23.666 DEBUG 17696 --- [http-nio-8181-exec-3] c.i.mapper.EorderMapper.selectVByDevice  : ==> Parameters: 29(Integer)
-2019-02-25 19:44:23.668 DEBUG 17696 --- [http-nio-8181-exec-3] c.i.m.EdataMapper.selectVByPrimaryKey    : ====>  Preparing: select id, item, deviceid, attrid, time, note from edata where id = ? 
-2019-02-25 19:44:23.668 DEBUG 17696 --- [http-nio-8181-exec-3] c.i.m.EdataMapper.selectVByPrimaryKey    : ====> Parameters: 2169(Integer)
-2019-02-25 19:44:23.669 DEBUG 17696 --- [http-nio-8181-exec-3] c.i.m.EdataMapper.selectVByPrimaryKey    : <====      Total: 1
-2019-02-25 19:44:23.670 DEBUG 17696 --- [http-nio-8181-exec-3] c.i.m.EdataMapper.selectVByPrimaryKey    : ====>  Preparing: select id, item, deviceid, attrid, time, note from edata where id = ? 
-2019-02-25 19:44:23.670 DEBUG 17696 --- [http-nio-8181-exec-3] c.i.m.EdataMapper.selectVByPrimaryKey    : ====> Parameters: 2172(Integer)
-2019-02-25 19:44:23.673 DEBUG 17696 --- [http-nio-8181-exec-3] c.i.m.EdataMapper.selectVByPrimaryKey    : <====      Total: 1
-2019-02-25 19:44:23.675 DEBUG 17696 --- [http-nio-8181-exec-3] c.i.m.EdataMapper.selectVByPrimaryKey    : ====>  Preparing: select id, item, deviceid, attrid, time, note from edata where id = ? 
-2019-02-25 19:44:23.675 DEBUG 17696 --- [http-nio-8181-exec-3] c.i.m.EdataMapper.selectVByPrimaryKey    : ====> Parameters: 2176(Integer)
-2019-02-25 19:44:23.678 DEBUG 17696 --- [http-nio-8181-exec-3] c.i.m.EdataMapper.selectVByPrimaryKey    : <====      Total: 1
-2019-02-25 19:44:23.678 DEBUG 17696 --- [http-nio-8181-exec-3] c.i.mapper.EorderMapper.selectVByDevice  : <==      Total: 3
-2019-02-25 19:46:30.058 DEBUG 17696 --- [http-nio-8181-exec-5] c.i.m.EorderMapper.selectByPrimaryKey    : ==>  Preparing: select id, item, dataid, userid, status, level, type, time, note from eorder where id = ? 
-2019-02-25 19:46:30.058 DEBUG 17696 --- [http-nio-8181-exec-5] c.i.m.EorderMapper.selectByPrimaryKey    : ==> Parameters: 2018(Integer)
-2019-02-25 19:46:30.058 DEBUG 17696 --- [http-nio-8181-exec-5] c.i.m.EorderMapper.selectByPrimaryKey    : <==      Total: 1
-2019-02-25 19:46:30.058 DEBUG 17696 --- [http-nio-8181-exec-6] c.i.m.EorderMapper.selectVByPrimaryKey   : ==>  Preparing: select id, item, dataid, userid, status, level, type, time, note from eorder where id = ? 
-2019-02-25 19:46:30.058 DEBUG 17696 --- [http-nio-8181-exec-6] c.i.m.EorderMapper.selectVByPrimaryKey   : ==> Parameters: 2018(Integer)
-2019-02-25 19:46:30.058 DEBUG 17696 --- [http-nio-8181-exec-6] c.i.m.EdataMapper.selectVByPrimaryKey    : ====>  Preparing: select id, item, deviceid, attrid, time, note from edata where id = ? 
-2019-02-25 19:46:30.058 DEBUG 17696 --- [http-nio-8181-exec-6] c.i.m.EdataMapper.selectVByPrimaryKey    : ====> Parameters: 2176(Integer)
-2019-02-25 19:46:30.058 DEBUG 17696 --- [http-nio-8181-exec-6] c.i.m.EdataMapper.selectVByPrimaryKey    : <====      Total: 1
-2019-02-25 19:46:30.058 DEBUG 17696 --- [http-nio-8181-exec-6] c.i.m.EorderMapper.selectVByPrimaryKey   : <==      Total: 1
-2019-02-25 19:46:30.058 DEBUG 17696 --- [http-nio-8181-exec-6] c.i.m.EorderMapper.updateByPrimaryKey    : ==>  Preparing: update eorder set item = ?, dataid = ?, userid = ?, status = ?, level = ?, type = ?, time = ?, note = ? where id = ? 
-2019-02-25 19:46:30.058 DEBUG 17696 --- [http-nio-8181-exec-6] c.i.m.EorderMapper.updateByPrimaryKey    : ==> Parameters: 东城区 北京物联天地信息技术有限公司 101 烟雾报警器 101-01 烟量 告警(String), 2176(Integer), 308(Integer), 维修(String), 1(Integer), 正常(String), 2019-02-22 09:32:10(String), 退单(String), 2018(Integer)
-2019-02-25 19:46:30.256 DEBUG 17696 --- [http-nio-8181-exec-6] c.i.m.EorderMapper.updateByPrimaryKey    : <==    Updates: 1
-2019-02-25 19:46:30.256 DEBUG 17696 --- [http-nio-8181-exec-6] c.i.m.EdataMapper.selectVByPrimaryKey    : ==>  Preparing: select id, item, deviceid, attrid, time, note from edata where id = ? 
-2019-02-25 19:46:30.256 DEBUG 17696 --- [http-nio-8181-exec-6] c.i.m.EdataMapper.selectVByPrimaryKey    : ==> Parameters: 2176(Integer)
-2019-02-25 19:46:30.257 DEBUG 17696 --- [http-nio-8181-exec-6] c.i.m.EdataMapper.selectVByPrimaryKey    : <==      Total: 1
-2019-02-25 19:46:30.264 DEBUG 17696 --- [http-nio-8181-exec-7] c.i.mapper.EorderMapper.selectVByDevice  : ==>  Preparing: select eorder.id id, eorder.item item, eorder.dataid dataid, eorder.userid userid, eorder.status status, eorder.level level, eorder.type type, eorder.time time, eorder.note note from eorder, edata where eorder.dataid = edata.id and edata.deviceid = ? 
-2019-02-25 19:46:30.264 DEBUG 17696 --- [http-nio-8181-exec-7] c.i.mapper.EorderMapper.selectVByDevice  : ==> Parameters: 29(Integer)
-2019-02-25 19:46:30.265 DEBUG 17696 --- [http-nio-8181-exec-7] c.i.m.EdataMapper.selectVByPrimaryKey    : ====>  Preparing: select id, item, deviceid, attrid, time, note from edata where id = ? 
-2019-02-25 19:46:30.265 DEBUG 17696 --- [http-nio-8181-exec-7] c.i.m.EdataMapper.selectVByPrimaryKey    : ====> Parameters: 2169(Integer)
-2019-02-25 19:46:30.266 DEBUG 17696 --- [http-nio-8181-exec-7] c.i.m.EdataMapper.selectVByPrimaryKey    : <====      Total: 1
-2019-02-25 19:46:30.267 DEBUG 17696 --- [http-nio-8181-exec-7] c.i.m.EdataMapper.selectVByPrimaryKey    : ====>  Preparing: select id, item, deviceid, attrid, time, note from edata where id = ? 
-2019-02-25 19:46:30.267 DEBUG 17696 --- [http-nio-8181-exec-7] c.i.m.EdataMapper.selectVByPrimaryKey    : ====> Parameters: 2172(Integer)
-2019-02-25 19:46:30.269 DEBUG 17696 --- [http-nio-8181-exec-7] c.i.m.EdataMapper.selectVByPrimaryKey    : <====      Total: 1
-2019-02-25 19:46:30.269 DEBUG 17696 --- [http-nio-8181-exec-7] c.i.m.EdataMapper.selectVByPrimaryKey    : ====>  Preparing: select id, item, deviceid, attrid, time, note from edata where id = ? 
-2019-02-25 19:46:30.269 DEBUG 17696 --- [http-nio-8181-exec-7] c.i.m.EdataMapper.selectVByPrimaryKey    : ====> Parameters: 2176(Integer)
-2019-02-25 19:46:30.270 DEBUG 17696 --- [http-nio-8181-exec-7] c.i.m.EdataMapper.selectVByPrimaryKey    : <====      Total: 1
-2019-02-25 19:46:30.271 DEBUG 17696 --- [http-nio-8181-exec-7] c.i.mapper.EorderMapper.selectVByDevice  : <==      Total: 3
-2019-02-25 19:46:50.502 DEBUG 17696 --- [http-nio-8181-exec-9] c.i.m.EorderMapper.selectVByPrimaryKey   : ==>  Preparing: select id, item, dataid, userid, status, level, type, time, note from eorder where id = ? 
-2019-02-25 19:46:50.502 DEBUG 17696 --- [http-nio-8181-exec-9] c.i.m.EorderMapper.selectVByPrimaryKey   : ==> Parameters: 2018(Integer)
-2019-02-25 19:46:50.503 DEBUG 17696 --- [http-nio-8181-exec-9] c.i.m.EdataMapper.selectVByPrimaryKey    : ====>  Preparing: select id, item, deviceid, attrid, time, note from edata where id = ? 
-2019-02-25 19:46:50.504 DEBUG 17696 --- [http-nio-8181-exec-9] c.i.m.EdataMapper.selectVByPrimaryKey    : ====> Parameters: 2176(Integer)
-2019-02-25 19:46:50.505 DEBUG 17696 --- [http-nio-8181-exec-9] c.i.m.EdataMapper.selectVByPrimaryKey    : <====      Total: 1
-2019-02-25 19:46:50.505 DEBUG 17696 --- [http-nio-8181-exec-9] c.i.m.EorderMapper.selectVByPrimaryKey   : <==      Total: 1
-2019-02-25 19:46:50.511 DEBUG 17696 --- [http-nio-8181-exec-10] c.i.m.EorderMapper.selectVByPrimaryKey   : ==>  Preparing: select id, item, dataid, userid, status, level, type, time, note from eorder where id = ? 
-2019-02-25 19:46:50.512 DEBUG 17696 --- [http-nio-8181-exec-10] c.i.m.EorderMapper.selectVByPrimaryKey   : ==> Parameters: 2018(Integer)
-2019-02-25 19:46:50.513 DEBUG 17696 --- [http-nio-8181-exec-10] c.i.m.EdataMapper.selectVByPrimaryKey    : ====>  Preparing: select id, item, deviceid, attrid, time, note from edata where id = ? 
-2019-02-25 19:46:50.513 DEBUG 17696 --- [http-nio-8181-exec-10] c.i.m.EdataMapper.selectVByPrimaryKey    : ====> Parameters: 2176(Integer)
-2019-02-25 19:46:50.514 DEBUG 17696 --- [http-nio-8181-exec-10] c.i.m.EdataMapper.selectVByPrimaryKey    : <====      Total: 1
-2019-02-25 19:46:50.514 DEBUG 17696 --- [http-nio-8181-exec-10] c.i.m.EorderMapper.selectVByPrimaryKey   : <==      Total: 1
-2019-02-25 19:46:50.514 DEBUG 17696 --- [http-nio-8181-exec-10] c.i.m.EorderMapper.updateByPrimaryKey    : ==>  Preparing: update eorder set item = ?, dataid = ?, userid = ?, status = ?, level = ?, type = ?, time = ?, note = ? where id = ? 
-2019-02-25 19:46:50.515 DEBUG 17696 --- [http-nio-8181-exec-10] c.i.m.EorderMapper.updateByPrimaryKey    : ==> Parameters: 东城区 北京物联天地信息技术有限公司 101 烟雾报警器 101-01 烟量 告警(String), 2176(Integer), 308(Integer), 告警(String), 1(Integer), 正常(String), 2019-02-22 09:32:10(String), 退单(String), 2018(Integer)
-2019-02-25 19:46:50.566 DEBUG 17696 --- [http-nio-8181-exec-10] c.i.m.EorderMapper.updateByPrimaryKey    : <==    Updates: 1
-2019-02-25 19:46:50.567 DEBUG 17696 --- [http-nio-8181-exec-10] c.i.m.EdataMapper.selectVByPrimaryKey    : ==>  Preparing: select id, item, deviceid, attrid, time, note from edata where id = ? 
-2019-02-25 19:46:50.568 DEBUG 17696 --- [http-nio-8181-exec-10] c.i.m.EdataMapper.selectVByPrimaryKey    : ==> Parameters: 2176(Integer)
-2019-02-25 19:46:50.569 DEBUG 17696 --- [http-nio-8181-exec-10] c.i.m.EdataMapper.selectVByPrimaryKey    : <==      Total: 1
-2019-02-25 19:46:50.575 DEBUG 17696 --- [http-nio-8181-exec-1] c.i.mapper.EorderMapper.selectVByDevice  : ==>  Preparing: select eorder.id id, eorder.item item, eorder.dataid dataid, eorder.userid userid, eorder.status status, eorder.level level, eorder.type type, eorder.time time, eorder.note note from eorder, edata where eorder.dataid = edata.id and edata.deviceid = ? 
-2019-02-25 19:46:50.575 DEBUG 17696 --- [http-nio-8181-exec-1] c.i.mapper.EorderMapper.selectVByDevice  : ==> Parameters: 29(Integer)
-2019-02-25 19:46:50.577 DEBUG 17696 --- [http-nio-8181-exec-1] c.i.m.EdataMapper.selectVByPrimaryKey    : ====>  Preparing: select id, item, deviceid, attrid, time, note from edata where id = ? 
-2019-02-25 19:46:50.577 DEBUG 17696 --- [http-nio-8181-exec-1] c.i.m.EdataMapper.selectVByPrimaryKey    : ====> Parameters: 2169(Integer)
-2019-02-25 19:46:50.579 DEBUG 17696 --- [http-nio-8181-exec-1] c.i.m.EdataMapper.selectVByPrimaryKey    : <====      Total: 1
-2019-02-25 19:46:50.579 DEBUG 17696 --- [http-nio-8181-exec-1] c.i.m.EdataMapper.selectVByPrimaryKey    : ====>  Preparing: select id, item, deviceid, attrid, time, note from edata where id = ? 
-2019-02-25 19:46:50.579 DEBUG 17696 --- [http-nio-8181-exec-1] c.i.m.EdataMapper.selectVByPrimaryKey    : ====> Parameters: 2172(Integer)
-2019-02-25 19:46:50.581 DEBUG 17696 --- [http-nio-8181-exec-1] c.i.m.EdataMapper.selectVByPrimaryKey    : <====      Total: 1
-2019-02-25 19:46:50.581 DEBUG 17696 --- [http-nio-8181-exec-1] c.i.m.EdataMapper.selectVByPrimaryKey    : ====>  Preparing: select id, item, deviceid, attrid, time, note from edata where id = ? 
-2019-02-25 19:46:50.582 DEBUG 17696 --- [http-nio-8181-exec-1] c.i.m.EdataMapper.selectVByPrimaryKey    : ====> Parameters: 2176(Integer)
-2019-02-25 19:46:50.583 DEBUG 17696 --- [http-nio-8181-exec-1] c.i.m.EdataMapper.selectVByPrimaryKey    : <====      Total: 1
-2019-02-25 19:46:50.583 DEBUG 17696 --- [http-nio-8181-exec-1] c.i.mapper.EorderMapper.selectVByDevice  : <==      Total: 3
-2019-02-25 19:48:00.290  INFO 17696 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-25 19:53:00.297  INFO 17696 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-25 19:58:00.307  INFO 17696 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-25 20:03:00.314  INFO 17696 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-25 20:08:00.315  INFO 17696 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-25 20:13:00.390  INFO 17696 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-26 10:18:22.832  INFO 9928 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'configurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$48e3bd23] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-02-26 10:18:23.634  INFO 9928 --- [main] c.i.s.ServiceSecurityApplication         : The following profiles are active: dev
+2019-02-26 10:18:34.163  INFO 9928 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-02-26 10:18:34.693  INFO 9928 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-02-26 10:18:36.806  INFO 9928 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 261ms. Found 0 repository interfaces.
+2019-02-26 10:18:38.431  INFO 9928 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=52c07227-ebdb-3080-8dd3-39f0645e9614
+2019-02-26 10:18:38.576  INFO 9928 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$2cc9ba26] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-02-26 10:18:38.629  INFO 9928 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$48e3bd23] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-02-26 10:18:39.134  INFO 9928 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8181 (http)
+2019-02-26 10:18:39.176  INFO 9928 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-02-26 10:18:39.176  INFO 9928 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.14]
+2019-02-26 10:18:39.176  INFO 9928 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\software\Java\jdk1.8.0_131\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;D:\software\Java\jdk1.8.0_131\bin\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\GtkSharp\2.12\bin;D:\software\Rational\common;D:\program\android-sdk-windows-all\tools\;D:\program\android-sdk-windows-all\platform-tools\;D:\software\gradle-4.0\bin;D:\software\VisualSVN Server\bin;C:\Program Files (x86)\Skype\Phone\;C:\Program Files\Common Files\Autodesk Shared\;D:\software\nodejs\;D:\software\Git\cmd;D:\software\Microsoft Visual Studio\Common\Tools\WinNT;D:\software\Microsoft Visual Studio\Common\MSDev98\Bin;D:\software\Microsoft Visual Studio\Common\Tools;D:\software\Microsoft Visual Studio\VC98\bin;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Users\Lenovo\AppData\Local\Microsoft\WindowsApps;C:\Users\Lenovo\AppData\Local\GitHubDesktop\bin;D:\software\SSH Secure Shell;C:\Users\Lenovo\AppData\Roaming\npm;.]
+2019-02-26 10:18:39.574  INFO 9928 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-02-26 10:18:39.575  INFO 9928 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 15921 ms
+2019-02-26 10:18:41.565  WARN 9928 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-02-26 10:18:41.565  INFO 9928 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-02-26 10:18:41.573  WARN 9928 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-02-26 10:18:41.573  INFO 9928 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-02-26 10:18:41.961  INFO 9928 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-02-26 10:18:46.193  INFO 9928 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2019-02-26 10:18:46.260  INFO 9928 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2019-02-26 10:18:47.908  INFO 9928 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2019-02-26 10:18:47.908  INFO 9928 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2019-02-26 10:18:48.156  INFO 9928 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2019-02-26 10:18:48.156  INFO 9928 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2019-02-26 10:18:48.851  INFO 9928 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-26 10:18:49.876  INFO 9928 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2019-02-26 10:18:49.876  INFO 9928 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2019-02-26 10:18:49.876  INFO 9928 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2019-02-26 10:18:49.876  INFO 9928 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2019-02-26 10:18:49.877  INFO 9928 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2019-02-26 10:18:49.877  INFO 9928 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2019-02-26 10:18:49.877  INFO 9928 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2019-02-26 10:18:50.323  INFO 9928 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2019-02-26 10:18:50.323  INFO 9928 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2019-02-26 10:18:50.323  INFO 9928 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2019-02-26 10:18:50.361  INFO 9928 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1551147530359 with initial instances count: 2
+2019-02-26 10:18:50.771  INFO 9928 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application SERVICE-SECURITY with eureka with status UP
+2019-02-26 10:18:50.772  INFO 9928 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1551147530772, current=UP, previous=STARTING]
+2019-02-26 10:18:50.809  INFO 9928 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_SERVICE-SECURITY/windows10.microdone.cn:service-security:8181: registering service...
+2019-02-26 10:18:51.025  INFO 9928 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8181 (http) with context path ''
+2019-02-26 10:18:51.027  INFO 9928 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8181
+2019-02-26 10:18:51.031  INFO 9928 --- [main] c.i.s.ServiceSecurityApplication         : Started ServiceSecurityApplication in 31.361 seconds (JVM running for 34.109)
+2019-02-26 10:18:51.214  INFO 9928 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_SERVICE-SECURITY/windows10.microdone.cn:service-security:8181 - registration status: 204
+2019-02-26 10:23:49.882  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-26 10:28:49.901  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-26 10:33:49.904  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-26 10:38:49.905  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-26 10:43:49.906  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-26 10:48:49.908  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-26 10:53:49.910  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-26 10:58:49.912  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-26 11:03:49.913  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-26 11:08:49.918  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-26 11:13:49.920  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-26 11:18:49.936  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-26 11:23:49.951  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-26 11:28:49.959  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-26 11:33:49.964  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-26 11:38:49.981  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-26 11:43:49.982  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-26 11:48:49.986  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-26 11:53:50.000  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-26 11:58:50.015  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-26 12:03:50.030  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-26 12:08:50.044  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-26 12:13:50.054  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-26 12:18:50.055  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-26 12:23:50.069  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-26 12:28:50.075  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-26 12:33:50.090  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-26 12:38:50.093  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-26 12:43:50.111  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-26 12:48:50.115  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-26 12:53:50.132  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-26 12:58:50.138  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-26 13:03:50.144  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-26 13:08:50.148  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-26 13:13:50.161  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-26 13:18:50.170  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-26 13:23:50.212  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-26 13:28:50.225  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-26 13:33:50.232  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-26 13:38:50.242  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-26 13:43:50.245  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-26 13:48:50.259  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-26 13:53:50.276  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-26 13:58:50.288  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-26 14:03:50.290  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-26 14:08:50.292  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-26 14:13:50.307  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-26 14:18:50.307  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-26 14:23:50.320  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-26 14:28:50.338  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-26 14:33:50.340  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-26 14:38:50.355  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-26 14:43:50.360  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-26 14:48:50.362  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-26 14:53:50.363  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-26 14:58:50.366  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-26 15:03:50.367  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-26 15:08:50.372  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-26 15:13:50.388  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-26 15:18:50.392  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-26 15:23:50.395  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-26 15:28:50.398  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-26 15:33:50.399  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-26 15:38:50.402  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-26 15:43:50.406  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-26 15:48:50.408  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-26 15:53:50.411  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-26 15:58:50.412  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-26 16:03:50.414  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-26 16:08:50.416  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration

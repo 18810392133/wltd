@@ -129,7 +129,7 @@ public interface EorderMapper {
             "select",
             "eorder.id id, eorder.item item, eorder.dataid dataid, eorder.userid userid, eorder.status status, eorder.level level, eorder.type type, eorder.time time, eorder.note note",
             "from eorder, edata",
-            "where eorder.dataid = edata.id and edata.deviceid in ${devices}"
+            "where eorder.dataid = edata.id and edata.deviceid in ${devices} order by eorder.id desc"
     })
     @Results({
             @Result(column="id", property="id", jdbcType=JdbcType.INTEGER, id=true),
@@ -150,7 +150,7 @@ public interface EorderMapper {
             "select",
             "eorder.id id, eorder.item item, eorder.dataid dataid, eorder.userid userid, eorder.status status, eorder.level level, eorder.type type, eorder.time time, eorder.note note",
             "from eorder, edata",
-            "where eorder.dataid = edata.id and edata.deviceid = #{deviceid,jdbcType=INTEGER}"
+            "where eorder.dataid = edata.id and edata.deviceid = #{deviceid,jdbcType=INTEGER} order by eorder.id desc"
     })
     @Results({
             @Result(column="id", property="id", jdbcType=JdbcType.INTEGER, id=true),

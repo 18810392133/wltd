@@ -35,77 +35,77 @@ public class EdeviceAction {
         if(bimid == 0){
             List<Ebim> bimList = ebimService.selectBySql("item='" + bimItem + "' and platid=" + platid);
             if(bimList.size() > 0){
-                map.put("isSuccess", false);
-                map.put("msg", "该节点已存在");
+                map.put("status", 240);
+                map.put("message", "该节点已存在");
             }else{
                 Ebimv bim = ebimService.insert(bimItem, platid, longitude, latitude, "正常", 0, "", "");
                 bimid = bim.getId();
                 List<Eroom> roomList = eroomService.selectBySql("item='" + roomItem + "' and bimid=" + bimid);
                 if(roomList.size() > 0){
-                    map.put("isSuccess", false);
-                    map.put("msg", "该房间已存在");
+                    map.put("status", 240);
+                    map.put("message", "该房间已存在");
                 }else {
                     Eroomv room = eroomService.insert(roomItem, bimid, "正常", 0, "", "");
                     roomid = room.getId();
                     if(isValidate(item, sensorid, roomid, 0)){
                         Edevicev device = edeviceService.insert(item, sensorid, roomid, protocol, "正常", 0, "");
-                        map.put("isSuccess", true);
+                        map.put("status", 260);
                         map.put("object", device);
                         for(int i = 0; i < userids.length; i++){
                             List<Euserdevice> userdeviceList = euserdeviceService.selectBySql("userid=" + userids[i] + " and deviceid=" + device.getId());
                             if(userdeviceList.size() > 0){
-                                map.put("msg", "某些用户已关联到设备");
+                                map.put("message", "某些用户已关联到设备");
                             }else{
                                 euserdeviceService.insert(userids[i], device.getId(), "");
                             }
                         }
                     }else{
-                        map.put("isSuccess", false);
-                        map.put("msg", "该设备已存在");
+                        map.put("status", 240);
+                        map.put("message", "该设备已存在");
                     }
                 }
             }
         }else if(roomid == 0){
             List<Eroom> roomList = eroomService.selectBySql("item='" + roomItem + "' and bimid=" + bimid);
             if(roomList.size() > 0){
-                map.put("isSuccess", false);
-                map.put("msg", "该房间已存在");
+                map.put("status", 240);
+                map.put("message", "该房间已存在");
             }else {
                 Eroomv room = eroomService.insert(roomItem, bimid, "正常", 0, "", "");
                 roomid = room.getId();
                 if(isValidate(item, sensorid, roomid, 0)){
                     Edevicev device = edeviceService.insert(item, sensorid, roomid, protocol, "正常", 0, "");
-                    map.put("isSuccess", true);
+                    map.put("status", 260);
                     map.put("object", device);
                     for(int i = 0; i < userids.length; i++){
                         List<Euserdevice> userdeviceList = euserdeviceService.selectBySql("userid=" + userids[i] + " and deviceid=" + device.getId());
                         if(userdeviceList.size() > 0){
-                            map.put("msg", "某些用户已关联到设备");
+                            map.put("message", "某些用户已关联到设备");
                         }else{
                             euserdeviceService.insert(userids[i], device.getId(), "");
                         }
                     }
                 }else{
-                    map.put("isSuccess", false);
-                    map.put("msg", "该设备已存在");
+                    map.put("status", 240);
+                    map.put("message", "该设备已存在");
                 }
             }
         }else {
             if (isValidate(item, sensorid, roomid, 0)) {
                 Edevicev device = edeviceService.insert(item, sensorid, roomid, protocol, "正常", 0, "");
-                map.put("isSuccess", true);
+                map.put("status", 260);
                 map.put("object", device);
                 for(int i = 0; i < userids.length; i++){
                     List<Euserdevice> userdeviceList = euserdeviceService.selectBySql("userid=" + userids[i] + " and deviceid=" + device.getId());
                     if(userdeviceList.size() > 0){
-                        map.put("msg", "某些用户已关联到设备");
+                        map.put("message", "某些用户已关联到设备");
                     }else{
                         euserdeviceService.insert(userids[i], device.getId(), "");
                     }
                 }
             } else {
-                map.put("isSuccess", false);
-                map.put("msg", "该设备已存在");
+                map.put("status", 240);
+                map.put("message", "该设备已存在");
             }
         }
         return map;
