@@ -112,7 +112,7 @@ public class EorderAction {
                         Edatav data = dataList.get(0);
                         Eattrv attr = eattrService.selectVByPrimaryKey(order.getData().getAttrid());
                         if(attr != null){
-                            List<Ethresholdv> thresholdList = ethresholdService.selectVBySql("attrid" + order.getData().getAttrid() + " order by level asc");
+                            List<Ethresholdv> thresholdList = ethresholdService.selectVBySql("attrid=" + order.getData().getAttrid() + " order by level asc");
                             int level = 0;
                             for(int i = 0; i < thresholdList.size(); i++){
                                 if(attr.getCompare().equals(">") && Integer.parseInt(data.getItem()) > Integer.parseInt(thresholdList.get(i).getItem()) ||

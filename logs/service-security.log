@@ -1,114 +1,395 @@
-2019-02-26 10:18:22.832  INFO 9928 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'configurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$48e3bd23] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-02-26 10:18:23.634  INFO 9928 --- [main] c.i.s.ServiceSecurityApplication         : The following profiles are active: dev
-2019-02-26 10:18:34.163  INFO 9928 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-2019-02-26 10:18:34.693  INFO 9928 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-02-26 10:18:36.806  INFO 9928 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 261ms. Found 0 repository interfaces.
-2019-02-26 10:18:38.431  INFO 9928 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=52c07227-ebdb-3080-8dd3-39f0645e9614
-2019-02-26 10:18:38.576  INFO 9928 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$2cc9ba26] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-02-26 10:18:38.629  INFO 9928 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$48e3bd23] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-02-26 10:18:39.134  INFO 9928 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8181 (http)
-2019-02-26 10:18:39.176  INFO 9928 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-02-26 10:18:39.176  INFO 9928 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.14]
-2019-02-26 10:18:39.176  INFO 9928 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\software\Java\jdk1.8.0_131\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;D:\software\Java\jdk1.8.0_131\bin\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\GtkSharp\2.12\bin;D:\software\Rational\common;D:\program\android-sdk-windows-all\tools\;D:\program\android-sdk-windows-all\platform-tools\;D:\software\gradle-4.0\bin;D:\software\VisualSVN Server\bin;C:\Program Files (x86)\Skype\Phone\;C:\Program Files\Common Files\Autodesk Shared\;D:\software\nodejs\;D:\software\Git\cmd;D:\software\Microsoft Visual Studio\Common\Tools\WinNT;D:\software\Microsoft Visual Studio\Common\MSDev98\Bin;D:\software\Microsoft Visual Studio\Common\Tools;D:\software\Microsoft Visual Studio\VC98\bin;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Users\Lenovo\AppData\Local\Microsoft\WindowsApps;C:\Users\Lenovo\AppData\Local\GitHubDesktop\bin;D:\software\SSH Secure Shell;C:\Users\Lenovo\AppData\Roaming\npm;.]
-2019-02-26 10:18:39.574  INFO 9928 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-02-26 10:18:39.575  INFO 9928 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 15921 ms
-2019-02-26 10:18:41.565  WARN 9928 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
-2019-02-26 10:18:41.565  INFO 9928 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
-2019-02-26 10:18:41.573  WARN 9928 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
-2019-02-26 10:18:41.573  INFO 9928 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
-2019-02-26 10:18:41.961  INFO 9928 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-02-26 10:18:46.193  INFO 9928 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
-2019-02-26 10:18:46.260  INFO 9928 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
-2019-02-26 10:18:47.908  INFO 9928 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
-2019-02-26 10:18:47.908  INFO 9928 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
-2019-02-26 10:18:48.156  INFO 9928 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
-2019-02-26 10:18:48.156  INFO 9928 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
-2019-02-26 10:18:48.851  INFO 9928 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-26 10:18:49.876  INFO 9928 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
-2019-02-26 10:18:49.876  INFO 9928 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
-2019-02-26 10:18:49.876  INFO 9928 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
-2019-02-26 10:18:49.876  INFO 9928 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
-2019-02-26 10:18:49.877  INFO 9928 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
-2019-02-26 10:18:49.877  INFO 9928 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
-2019-02-26 10:18:49.877  INFO 9928 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
-2019-02-26 10:18:50.323  INFO 9928 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
-2019-02-26 10:18:50.323  INFO 9928 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
-2019-02-26 10:18:50.323  INFO 9928 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
-2019-02-26 10:18:50.361  INFO 9928 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1551147530359 with initial instances count: 2
-2019-02-26 10:18:50.771  INFO 9928 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application SERVICE-SECURITY with eureka with status UP
-2019-02-26 10:18:50.772  INFO 9928 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1551147530772, current=UP, previous=STARTING]
-2019-02-26 10:18:50.809  INFO 9928 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_SERVICE-SECURITY/windows10.microdone.cn:service-security:8181: registering service...
-2019-02-26 10:18:51.025  INFO 9928 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8181 (http) with context path ''
-2019-02-26 10:18:51.027  INFO 9928 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8181
-2019-02-26 10:18:51.031  INFO 9928 --- [main] c.i.s.ServiceSecurityApplication         : Started ServiceSecurityApplication in 31.361 seconds (JVM running for 34.109)
-2019-02-26 10:18:51.214  INFO 9928 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_SERVICE-SECURITY/windows10.microdone.cn:service-security:8181 - registration status: 204
-2019-02-26 10:23:49.882  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-26 10:28:49.901  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-26 10:33:49.904  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-26 10:38:49.905  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-26 10:43:49.906  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-26 10:48:49.908  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-26 10:53:49.910  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-26 10:58:49.912  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-26 11:03:49.913  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-26 11:08:49.918  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-26 11:13:49.920  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-26 11:18:49.936  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-26 11:23:49.951  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-26 11:28:49.959  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-26 11:33:49.964  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-26 11:38:49.981  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-26 11:43:49.982  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-26 11:48:49.986  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-26 11:53:50.000  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-26 11:58:50.015  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-26 12:03:50.030  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-26 12:08:50.044  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-26 12:13:50.054  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-26 12:18:50.055  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-26 12:23:50.069  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-26 12:28:50.075  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-26 12:33:50.090  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-26 12:38:50.093  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-26 12:43:50.111  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-26 12:48:50.115  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-26 12:53:50.132  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-26 12:58:50.138  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-26 13:03:50.144  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-26 13:08:50.148  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-26 13:13:50.161  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-26 13:18:50.170  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-26 13:23:50.212  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-26 13:28:50.225  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-26 13:33:50.232  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-26 13:38:50.242  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-26 13:43:50.245  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-26 13:48:50.259  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-26 13:53:50.276  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-26 13:58:50.288  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-26 14:03:50.290  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-26 14:08:50.292  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-26 14:13:50.307  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-26 14:18:50.307  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-26 14:23:50.320  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-26 14:28:50.338  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-26 14:33:50.340  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-26 14:38:50.355  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-26 14:43:50.360  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-26 14:48:50.362  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-26 14:53:50.363  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-26 14:58:50.366  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-26 15:03:50.367  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-26 15:08:50.372  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-26 15:13:50.388  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-26 15:18:50.392  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-26 15:23:50.395  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-26 15:28:50.398  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-26 15:33:50.399  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-26 15:38:50.402  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-26 15:43:50.406  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-26 15:48:50.408  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-26 15:53:50.411  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-26 15:58:50.412  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-26 16:03:50.414  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-02-26 16:08:50.416  INFO 9928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 10:39:49.324  INFO 13928 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'configurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$229a0e3e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-02-27 10:39:50.074  INFO 13928 --- [main] c.i.s.ServiceSecurityApplication         : The following profiles are active: dev
+2019-02-27 10:39:51.090  INFO 13928 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-02-27 10:39:51.206  INFO 13928 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-02-27 10:39:51.263  INFO 13928 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 16ms. Found 0 repository interfaces.
+2019-02-27 10:39:51.581  INFO 13928 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=52c07227-ebdb-3080-8dd3-39f0645e9614
+2019-02-27 10:39:51.698  INFO 13928 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$6800b41] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-02-27 10:39:51.723  INFO 13928 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$229a0e3e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-02-27 10:39:52.090  INFO 13928 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8181 (http)
+2019-02-27 10:39:52.122  INFO 13928 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-02-27 10:39:52.122  INFO 13928 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.14]
+2019-02-27 10:39:52.136  INFO 13928 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\software\Java\jdk1.8.0_131\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;D:\software\Java\jdk1.8.0_131\bin\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\GtkSharp\2.12\bin;D:\software\Rational\common;D:\program\android-sdk-windows-all\tools\;D:\program\android-sdk-windows-all\platform-tools\;D:\software\gradle-4.0\bin;D:\software\VisualSVN Server\bin;C:\Program Files (x86)\Skype\Phone\;C:\Program Files\Common Files\Autodesk Shared\;D:\software\nodejs\;D:\software\Git\cmd;D:\software\Microsoft Visual Studio\Common\Tools\WinNT;D:\software\Microsoft Visual Studio\Common\MSDev98\Bin;D:\software\Microsoft Visual Studio\Common\Tools;D:\software\Microsoft Visual Studio\VC98\bin;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Users\Lenovo\AppData\Local\Microsoft\WindowsApps;C:\Users\Lenovo\AppData\Local\GitHubDesktop\bin;D:\software\SSH Secure Shell;C:\Users\Lenovo\AppData\Roaming\npm;.]
+2019-02-27 10:39:52.403  INFO 13928 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-02-27 10:39:52.418  INFO 13928 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2328 ms
+2019-02-27 10:39:52.996  WARN 13928 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-02-27 10:39:52.996  INFO 13928 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-02-27 10:39:53.011  WARN 13928 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-02-27 10:39:53.011  INFO 13928 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-02-27 10:39:53.262  INFO 13928 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-02-27 10:39:55.293  INFO 13928 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2019-02-27 10:39:55.325  INFO 13928 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2019-02-27 10:39:55.871  INFO 13928 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2019-02-27 10:39:55.871  INFO 13928 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2019-02-27 10:39:55.996  INFO 13928 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2019-02-27 10:39:55.996  INFO 13928 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2019-02-27 10:39:56.278  INFO 13928 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 10:39:56.579  INFO 13928 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2019-02-27 10:39:56.579  INFO 13928 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2019-02-27 10:39:56.579  INFO 13928 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2019-02-27 10:39:56.579  INFO 13928 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2019-02-27 10:39:56.579  INFO 13928 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2019-02-27 10:39:56.579  INFO 13928 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2019-02-27 10:39:56.579  INFO 13928 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2019-02-27 10:39:56.793  INFO 13928 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2019-02-27 10:39:56.793  INFO 13928 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2019-02-27 10:39:56.793  INFO 13928 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2019-02-27 10:39:56.793  INFO 13928 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1551235196793 with initial instances count: 3
+2019-02-27 10:39:56.950  INFO 13928 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application SERVICE-SECURITY with eureka with status UP
+2019-02-27 10:39:56.950  INFO 13928 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1551235196950, current=UP, previous=STARTING]
+2019-02-27 10:39:56.950  INFO 13928 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_SERVICE-SECURITY/windows10.microdone.cn:service-security:8181: registering service...
+2019-02-27 10:39:57.012  INFO 13928 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8181 (http) with context path ''
+2019-02-27 10:39:57.012  INFO 13928 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8181
+2019-02-27 10:39:57.012  INFO 13928 --- [main] c.i.s.ServiceSecurityApplication         : Started ServiceSecurityApplication in 10.651 seconds (JVM running for 12.625)
+2019-02-27 10:39:57.012  INFO 13928 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_SERVICE-SECURITY/windows10.microdone.cn:service-security:8181 - registration status: 204
+2019-02-27 10:44:56.596  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 10:49:56.610  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 10:54:56.612  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 10:54:59.405  INFO 13928 --- [http-nio-8181-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-02-27 10:54:59.405  INFO 13928 --- [http-nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-02-27 10:54:59.429  INFO 13928 --- [http-nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 24 ms
+2019-02-27 10:54:59.578  INFO 13928 --- [http-nio-8181-exec-1] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2019-02-27 10:54:59.578 DEBUG 13928 --- [http-nio-8181-exec-1] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-27 10:54:59.607 DEBUG 13928 --- [http-nio-8181-exec-1] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 29(Integer), 35(Integer), 2019-02-27 10:54:59(String), (String)
+2019-02-27 10:54:59.665 DEBUG 13928 --- [http-nio-8181-exec-1] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-27 10:54:59.733 DEBUG 13928 --- [http-nio-8181-exec-2] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-27 10:54:59.733 DEBUG 13928 --- [http-nio-8181-exec-2] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 94(String), 29(Integer), 36(Integer), 2019-02-27 10:54:59(String), (String)
+2019-02-27 10:54:59.780 DEBUG 13928 --- [http-nio-8181-exec-2] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-27 10:54:59.827 DEBUG 13928 --- [http-nio-8181-exec-3] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-27 10:54:59.827 DEBUG 13928 --- [http-nio-8181-exec-3] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 30(Integer), 38(Integer), 2019-02-27 10:54:59(String), (String)
+2019-02-27 10:54:59.858 DEBUG 13928 --- [http-nio-8181-exec-3] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-27 10:59:56.614  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 11:04:56.617  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 11:09:56.626  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 11:14:56.627  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 11:19:56.630  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 11:24:56.633  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 11:29:56.641  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 11:34:56.652  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 11:37:00.173 DEBUG 13928 --- [http-nio-8181-exec-4] c.i.m.EorderMapper.selectByPrimaryKey    : ==>  Preparing: select id, item, dataid, userid, status, level, type, time, note from eorder where id = ? 
+2019-02-27 11:37:00.175 DEBUG 13928 --- [http-nio-8181-exec-4] c.i.m.EorderMapper.selectByPrimaryKey    : ==> Parameters: 2018(Integer)
+2019-02-27 11:37:00.197 DEBUG 13928 --- [http-nio-8181-exec-4] c.i.m.EorderMapper.selectByPrimaryKey    : <==      Total: 1
+2019-02-27 11:37:00.235 DEBUG 13928 --- [http-nio-8181-exec-5] c.i.m.EorderMapper.selectVByPrimaryKey   : ==>  Preparing: select id, item, dataid, userid, status, level, type, time, note from eorder where id = ? 
+2019-02-27 11:37:00.236 DEBUG 13928 --- [http-nio-8181-exec-5] c.i.m.EorderMapper.selectVByPrimaryKey   : ==> Parameters: 2018(Integer)
+2019-02-27 11:37:00.240 DEBUG 13928 --- [http-nio-8181-exec-5] c.i.m.EdataMapper.selectVByPrimaryKey    : ====>  Preparing: select id, item, deviceid, attrid, time, note from edata where id = ? 
+2019-02-27 11:37:00.241 DEBUG 13928 --- [http-nio-8181-exec-5] c.i.m.EdataMapper.selectVByPrimaryKey    : ====> Parameters: 2176(Integer)
+2019-02-27 11:37:00.242 DEBUG 13928 --- [http-nio-8181-exec-5] c.i.m.EdataMapper.selectVByPrimaryKey    : <====      Total: 1
+2019-02-27 11:37:00.242 DEBUG 13928 --- [http-nio-8181-exec-5] c.i.m.EorderMapper.selectVByPrimaryKey   : <==      Total: 1
+2019-02-27 11:37:00.243 DEBUG 13928 --- [http-nio-8181-exec-5] c.i.m.EorderMapper.updateByPrimaryKey    : ==>  Preparing: update eorder set item = ?, dataid = ?, userid = ?, status = ?, level = ?, type = ?, time = ?, note = ? where id = ? 
+2019-02-27 11:37:00.243 DEBUG 13928 --- [http-nio-8181-exec-5] c.i.m.EorderMapper.updateByPrimaryKey    : ==> Parameters: 东城区 北京物联天地信息技术有限公司 101 烟雾报警器 101-01 烟量 告警(String), 2176(Integer), 308(Integer), 维修(String), 1(Integer), 正常(String), 2019-02-22 09:32:10(String), null, 2018(Integer)
+2019-02-27 11:37:00.305 DEBUG 13928 --- [http-nio-8181-exec-5] c.i.m.EorderMapper.updateByPrimaryKey    : <==    Updates: 1
+2019-02-27 11:37:00.306 DEBUG 13928 --- [http-nio-8181-exec-5] c.i.m.EdataMapper.selectVByPrimaryKey    : ==>  Preparing: select id, item, deviceid, attrid, time, note from edata where id = ? 
+2019-02-27 11:37:00.306 DEBUG 13928 --- [http-nio-8181-exec-5] c.i.m.EdataMapper.selectVByPrimaryKey    : ==> Parameters: 2176(Integer)
+2019-02-27 11:37:00.310 DEBUG 13928 --- [http-nio-8181-exec-5] c.i.m.EdataMapper.selectVByPrimaryKey    : <==      Total: 1
+2019-02-27 11:37:00.366 DEBUG 13928 --- [http-nio-8181-exec-6] c.i.mapper.EorderMapper.selectVByDevice  : ==>  Preparing: select eorder.id id, eorder.item item, eorder.dataid dataid, eorder.userid userid, eorder.status status, eorder.level level, eorder.type type, eorder.time time, eorder.note note from eorder, edata where eorder.dataid = edata.id and edata.deviceid = ? order by eorder.id desc 
+2019-02-27 11:37:00.366 DEBUG 13928 --- [http-nio-8181-exec-6] c.i.mapper.EorderMapper.selectVByDevice  : ==> Parameters: 29(Integer)
+2019-02-27 11:37:00.372 DEBUG 13928 --- [http-nio-8181-exec-6] c.i.m.EdataMapper.selectVByPrimaryKey    : ====>  Preparing: select id, item, deviceid, attrid, time, note from edata where id = ? 
+2019-02-27 11:37:00.374 DEBUG 13928 --- [http-nio-8181-exec-6] c.i.m.EdataMapper.selectVByPrimaryKey    : ====> Parameters: 2176(Integer)
+2019-02-27 11:37:00.384 DEBUG 13928 --- [http-nio-8181-exec-6] c.i.m.EdataMapper.selectVByPrimaryKey    : <====      Total: 1
+2019-02-27 11:37:00.385 DEBUG 13928 --- [http-nio-8181-exec-6] c.i.m.EdataMapper.selectVByPrimaryKey    : ====>  Preparing: select id, item, deviceid, attrid, time, note from edata where id = ? 
+2019-02-27 11:37:00.385 DEBUG 13928 --- [http-nio-8181-exec-6] c.i.m.EdataMapper.selectVByPrimaryKey    : ====> Parameters: 2172(Integer)
+2019-02-27 11:37:00.392 DEBUG 13928 --- [http-nio-8181-exec-6] c.i.m.EdataMapper.selectVByPrimaryKey    : <====      Total: 1
+2019-02-27 11:37:00.393 DEBUG 13928 --- [http-nio-8181-exec-6] c.i.m.EdataMapper.selectVByPrimaryKey    : ====>  Preparing: select id, item, deviceid, attrid, time, note from edata where id = ? 
+2019-02-27 11:37:00.393 DEBUG 13928 --- [http-nio-8181-exec-6] c.i.m.EdataMapper.selectVByPrimaryKey    : ====> Parameters: 2169(Integer)
+2019-02-27 11:37:00.398 DEBUG 13928 --- [http-nio-8181-exec-6] c.i.m.EdataMapper.selectVByPrimaryKey    : <====      Total: 1
+2019-02-27 11:37:00.399 DEBUG 13928 --- [http-nio-8181-exec-6] c.i.mapper.EorderMapper.selectVByDevice  : <==      Total: 3
+2019-02-27 11:38:08.426 DEBUG 13928 --- [http-nio-8181-exec-8] c.i.m.EorderMapper.selectVByPrimaryKey   : ==>  Preparing: select id, item, dataid, userid, status, level, type, time, note from eorder where id = ? 
+2019-02-27 11:38:08.426 DEBUG 13928 --- [http-nio-8181-exec-8] c.i.m.EorderMapper.selectVByPrimaryKey   : ==> Parameters: 2018(Integer)
+2019-02-27 11:38:08.426 DEBUG 13928 --- [http-nio-8181-exec-8] c.i.m.EdataMapper.selectVByPrimaryKey    : ====>  Preparing: select id, item, deviceid, attrid, time, note from edata where id = ? 
+2019-02-27 11:38:08.426 DEBUG 13928 --- [http-nio-8181-exec-8] c.i.m.EdataMapper.selectVByPrimaryKey    : ====> Parameters: 2176(Integer)
+2019-02-27 11:38:08.426 DEBUG 13928 --- [http-nio-8181-exec-8] c.i.m.EdataMapper.selectVByPrimaryKey    : <====      Total: 1
+2019-02-27 11:38:08.426 DEBUG 13928 --- [http-nio-8181-exec-8] c.i.m.EorderMapper.selectVByPrimaryKey   : <==      Total: 1
+2019-02-27 11:38:15.006 DEBUG 13928 --- [http-nio-8181-exec-9] com.iot.mapper.EdataMapper.selectVBySql  : ==>  Preparing: select id, item, deviceid, attrid, time, note from edata where deviceid=29 and attrid=35 order by id desc limit 1 
+2019-02-27 11:38:15.006 DEBUG 13928 --- [http-nio-8181-exec-9] com.iot.mapper.EdataMapper.selectVBySql  : ==> Parameters: 
+2019-02-27 11:38:15.006 DEBUG 13928 --- [http-nio-8181-exec-9] com.iot.mapper.EdataMapper.selectVBySql  : <==      Total: 1
+2019-02-27 11:38:56.943 DEBUG 13928 --- [http-nio-8181-exec-2] c.i.m.EorderMapper.selectVByPrimaryKey   : ==>  Preparing: select id, item, dataid, userid, status, level, type, time, note from eorder where id = ? 
+2019-02-27 11:38:56.943 DEBUG 13928 --- [http-nio-8181-exec-2] c.i.m.EorderMapper.selectVByPrimaryKey   : ==> Parameters: 2018(Integer)
+2019-02-27 11:38:56.943 DEBUG 13928 --- [http-nio-8181-exec-2] c.i.m.EdataMapper.selectVByPrimaryKey    : ====>  Preparing: select id, item, deviceid, attrid, time, note from edata where id = ? 
+2019-02-27 11:38:56.943 DEBUG 13928 --- [http-nio-8181-exec-2] c.i.m.EdataMapper.selectVByPrimaryKey    : ====> Parameters: 2176(Integer)
+2019-02-27 11:38:56.943 DEBUG 13928 --- [http-nio-8181-exec-2] c.i.m.EdataMapper.selectVByPrimaryKey    : <====      Total: 1
+2019-02-27 11:38:56.943 DEBUG 13928 --- [http-nio-8181-exec-2] c.i.m.EorderMapper.selectVByPrimaryKey   : <==      Total: 1
+2019-02-27 11:38:58.537 DEBUG 13928 --- [http-nio-8181-exec-3] com.iot.mapper.EdataMapper.selectVBySql  : ==>  Preparing: select id, item, deviceid, attrid, time, note from edata where deviceid=29 and attrid=35 order by id desc limit 1 
+2019-02-27 11:38:58.537 DEBUG 13928 --- [http-nio-8181-exec-3] com.iot.mapper.EdataMapper.selectVBySql  : ==> Parameters: 
+2019-02-27 11:38:58.537 DEBUG 13928 --- [http-nio-8181-exec-3] com.iot.mapper.EdataMapper.selectVBySql  : <==      Total: 1
+2019-02-27 11:39:12.739 DEBUG 13928 --- [http-nio-8181-exec-4] c.i.m.EorderMapper.selectVByPrimaryKey   : ==>  Preparing: select id, item, dataid, userid, status, level, type, time, note from eorder where id = ? 
+2019-02-27 11:39:12.739 DEBUG 13928 --- [http-nio-8181-exec-4] c.i.m.EorderMapper.selectVByPrimaryKey   : ==> Parameters: 2018(Integer)
+2019-02-27 11:39:12.739 DEBUG 13928 --- [http-nio-8181-exec-4] c.i.m.EdataMapper.selectVByPrimaryKey    : ====>  Preparing: select id, item, deviceid, attrid, time, note from edata where id = ? 
+2019-02-27 11:39:12.739 DEBUG 13928 --- [http-nio-8181-exec-4] c.i.m.EdataMapper.selectVByPrimaryKey    : ====> Parameters: 2176(Integer)
+2019-02-27 11:39:12.739 DEBUG 13928 --- [http-nio-8181-exec-4] c.i.m.EdataMapper.selectVByPrimaryKey    : <====      Total: 1
+2019-02-27 11:39:12.739 DEBUG 13928 --- [http-nio-8181-exec-4] c.i.m.EorderMapper.selectVByPrimaryKey   : <==      Total: 1
+2019-02-27 11:39:13.481 DEBUG 13928 --- [http-nio-8181-exec-5] com.iot.mapper.EdataMapper.selectVBySql  : ==>  Preparing: select id, item, deviceid, attrid, time, note from edata where deviceid=29 and attrid=35 order by id desc limit 1 
+2019-02-27 11:39:13.481 DEBUG 13928 --- [http-nio-8181-exec-5] com.iot.mapper.EdataMapper.selectVBySql  : ==> Parameters: 
+2019-02-27 11:39:13.481 DEBUG 13928 --- [http-nio-8181-exec-5] com.iot.mapper.EdataMapper.selectVBySql  : <==      Total: 1
+2019-02-27 11:39:56.668  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 11:40:37.152 DEBUG 13928 --- [http-nio-8181-exec-7] c.i.m.EorderMapper.selectVByPrimaryKey   : ==>  Preparing: select id, item, dataid, userid, status, level, type, time, note from eorder where id = ? 
+2019-02-27 11:40:37.152 DEBUG 13928 --- [http-nio-8181-exec-7] c.i.m.EorderMapper.selectVByPrimaryKey   : ==> Parameters: 2018(Integer)
+2019-02-27 11:40:37.152 DEBUG 13928 --- [http-nio-8181-exec-7] c.i.m.EdataMapper.selectVByPrimaryKey    : ====>  Preparing: select id, item, deviceid, attrid, time, note from edata where id = ? 
+2019-02-27 11:40:37.152 DEBUG 13928 --- [http-nio-8181-exec-7] c.i.m.EdataMapper.selectVByPrimaryKey    : ====> Parameters: 2176(Integer)
+2019-02-27 11:40:37.152 DEBUG 13928 --- [http-nio-8181-exec-7] c.i.m.EdataMapper.selectVByPrimaryKey    : <====      Total: 1
+2019-02-27 11:40:37.152 DEBUG 13928 --- [http-nio-8181-exec-7] c.i.m.EorderMapper.selectVByPrimaryKey   : <==      Total: 1
+2019-02-27 11:40:38.099 DEBUG 13928 --- [http-nio-8181-exec-8] com.iot.mapper.EdataMapper.selectVBySql  : ==>  Preparing: select id, item, deviceid, attrid, time, note from edata where deviceid=29 and attrid=35 order by id desc limit 1 
+2019-02-27 11:40:38.099 DEBUG 13928 --- [http-nio-8181-exec-8] com.iot.mapper.EdataMapper.selectVBySql  : ==> Parameters: 
+2019-02-27 11:40:38.099 DEBUG 13928 --- [http-nio-8181-exec-8] com.iot.mapper.EdataMapper.selectVBySql  : <==      Total: 1
+2019-02-27 11:40:53.446 DEBUG 13928 --- [http-nio-8181-exec-9] c.i.m.EorderMapper.selectVByPrimaryKey   : ==>  Preparing: select id, item, dataid, userid, status, level, type, time, note from eorder where id = ? 
+2019-02-27 11:40:53.446 DEBUG 13928 --- [http-nio-8181-exec-9] c.i.m.EorderMapper.selectVByPrimaryKey   : ==> Parameters: 2018(Integer)
+2019-02-27 11:40:53.461 DEBUG 13928 --- [http-nio-8181-exec-9] c.i.m.EdataMapper.selectVByPrimaryKey    : ====>  Preparing: select id, item, deviceid, attrid, time, note from edata where id = ? 
+2019-02-27 11:40:53.461 DEBUG 13928 --- [http-nio-8181-exec-9] c.i.m.EdataMapper.selectVByPrimaryKey    : ====> Parameters: 2176(Integer)
+2019-02-27 11:40:53.461 DEBUG 13928 --- [http-nio-8181-exec-9] c.i.m.EdataMapper.selectVByPrimaryKey    : <====      Total: 1
+2019-02-27 11:40:53.461 DEBUG 13928 --- [http-nio-8181-exec-9] c.i.m.EorderMapper.selectVByPrimaryKey   : <==      Total: 1
+2019-02-27 11:40:53.461 DEBUG 13928 --- [http-nio-8181-exec-9] c.i.m.EorderMapper.updateByPrimaryKey    : ==>  Preparing: update eorder set item = ?, dataid = ?, userid = ?, status = ?, level = ?, type = ?, time = ?, note = ? where id = ? 
+2019-02-27 11:40:53.461 DEBUG 13928 --- [http-nio-8181-exec-9] c.i.m.EorderMapper.updateByPrimaryKey    : ==> Parameters: 东城区 北京物联天地信息技术有限公司 101 烟雾报警器 101-01 烟量 告警(String), 2176(Integer), 308(Integer), 完成(String), 1(Integer), 正常(String), 2019-02-22 09:32:10(String), 正常处理(String), 2018(Integer)
+2019-02-27 11:40:53.517 DEBUG 13928 --- [http-nio-8181-exec-9] c.i.m.EorderMapper.updateByPrimaryKey    : <==    Updates: 1
+2019-02-27 11:40:53.518 DEBUG 13928 --- [http-nio-8181-exec-9] c.i.m.EdataMapper.selectVByPrimaryKey    : ==>  Preparing: select id, item, deviceid, attrid, time, note from edata where id = ? 
+2019-02-27 11:40:53.518 DEBUG 13928 --- [http-nio-8181-exec-9] c.i.m.EdataMapper.selectVByPrimaryKey    : ==> Parameters: 2176(Integer)
+2019-02-27 11:40:53.519 DEBUG 13928 --- [http-nio-8181-exec-9] c.i.m.EdataMapper.selectVByPrimaryKey    : <==      Total: 1
+2019-02-27 11:41:02.958 DEBUG 13928 --- [http-nio-8181-exec-2] c.i.mapper.EorderMapper.selectVByDevice  : ==>  Preparing: select eorder.id id, eorder.item item, eorder.dataid dataid, eorder.userid userid, eorder.status status, eorder.level level, eorder.type type, eorder.time time, eorder.note note from eorder, edata where eorder.dataid = edata.id and edata.deviceid = ? order by eorder.id desc 
+2019-02-27 11:41:02.958 DEBUG 13928 --- [http-nio-8181-exec-2] c.i.mapper.EorderMapper.selectVByDevice  : ==> Parameters: 29(Integer)
+2019-02-27 11:41:02.958 DEBUG 13928 --- [http-nio-8181-exec-2] c.i.m.EdataMapper.selectVByPrimaryKey    : ====>  Preparing: select id, item, deviceid, attrid, time, note from edata where id = ? 
+2019-02-27 11:41:02.958 DEBUG 13928 --- [http-nio-8181-exec-2] c.i.m.EdataMapper.selectVByPrimaryKey    : ====> Parameters: 2176(Integer)
+2019-02-27 11:41:02.958 DEBUG 13928 --- [http-nio-8181-exec-2] c.i.m.EdataMapper.selectVByPrimaryKey    : <====      Total: 1
+2019-02-27 11:41:02.958 DEBUG 13928 --- [http-nio-8181-exec-2] c.i.m.EdataMapper.selectVByPrimaryKey    : ====>  Preparing: select id, item, deviceid, attrid, time, note from edata where id = ? 
+2019-02-27 11:41:02.958 DEBUG 13928 --- [http-nio-8181-exec-2] c.i.m.EdataMapper.selectVByPrimaryKey    : ====> Parameters: 2172(Integer)
+2019-02-27 11:41:02.958 DEBUG 13928 --- [http-nio-8181-exec-2] c.i.m.EdataMapper.selectVByPrimaryKey    : <====      Total: 1
+2019-02-27 11:41:02.958 DEBUG 13928 --- [http-nio-8181-exec-2] c.i.m.EdataMapper.selectVByPrimaryKey    : ====>  Preparing: select id, item, deviceid, attrid, time, note from edata where id = ? 
+2019-02-27 11:41:02.958 DEBUG 13928 --- [http-nio-8181-exec-2] c.i.m.EdataMapper.selectVByPrimaryKey    : ====> Parameters: 2169(Integer)
+2019-02-27 11:41:02.973 DEBUG 13928 --- [http-nio-8181-exec-2] c.i.m.EdataMapper.selectVByPrimaryKey    : <====      Total: 1
+2019-02-27 11:41:02.973 DEBUG 13928 --- [http-nio-8181-exec-2] c.i.mapper.EorderMapper.selectVByDevice  : <==      Total: 3
+2019-02-27 11:41:13.885 DEBUG 13928 --- [http-nio-8181-exec-4] c.i.m.EorderMapper.selectVByPrimaryKey   : ==>  Preparing: select id, item, dataid, userid, status, level, type, time, note from eorder where id = ? 
+2019-02-27 11:41:13.886 DEBUG 13928 --- [http-nio-8181-exec-4] c.i.m.EorderMapper.selectVByPrimaryKey   : ==> Parameters: 2018(Integer)
+2019-02-27 11:41:13.887 DEBUG 13928 --- [http-nio-8181-exec-4] c.i.m.EdataMapper.selectVByPrimaryKey    : ====>  Preparing: select id, item, deviceid, attrid, time, note from edata where id = ? 
+2019-02-27 11:41:13.887 DEBUG 13928 --- [http-nio-8181-exec-4] c.i.m.EdataMapper.selectVByPrimaryKey    : ====> Parameters: 2176(Integer)
+2019-02-27 11:41:13.888 DEBUG 13928 --- [http-nio-8181-exec-4] c.i.m.EdataMapper.selectVByPrimaryKey    : <====      Total: 1
+2019-02-27 11:41:13.889 DEBUG 13928 --- [http-nio-8181-exec-4] c.i.m.EorderMapper.selectVByPrimaryKey   : <==      Total: 1
+2019-02-27 11:41:13.905 DEBUG 13928 --- [http-nio-8181-exec-5] com.iot.mapper.EdataMapper.selectVBySql  : ==>  Preparing: select id, item, deviceid, attrid, time, note from edata where deviceid=29 and attrid=35 order by id desc limit 1 
+2019-02-27 11:41:13.905 DEBUG 13928 --- [http-nio-8181-exec-5] com.iot.mapper.EdataMapper.selectVBySql  : ==> Parameters: 
+2019-02-27 11:41:13.906 DEBUG 13928 --- [http-nio-8181-exec-5] com.iot.mapper.EdataMapper.selectVBySql  : <==      Total: 1
+2019-02-27 11:41:13.929 DEBUG 13928 --- [http-nio-8181-exec-6] c.i.m.EorderMapper.selectVByPrimaryKey   : ==>  Preparing: select id, item, dataid, userid, status, level, type, time, note from eorder where id = ? 
+2019-02-27 11:41:13.929 DEBUG 13928 --- [http-nio-8181-exec-6] c.i.m.EorderMapper.selectVByPrimaryKey   : ==> Parameters: 2018(Integer)
+2019-02-27 11:41:13.930 DEBUG 13928 --- [http-nio-8181-exec-6] c.i.m.EdataMapper.selectVByPrimaryKey    : ====>  Preparing: select id, item, deviceid, attrid, time, note from edata where id = ? 
+2019-02-27 11:41:13.931 DEBUG 13928 --- [http-nio-8181-exec-6] c.i.m.EdataMapper.selectVByPrimaryKey    : ====> Parameters: 2176(Integer)
+2019-02-27 11:41:13.932 DEBUG 13928 --- [http-nio-8181-exec-6] c.i.m.EdataMapper.selectVByPrimaryKey    : <====      Total: 1
+2019-02-27 11:41:13.932 DEBUG 13928 --- [http-nio-8181-exec-6] c.i.m.EorderMapper.selectVByPrimaryKey   : <==      Total: 1
+2019-02-27 11:41:13.932 DEBUG 13928 --- [http-nio-8181-exec-6] c.i.m.EorderMapper.updateByPrimaryKey    : ==>  Preparing: update eorder set item = ?, dataid = ?, userid = ?, status = ?, level = ?, type = ?, time = ?, note = ? where id = ? 
+2019-02-27 11:41:13.933 DEBUG 13928 --- [http-nio-8181-exec-6] c.i.m.EorderMapper.updateByPrimaryKey    : ==> Parameters: 东城区 北京物联天地信息技术有限公司 101 烟雾报警器 101-01 烟量 告警(String), 2176(Integer), 308(Integer), 完成(String), 1(Integer), 正常(String), 2019-02-22 09:32:10(String), 正常处理(String), 2018(Integer)
+2019-02-27 11:41:13.996 DEBUG 13928 --- [http-nio-8181-exec-6] c.i.m.EorderMapper.updateByPrimaryKey    : <==    Updates: 1
+2019-02-27 11:41:13.996 DEBUG 13928 --- [http-nio-8181-exec-6] c.i.m.EdataMapper.selectVByPrimaryKey    : ==>  Preparing: select id, item, deviceid, attrid, time, note from edata where id = ? 
+2019-02-27 11:41:13.996 DEBUG 13928 --- [http-nio-8181-exec-6] c.i.m.EdataMapper.selectVByPrimaryKey    : ==> Parameters: 2176(Integer)
+2019-02-27 11:41:13.996 DEBUG 13928 --- [http-nio-8181-exec-6] c.i.m.EdataMapper.selectVByPrimaryKey    : <==      Total: 1
+2019-02-27 11:41:13.996 DEBUG 13928 --- [http-nio-8181-exec-7] c.i.mapper.EorderMapper.selectVByDevice  : ==>  Preparing: select eorder.id id, eorder.item item, eorder.dataid dataid, eorder.userid userid, eorder.status status, eorder.level level, eorder.type type, eorder.time time, eorder.note note from eorder, edata where eorder.dataid = edata.id and edata.deviceid = ? order by eorder.id desc 
+2019-02-27 11:41:13.996 DEBUG 13928 --- [http-nio-8181-exec-7] c.i.mapper.EorderMapper.selectVByDevice  : ==> Parameters: 29(Integer)
+2019-02-27 11:41:13.996 DEBUG 13928 --- [http-nio-8181-exec-7] c.i.m.EdataMapper.selectVByPrimaryKey    : ====>  Preparing: select id, item, deviceid, attrid, time, note from edata where id = ? 
+2019-02-27 11:41:13.996 DEBUG 13928 --- [http-nio-8181-exec-7] c.i.m.EdataMapper.selectVByPrimaryKey    : ====> Parameters: 2176(Integer)
+2019-02-27 11:41:13.996 DEBUG 13928 --- [http-nio-8181-exec-7] c.i.m.EdataMapper.selectVByPrimaryKey    : <====      Total: 1
+2019-02-27 11:41:13.996 DEBUG 13928 --- [http-nio-8181-exec-7] c.i.m.EdataMapper.selectVByPrimaryKey    : ====>  Preparing: select id, item, deviceid, attrid, time, note from edata where id = ? 
+2019-02-27 11:41:13.996 DEBUG 13928 --- [http-nio-8181-exec-7] c.i.m.EdataMapper.selectVByPrimaryKey    : ====> Parameters: 2172(Integer)
+2019-02-27 11:41:13.996 DEBUG 13928 --- [http-nio-8181-exec-7] c.i.m.EdataMapper.selectVByPrimaryKey    : <====      Total: 1
+2019-02-27 11:41:13.996 DEBUG 13928 --- [http-nio-8181-exec-7] c.i.m.EdataMapper.selectVByPrimaryKey    : ====>  Preparing: select id, item, deviceid, attrid, time, note from edata where id = ? 
+2019-02-27 11:41:13.996 DEBUG 13928 --- [http-nio-8181-exec-7] c.i.m.EdataMapper.selectVByPrimaryKey    : ====> Parameters: 2169(Integer)
+2019-02-27 11:41:13.996 DEBUG 13928 --- [http-nio-8181-exec-7] c.i.m.EdataMapper.selectVByPrimaryKey    : <====      Total: 1
+2019-02-27 11:41:13.996 DEBUG 13928 --- [http-nio-8181-exec-7] c.i.mapper.EorderMapper.selectVByDevice  : <==      Total: 3
+2019-02-27 11:41:32.620 DEBUG 13928 --- [http-nio-8181-exec-10] c.i.m.EorderMapper.selectVByPrimaryKey   : ==>  Preparing: select id, item, dataid, userid, status, level, type, time, note from eorder where id = ? 
+2019-02-27 11:41:32.620 DEBUG 13928 --- [http-nio-8181-exec-10] c.i.m.EorderMapper.selectVByPrimaryKey   : ==> Parameters: 2018(Integer)
+2019-02-27 11:41:32.621 DEBUG 13928 --- [http-nio-8181-exec-10] c.i.m.EdataMapper.selectVByPrimaryKey    : ====>  Preparing: select id, item, deviceid, attrid, time, note from edata where id = ? 
+2019-02-27 11:41:32.622 DEBUG 13928 --- [http-nio-8181-exec-10] c.i.m.EdataMapper.selectVByPrimaryKey    : ====> Parameters: 2176(Integer)
+2019-02-27 11:41:32.623 DEBUG 13928 --- [http-nio-8181-exec-10] c.i.m.EdataMapper.selectVByPrimaryKey    : <====      Total: 1
+2019-02-27 11:41:32.624 DEBUG 13928 --- [http-nio-8181-exec-10] c.i.m.EorderMapper.selectVByPrimaryKey   : <==      Total: 1
+2019-02-27 11:41:32.631 DEBUG 13928 --- [http-nio-8181-exec-9] c.i.m.EorderMapper.selectVByPrimaryKey   : ==>  Preparing: select id, item, dataid, userid, status, level, type, time, note from eorder where id = ? 
+2019-02-27 11:41:32.632 DEBUG 13928 --- [http-nio-8181-exec-9] c.i.m.EorderMapper.selectVByPrimaryKey   : ==> Parameters: 2018(Integer)
+2019-02-27 11:41:32.633 DEBUG 13928 --- [http-nio-8181-exec-9] c.i.m.EdataMapper.selectVByPrimaryKey    : ====>  Preparing: select id, item, deviceid, attrid, time, note from edata where id = ? 
+2019-02-27 11:41:32.633 DEBUG 13928 --- [http-nio-8181-exec-9] c.i.m.EdataMapper.selectVByPrimaryKey    : ====> Parameters: 2176(Integer)
+2019-02-27 11:41:32.635 DEBUG 13928 --- [http-nio-8181-exec-9] c.i.m.EdataMapper.selectVByPrimaryKey    : <====      Total: 1
+2019-02-27 11:41:32.635 DEBUG 13928 --- [http-nio-8181-exec-9] c.i.m.EorderMapper.selectVByPrimaryKey   : <==      Total: 1
+2019-02-27 11:41:32.635 DEBUG 13928 --- [http-nio-8181-exec-9] c.i.m.EorderMapper.updateByPrimaryKey    : ==>  Preparing: update eorder set item = ?, dataid = ?, userid = ?, status = ?, level = ?, type = ?, time = ?, note = ? where id = ? 
+2019-02-27 11:41:32.636 DEBUG 13928 --- [http-nio-8181-exec-9] c.i.m.EorderMapper.updateByPrimaryKey    : ==> Parameters: 东城区 北京物联天地信息技术有限公司 101 烟雾报警器 101-01 烟量 告警(String), 2176(Integer), 308(Integer), 维修(String), 1(Integer), 正常(String), 2019-02-22 09:32:10(String), 正常处理(String), 2018(Integer)
+2019-02-27 11:41:32.677 DEBUG 13928 --- [http-nio-8181-exec-9] c.i.m.EorderMapper.updateByPrimaryKey    : <==    Updates: 1
+2019-02-27 11:41:32.677 DEBUG 13928 --- [http-nio-8181-exec-9] c.i.m.EdataMapper.selectVByPrimaryKey    : ==>  Preparing: select id, item, deviceid, attrid, time, note from edata where id = ? 
+2019-02-27 11:41:32.677 DEBUG 13928 --- [http-nio-8181-exec-9] c.i.m.EdataMapper.selectVByPrimaryKey    : ==> Parameters: 2176(Integer)
+2019-02-27 11:41:32.678 DEBUG 13928 --- [http-nio-8181-exec-9] c.i.m.EdataMapper.selectVByPrimaryKey    : <==      Total: 1
+2019-02-27 11:41:32.683 DEBUG 13928 --- [http-nio-8181-exec-1] c.i.mapper.EorderMapper.selectVByDevice  : ==>  Preparing: select eorder.id id, eorder.item item, eorder.dataid dataid, eorder.userid userid, eorder.status status, eorder.level level, eorder.type type, eorder.time time, eorder.note note from eorder, edata where eorder.dataid = edata.id and edata.deviceid = ? order by eorder.id desc 
+2019-02-27 11:41:32.683 DEBUG 13928 --- [http-nio-8181-exec-1] c.i.mapper.EorderMapper.selectVByDevice  : ==> Parameters: 29(Integer)
+2019-02-27 11:41:32.685 DEBUG 13928 --- [http-nio-8181-exec-1] c.i.m.EdataMapper.selectVByPrimaryKey    : ====>  Preparing: select id, item, deviceid, attrid, time, note from edata where id = ? 
+2019-02-27 11:41:32.685 DEBUG 13928 --- [http-nio-8181-exec-1] c.i.m.EdataMapper.selectVByPrimaryKey    : ====> Parameters: 2176(Integer)
+2019-02-27 11:41:32.686 DEBUG 13928 --- [http-nio-8181-exec-1] c.i.m.EdataMapper.selectVByPrimaryKey    : <====      Total: 1
+2019-02-27 11:41:32.686 DEBUG 13928 --- [http-nio-8181-exec-1] c.i.m.EdataMapper.selectVByPrimaryKey    : ====>  Preparing: select id, item, deviceid, attrid, time, note from edata where id = ? 
+2019-02-27 11:41:32.686 DEBUG 13928 --- [http-nio-8181-exec-1] c.i.m.EdataMapper.selectVByPrimaryKey    : ====> Parameters: 2172(Integer)
+2019-02-27 11:41:32.687 DEBUG 13928 --- [http-nio-8181-exec-1] c.i.m.EdataMapper.selectVByPrimaryKey    : <====      Total: 1
+2019-02-27 11:41:32.688 DEBUG 13928 --- [http-nio-8181-exec-1] c.i.m.EdataMapper.selectVByPrimaryKey    : ====>  Preparing: select id, item, deviceid, attrid, time, note from edata where id = ? 
+2019-02-27 11:41:32.688 DEBUG 13928 --- [http-nio-8181-exec-1] c.i.m.EdataMapper.selectVByPrimaryKey    : ====> Parameters: 2169(Integer)
+2019-02-27 11:41:32.689 DEBUG 13928 --- [http-nio-8181-exec-1] c.i.m.EdataMapper.selectVByPrimaryKey    : <====      Total: 1
+2019-02-27 11:41:32.689 DEBUG 13928 --- [http-nio-8181-exec-1] c.i.mapper.EorderMapper.selectVByDevice  : <==      Total: 3
+2019-02-27 11:44:08.633 DEBUG 13928 --- [http-nio-8181-exec-3] c.i.m.EorderMapper.selectVByPrimaryKey   : ==>  Preparing: select id, item, dataid, userid, status, level, type, time, note from eorder where id = ? 
+2019-02-27 11:44:08.634 DEBUG 13928 --- [http-nio-8181-exec-3] c.i.m.EorderMapper.selectVByPrimaryKey   : ==> Parameters: 2018(Integer)
+2019-02-27 11:44:08.635 DEBUG 13928 --- [http-nio-8181-exec-3] c.i.m.EdataMapper.selectVByPrimaryKey    : ====>  Preparing: select id, item, deviceid, attrid, time, note from edata where id = ? 
+2019-02-27 11:44:08.635 DEBUG 13928 --- [http-nio-8181-exec-3] c.i.m.EdataMapper.selectVByPrimaryKey    : ====> Parameters: 2176(Integer)
+2019-02-27 11:44:08.636 DEBUG 13928 --- [http-nio-8181-exec-3] c.i.m.EdataMapper.selectVByPrimaryKey    : <====      Total: 1
+2019-02-27 11:44:08.637 DEBUG 13928 --- [http-nio-8181-exec-3] c.i.m.EorderMapper.selectVByPrimaryKey   : <==      Total: 1
+2019-02-27 11:44:08.646 DEBUG 13928 --- [http-nio-8181-exec-4] com.iot.mapper.EdataMapper.selectVBySql  : ==>  Preparing: select id, item, deviceid, attrid, time, note from edata where deviceid=29 and attrid=35 order by id desc limit 1 
+2019-02-27 11:44:08.646 DEBUG 13928 --- [http-nio-8181-exec-4] com.iot.mapper.EdataMapper.selectVBySql  : ==> Parameters: 
+2019-02-27 11:44:08.647 DEBUG 13928 --- [http-nio-8181-exec-4] com.iot.mapper.EdataMapper.selectVBySql  : <==      Total: 1
+2019-02-27 11:44:56.669  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 11:49:56.685  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 11:54:56.700  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 11:59:56.703  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 12:04:56.711  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 12:09:56.716  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 12:14:36.446 DEBUG 13928 --- [http-nio-8181-exec-6] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-27 12:14:36.446 DEBUG 13928 --- [http-nio-8181-exec-6] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 29(Integer), 35(Integer), 2019-02-27 12:14:36(String), (String)
+2019-02-27 12:14:36.524 DEBUG 13928 --- [http-nio-8181-exec-6] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-27 12:14:36.553 DEBUG 13928 --- [http-nio-8181-exec-7] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-27 12:14:36.553 DEBUG 13928 --- [http-nio-8181-exec-7] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 93(String), 29(Integer), 36(Integer), 2019-02-27 12:14:36(String), (String)
+2019-02-27 12:14:36.584 DEBUG 13928 --- [http-nio-8181-exec-7] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-27 12:14:42.221 DEBUG 13928 --- [http-nio-8181-exec-10] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-27 12:14:42.221 DEBUG 13928 --- [http-nio-8181-exec-10] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 30(Integer), 38(Integer), 2019-02-27 12:14:42(String), (String)
+2019-02-27 12:14:42.274 DEBUG 13928 --- [http-nio-8181-exec-10] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-27 12:14:53.369 DEBUG 13928 --- [http-nio-8181-exec-1] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-27 12:14:53.369 DEBUG 13928 --- [http-nio-8181-exec-1] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 30(Integer), 38(Integer), 2019-02-27 12:14:53(String), (String)
+2019-02-27 12:14:53.431 DEBUG 13928 --- [http-nio-8181-exec-1] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-27 12:14:56.719  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 12:15:04.750 DEBUG 13928 --- [http-nio-8181-exec-3] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-27 12:15:04.750 DEBUG 13928 --- [http-nio-8181-exec-3] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 29(Integer), 35(Integer), 2019-02-27 12:15:04(String), (String)
+2019-02-27 12:15:04.797 DEBUG 13928 --- [http-nio-8181-exec-3] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-27 12:15:04.812 DEBUG 13928 --- [http-nio-8181-exec-4] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-27 12:15:04.812 DEBUG 13928 --- [http-nio-8181-exec-4] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 93(String), 29(Integer), 36(Integer), 2019-02-27 12:15:04(String), (String)
+2019-02-27 12:15:04.883 DEBUG 13928 --- [http-nio-8181-exec-4] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-27 12:15:07.946 DEBUG 13928 --- [http-nio-8181-exec-5] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-27 12:15:07.946 DEBUG 13928 --- [http-nio-8181-exec-5] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 30(Integer), 38(Integer), 2019-02-27 12:15:07(String), (String)
+2019-02-27 12:15:08.009 DEBUG 13928 --- [http-nio-8181-exec-5] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-27 12:15:09.223 DEBUG 13928 --- [http-nio-8181-exec-6] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-27 12:15:09.224 DEBUG 13928 --- [http-nio-8181-exec-6] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 30(Integer), 38(Integer), 2019-02-27 12:15:09(String), (String)
+2019-02-27 12:15:09.275 DEBUG 13928 --- [http-nio-8181-exec-6] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-27 12:15:10.258 DEBUG 13928 --- [http-nio-8181-exec-7] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-27 12:15:10.258 DEBUG 13928 --- [http-nio-8181-exec-7] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 30(Integer), 38(Integer), 2019-02-27 12:15:10(String), (String)
+2019-02-27 12:15:10.336 DEBUG 13928 --- [http-nio-8181-exec-7] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-27 12:15:52.398 DEBUG 13928 --- [http-nio-8181-exec-10] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-27 12:15:52.398 DEBUG 13928 --- [http-nio-8181-exec-10] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 29(Integer), 35(Integer), 2019-02-27 12:15:52(String), (String)
+2019-02-27 12:15:52.461 DEBUG 13928 --- [http-nio-8181-exec-10] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-27 12:15:52.461 DEBUG 13928 --- [http-nio-8181-exec-9] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-27 12:15:52.461 DEBUG 13928 --- [http-nio-8181-exec-9] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 93(String), 29(Integer), 36(Integer), 2019-02-27 12:15:52(String), (String)
+2019-02-27 12:15:52.508 DEBUG 13928 --- [http-nio-8181-exec-9] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-27 12:15:54.837 DEBUG 13928 --- [http-nio-8181-exec-1] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-27 12:15:54.837 DEBUG 13928 --- [http-nio-8181-exec-1] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 30(Integer), 38(Integer), 2019-02-27 12:15:54(String), (String)
+2019-02-27 12:15:54.884 DEBUG 13928 --- [http-nio-8181-exec-1] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-27 12:15:58.616 DEBUG 13928 --- [http-nio-8181-exec-2] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-27 12:15:58.617 DEBUG 13928 --- [http-nio-8181-exec-2] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 30(Integer), 38(Integer), 2019-02-27 12:15:58(String), (String)
+2019-02-27 12:15:58.686 DEBUG 13928 --- [http-nio-8181-exec-2] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-27 12:15:59.243 DEBUG 13928 --- [http-nio-8181-exec-3] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-27 12:15:59.243 DEBUG 13928 --- [http-nio-8181-exec-3] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 30(Integer), 38(Integer), 2019-02-27 12:15:59(String), (String)
+2019-02-27 12:15:59.290 DEBUG 13928 --- [http-nio-8181-exec-3] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-27 12:15:59.914 DEBUG 13928 --- [http-nio-8181-exec-4] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-27 12:15:59.914 DEBUG 13928 --- [http-nio-8181-exec-4] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 30(Integer), 38(Integer), 2019-02-27 12:15:59(String), (String)
+2019-02-27 12:15:59.977 DEBUG 13928 --- [http-nio-8181-exec-4] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-27 12:16:00.686 DEBUG 13928 --- [http-nio-8181-exec-5] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-27 12:16:00.686 DEBUG 13928 --- [http-nio-8181-exec-5] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 30(Integer), 38(Integer), 2019-02-27 12:16:00(String), (String)
+2019-02-27 12:16:00.743 DEBUG 13928 --- [http-nio-8181-exec-5] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-27 12:16:45.069 DEBUG 13928 --- [http-nio-8181-exec-7] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-27 12:16:45.069 DEBUG 13928 --- [http-nio-8181-exec-7] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 4(String), 29(Integer), 35(Integer), 2019-02-27 12:16:45(String), (String)
+2019-02-27 12:16:45.132 DEBUG 13928 --- [http-nio-8181-exec-7] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-27 12:16:50.120 DEBUG 13928 --- [http-nio-8181-exec-8] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-27 12:16:50.121 DEBUG 13928 --- [http-nio-8181-exec-8] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 29(Integer), 35(Integer), 2019-02-27 12:16:50(String), (String)
+2019-02-27 12:16:50.171 DEBUG 13928 --- [http-nio-8181-exec-8] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-27 12:16:50.186 DEBUG 13928 --- [http-nio-8181-exec-10] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-27 12:16:50.186 DEBUG 13928 --- [http-nio-8181-exec-10] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 93(String), 29(Integer), 36(Integer), 2019-02-27 12:16:50(String), (String)
+2019-02-27 12:16:50.236 DEBUG 13928 --- [http-nio-8181-exec-10] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-27 12:16:52.201 DEBUG 13928 --- [http-nio-8181-exec-9] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-27 12:16:52.201 DEBUG 13928 --- [http-nio-8181-exec-9] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 29(Integer), 35(Integer), 2019-02-27 12:16:52(String), (String)
+2019-02-27 12:16:52.259 DEBUG 13928 --- [http-nio-8181-exec-9] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-27 12:16:52.274 DEBUG 13928 --- [http-nio-8181-exec-1] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-27 12:16:52.274 DEBUG 13928 --- [http-nio-8181-exec-1] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 93(String), 29(Integer), 36(Integer), 2019-02-27 12:16:52(String), (String)
+2019-02-27 12:16:52.321 DEBUG 13928 --- [http-nio-8181-exec-1] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-27 12:19:56.720  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 12:24:25.337 DEBUG 13928 --- [http-nio-8181-exec-3] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-27 12:24:25.337 DEBUG 13928 --- [http-nio-8181-exec-3] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 30(Integer), 38(Integer), 2019-02-27 12:24:25(String), (String)
+2019-02-27 12:24:25.400 DEBUG 13928 --- [http-nio-8181-exec-3] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-27 12:24:26.070 DEBUG 13928 --- [http-nio-8181-exec-4] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-27 12:24:26.070 DEBUG 13928 --- [http-nio-8181-exec-4] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 30(Integer), 38(Integer), 2019-02-27 12:24:26(String), (String)
+2019-02-27 12:24:26.128 DEBUG 13928 --- [http-nio-8181-exec-4] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-27 12:24:56.722  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 12:29:29.051 DEBUG 13928 --- [http-nio-8181-exec-6] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-27 12:29:29.051 DEBUG 13928 --- [http-nio-8181-exec-6] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 4(String), 29(Integer), 35(Integer), 2019-02-27 12:29:28(String), (String)
+2019-02-27 12:29:29.101 DEBUG 13928 --- [http-nio-8181-exec-6] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-27 12:29:36.324 DEBUG 13928 --- [http-nio-8181-exec-8] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-27 12:29:36.325 DEBUG 13928 --- [http-nio-8181-exec-8] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 0(String), 29(Integer), 35(Integer), 2019-02-27 12:29:36(String), (String)
+2019-02-27 12:29:36.364 DEBUG 13928 --- [http-nio-8181-exec-8] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-27 12:29:36.373 DEBUG 13928 --- [http-nio-8181-exec-10] com.iot.mapper.EdataMapper.insert        : ==>  Preparing: insert into edata (id, item, deviceid, attrid, time, note) values (?, ?, ?, ?, ?, ?) 
+2019-02-27 12:29:36.374 DEBUG 13928 --- [http-nio-8181-exec-10] com.iot.mapper.EdataMapper.insert        : ==> Parameters: null, 93(String), 29(Integer), 36(Integer), 2019-02-27 12:29:36(String), (String)
+2019-02-27 12:29:36.413 DEBUG 13928 --- [http-nio-8181-exec-10] com.iot.mapper.EdataMapper.insert        : <==    Updates: 1
+2019-02-27 12:29:56.724  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 12:34:56.725  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 12:39:56.727  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 12:44:56.730  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 12:49:56.733  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 12:54:56.734  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 12:59:56.737  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 13:04:56.740  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 13:09:56.744  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 13:14:56.746  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 13:19:56.749  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 13:24:56.751  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 13:29:56.768  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 13:34:56.784  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 13:39:56.801  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 13:44:56.803  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 13:49:56.804  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 13:54:56.814  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 13:59:56.821  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 14:04:56.826  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 14:09:56.828  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 14:14:56.831  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 14:19:56.840  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 14:24:56.856  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 14:29:56.864  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 14:34:56.870  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 14:39:56.874  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 14:44:56.890  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 14:49:56.892  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 14:54:56.895  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 14:59:56.897  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 15:04:56.899  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 15:09:56.900  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 15:14:56.905  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 15:19:56.910  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 15:24:56.913  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 15:29:56.915  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 15:34:56.918  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 15:39:56.919  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 15:44:56.920  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 15:49:56.922  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 15:54:56.924  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 15:59:56.925  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 16:04:56.927  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 16:09:56.929  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 16:14:56.964  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 16:19:56.969  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 16:24:56.973  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 16:29:56.978  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 16:34:56.997  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 16:39:57.003  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 16:44:57.005  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 16:49:57.007  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 16:54:57.008  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 16:59:57.013  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 17:04:57.015  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 17:09:57.017  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 17:14:57.045  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 17:19:57.047  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 17:24:57.049  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 17:29:57.052  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 17:34:57.067  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 17:39:57.084  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 17:44:57.087  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 17:49:57.088  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 17:54:57.092  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 17:59:57.093  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 18:04:57.094  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 18:09:57.096  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 18:14:57.098  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 18:19:57.100  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 18:24:57.101  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 18:29:57.105  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 18:34:57.107  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 18:39:57.108  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 18:44:57.109  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 18:49:57.111  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 18:54:57.112  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 18:59:57.113  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-02-27 19:04:57.116  INFO 13928 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
