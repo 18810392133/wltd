@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="js/easyui/jquery.min.js"></script>
+    <script>
+        function test() {
+            $.ajax({
+                url: "/base/project/selectByPage",
+                type: "GET",
+                data: {},
+                dataType: "JSON",
+                success: function (data) {
+
+                    console.log(data.rows[0].item);
+                    // alert(typeof data);
+                }
+            });
+            // xmlHttp = new XMLHttpRequest();
+            // xmlHttp.open("GET","http://localhost:8180/project/selectAll",true);
+            // xmlHttp.send();
+            // xmlHttp.onreadystatechange = function () {
+            //     if(xmlHttp.readyState == 4 && xmlHttp.status ==200){
+            //         document.getElementById("con").value = xmlHttp.responseText;
+            //     }else {
+            //         alert(xmlHttp.responseText);
+            //     }
+            // }
+        }
+    </script>
+</head>
+<body>
+<input type="button" value="option" onclick="test()"/>\
+
+</body>
+</html>

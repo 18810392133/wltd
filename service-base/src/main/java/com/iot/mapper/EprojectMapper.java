@@ -3,6 +3,8 @@ package com.iot.mapper;
 import com.iot.bean.Eproject;
 import org.apache.ibatis.annotations.*;
 import org.apache.ibatis.type.JdbcType;
+import org.springframework.web.bind.annotation.CrossOrigin;
+
 import java.util.List;
 
 public interface EprojectMapper {

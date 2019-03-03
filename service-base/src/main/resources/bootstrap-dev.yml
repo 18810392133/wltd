@@ -30,7 +30,7 @@ spring:
   datasource:
     url: jdbc:mariadb://localhost:3306/wltd?autoReconnect=true&amp;autoReconnectForPools=true
     username: root
-    password: wltd
+    password: wjl984296155@#$
     driver-class-name: org.mariadb.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
     initialSize: 5

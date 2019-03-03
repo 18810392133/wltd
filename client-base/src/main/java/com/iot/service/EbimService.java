@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import java.util.List;
 import java.util.Map;
-
+//@AuthToken
 @FeignClient(value = "service-base", fallback = EbimServiceImpl.class)
 public interface EbimService {
     @RequestMapping(value = "/bim/selectAll", method = RequestMethod.GET)

@@ -2,12 +2,15 @@ package com.iot.service;
 
 import com.iot.bean.Eproject;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.CrossOrigin;
+
 import java.util.List;
 import java.util.Map;
 
 @Component
 public class EprojectServiceImpl implements EprojectService {
 
+    @CrossOrigin
     @Override
     public List<Eproject> selectAll() {
         return null;

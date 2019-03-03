@@ -2,6 +2,7 @@ package com.iot.service;
 
 import com.iot.bean.Eproject;
 import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -10,6 +11,7 @@ import java.util.Map;
 
 @FeignClient(value = "service-base", fallback = EprojectServiceImpl.class)
 public interface EprojectService {
+    @CrossOrigin
     @RequestMapping(value = "/project/selectAll", method = RequestMethod.GET)
     public List<Eproject> selectAll();
 

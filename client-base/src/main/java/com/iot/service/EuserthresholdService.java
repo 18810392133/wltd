@@ -2,6 +2,7 @@ package com.iot.service;
 
 import com.iot.bean.Euserthreshold;
 import com.iot.bean.Euserthresholdv;
+import com.iot.util.AuthToken;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -20,6 +21,7 @@ public interface EuserthresholdService {
     @RequestMapping(value = "/userthreshold/selectBySql", method = RequestMethod.GET)
     public List<Euserthreshold> selectBySql(@RequestParam("sql") String sql);
 
+    @AuthToken
     @RequestMapping(value = "/userthreshold/selectByPrimaryKey", method = RequestMethod.GET)
     public Euserthreshold selectByPrimaryKey(@RequestParam("id") Integer id);
 

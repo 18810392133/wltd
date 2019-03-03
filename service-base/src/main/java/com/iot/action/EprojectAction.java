@@ -3,6 +3,7 @@ package com.iot.action;
 import com.github.pagehelper.PageInfo;
 import com.iot.bean.Eproject;
 import com.iot.service.EprojectService;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,17 +12,20 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+
 @RestController
 @RequestMapping("/project")
 public class EprojectAction {  
     @Resource  
     private EprojectService eprojectService;
 
+    @CrossOrigin
 	@RequestMapping(value = "/selectAll", method = RequestMethod.GET)
 	public List<Eproject> selectAll(){
 		return eprojectService.selectAll();
 	}
 
+	@CrossOrigin
     @RequestMapping(value = "/selectByPage", method = RequestMethod.GET)
     public Map<Object, Object> selectByPage(Integer page, Integer rows, String sort, String order, String filterRules){
     	List<Eproject> list = eprojectService.selectByPage(page, rows, sort, order, filterRules);

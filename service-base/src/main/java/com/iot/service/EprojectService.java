@@ -1,10 +1,11 @@
 package com.iot.service;
 
 import com.iot.bean.Eproject;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.util.List;
 
-public interface EprojectService {  
+public interface EprojectService {
      
 	public List<Eproject> selectAll();
 	

@@ -6,6 +6,7 @@ import com.iot.bean.Select;
 import com.iot.service.EprojectService;
 import com.iot.util.AuthToken;
 import org.apache.commons.beanutils.BeanMap;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,6 +21,7 @@ public class EprojectAction {
     @Resource
     private EprojectService eprojectService;
 
+    @CrossOrigin
     @AuthToken
     @RequestMapping(value = "/selectAll")
     public Map<Object, Object> selectAll(){
@@ -28,8 +30,7 @@ public class EprojectAction {
         map.put("list", list);
         return map;
     }
-
-    @AuthToken
+    @CrossOrigin
     @RequestMapping(value = "/selectByPage")
     public Map<Object, Object> selectByPage(Integer page, Integer rows, String sort, String order, String filterRules){
         return eprojectService.selectByPage(page, rows, sort, order, filterRules);

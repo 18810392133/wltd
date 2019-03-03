@@ -5,6 +5,8 @@ import com.iot.bean.Eproject;
 import com.iot.mapper.EprojectMapper;
 import com.iot.util.CommonUtils;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.CrossOrigin;
+
 import javax.annotation.Resource;
 import java.util.List;
 

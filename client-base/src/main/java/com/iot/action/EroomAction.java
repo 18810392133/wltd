@@ -139,7 +139,7 @@ public class EroomAction {
         return map;
     }
 
-    @AuthToken
+
     @RequestMapping(value = "/selectSubVByPage")
     public Map<Object, Object> selectSubVByPage(Integer projectid, Integer page, Integer rows, String sort, String order, String filterRules){
         return eroomService.selectSubVByPage(projectid, page, rows, sort, order, filterRules);
