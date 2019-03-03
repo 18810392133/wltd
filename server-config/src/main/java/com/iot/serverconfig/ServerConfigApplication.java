@@ -9,7 +9,7 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 @EnableEurekaClient
 @EnableConfigServer
 public class ServerConfigApplication {
-
+//git测试
     public static void main(String[] args) {
         SpringApplication.run(ServerConfigApplication.class, args);
     }
